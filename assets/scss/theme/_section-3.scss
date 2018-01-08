@@ -1,0 +1,81 @@
+/***
+	SECTION 3
+				***/
+
+.s3 {
+	height: 670px;
+	background-image: url('../i/s3-bg.png');
+	background-size: cover;
+	@media all and (max-width: 991px) {
+		height: 715px;
+	}
+	@media all and (max-width: 767px) {
+		background-image: url('../i/s3-bg-xs.jpg');
+		height: auto;	
+	}
+	h2 {
+		color: $basicFontColor;
+	}
+	p {
+		font-size: 20px;
+		color: $basicFontColor;
+		@include proximaLight;
+		@media all and (max-width: 767px) {
+			font-size: 16px;
+		}
+	}
+}
+
+.features {
+	border-bottom: 1px solid rgba(255,255,255,.2);
+	padding-bottom: 15px;
+  margin-bottom: 35px;
+  @media all and (max-width: 767px) {
+	  border-bottom: none;
+	}
+  & > div {
+	  position: relative;
+  }
+  & > div:not(:last-child):after {
+	  content: '';
+	  display: block;
+	  position: absolute;
+    border-right: 1px solid rgba(255, 255, 255, .2);
+    top: 25px;
+    right: 0;
+    height: 270px;
+    @media all and (max-width: 767px) {
+	    display: none; 
+	  }
+  }
+}
+
+.feature {
+	text-align: center;
+	@media all and (max-width: 767px) {
+		border-bottom: 1px solid rgba(255,255,255,.2);
+	}
+	&__header {
+		padding: 75px;
+		background-image: url('../i/figure.svg');
+		background-repeat: no-repeat;
+		background-position: center center;
+		i {
+			font-size: 50px;
+		}
+	}
+	&__body {
+		h3 {
+			font-size: 28px;
+			color: $primaryColor;
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+		p {
+			color: $basicFontColor;
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 15px;
+		}
+	}
+}

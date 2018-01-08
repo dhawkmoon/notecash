@@ -1,0 +1,45 @@
+/***
+	Common
+			***/
+
+.s2,
+.s3,
+.s4,
+.s5,
+.s6 {
+	padding: 80px 0;
+	h2 {
+		margin-top:0;
+		margin-bottom: 20px;
+	}
+	@media all and (max-width: 767px) {
+		padding: 40px 0;
+		h2 {
+			font-size: 30px;
+		}
+	}
+}
+
+.mobile-menu-is-open {
+	position: fixed;
+	width: 100vw;
+}
+
+@media all and (max-width: 767px) {
+
+	html,body {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.row-xs-reversed {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	
+}
+

@@ -1,0 +1,76 @@
+/***
+  Modals
+      ***/
+
+.m-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: 9090;
+  overflow: auto;
+  &-wrapper {
+    position: relative;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    width: 460px;
+    height: auto;
+    min-height: 150px;
+    padding: 40px;
+    background-color: rgba(255,255,255,.85);
+    z-index: 1010;
+    @include fadeInTop(.15s);
+    @media all and (max-width: 767px) {
+	    top: 15px;
+	    width: calc(100% - 30px);
+    }
+  }
+
+  @include fadeIn(.15s);
+  &__closer {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    color: $headingColor;
+    line-height: .6;
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &-overlay {
+    position: fixed;
+    display: block;
+    background-color: rgba(0,0,0,.8);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  &--opened {
+    display: block;
+  }
+  h2 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0 0 15px;
+  }
+  p {
+    @include proximaLight;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+  }
+}
