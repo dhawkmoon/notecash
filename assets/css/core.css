@@ -8490,6 +8490,67 @@ h2 {
   cursor: text;
 }
 
+.floating-label.has-success {
+  background-color: #d1ffd1;
+}
+
+.floating-label.has-success input,
+.floating-label.has-success textarea {
+  background-color: #d1ffd1;
+}
+
+.floating-label.has-error {
+  background-color: #ffd1d1;
+}
+
+.floating-label.has-error input,
+.floating-label.has-error textarea {
+  background-color: #ffd1d1;
+}
+
+.floating-label .error-text {
+  position: absolute;
+  top: -40px;
+  color: #ce0000;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: block;
+  padding: 3px 10px;
+  left: 25px;
+  font-size: 16px;
+  white-space: nowrap;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.floating-label .error-text:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 15px;
+  bottom: -20px;
+  border: 10px solid rgba(255, 255, 255, 0.9);
+  width: 2px;
+  height: 1px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.floating-label .error-text:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 18px;
+  bottom: -20px;
+  border: 10px solid rgba(0, 0, 0, 0.2);
+  width: 2px;
+  height: 1px;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
 .floating-label--textarea {
   height: auto;
   padding: 15px 30px;

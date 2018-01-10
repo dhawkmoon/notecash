@@ -33,6 +33,7 @@ jQuery(document).ready(function($){
 			$(this).parents('.m-dropdown').find('.m-dropdown__current').text( $(this).text() ).addClass('m-dropdown__current--not-empty')
 			//$(this).data( 'value', $(this).text() )
 			$(this).parents('.floating-label').find('input').val( $(this).text() )
+			$(this).parents('.floating-label').find('input').trigger('change')
 		}
 	}
 	

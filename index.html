@@ -126,7 +126,7 @@
 
 							<form id="s1-form">
 								<span class="floating-label">
-									<input id="phone-top" name="phone-top" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+									<input id="phone-top" name="phone-top" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 									<label for="phone-top">Ваш телефон</label>
 								</span>
 								<button class="btn btn-primary">Оценить сейчас</button>
@@ -644,7 +644,7 @@
 						<p>Оставьте свой номер телефона и наш специалист<br class="hidden-xs" /> свяжется с вами для оценки стоимости ноутбука.</p>
 						<form id="prefooter-form">
 								<span class="floating-label">
-									<input id="phone-bottom" name="phone-bottom" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+									<input id="phone-bottom" name="phone-bottom" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 									<label for="phone-bottom">Ваш телефон</label>
 								</span>
 								<button class="btn btn-primary">Оценить сейчас</button>
@@ -713,17 +713,17 @@
 					<form id="modal-form" class="modal-form" action="index.html" method="post">
 							<!-- START: TEXT-->
 							<div class="floating-label">
-								<input type="text" id="modal-name" name="modal-name" value="">
+								<input type="text" id="modal-name" name="modal-name" value="" data-field="name">
 								<label for="modal-name">Представьтесь</label>
 							</div>
 							<!-- START: PHONE-->
 							<div class="floating-label">
-								<input type="text" id="modal-phone" name="modal-phone" value="" data-mask="phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+								<input type="text" id="modal-phone" name="modal-phone" value="" data-mask="phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 								<label for="modal-phone">Ваш телефон</label>
 							</div>
 							<!-- START: DROPDOWN -->
 							<div class="floating-label">
-								<input type="hidden" id="modal-note" value="0">
+								<input type="hidden" id="modal-note" data-field="notebook">
 								<div class="m-dropdown">
 									<div class="m-dropdown__current"></div>
 									<label>Марка ноутбука</label>
@@ -752,13 +752,13 @@
 								
 								
 								<span class="btn btn-primary">Выбрать</span>
-								<input type="file" name="modal-photo" id="modal-photo">
+								<input type="file" name="modal-photo" id="modal-photo" data-field="photo">
 								<span class="file-current"></span>
 								<label for="modal-photo">Фото ноутбука</label>
 							</div>
 							<!-- START: TEXTAREA -->
 							<span class="floating-label floating-label--textarea">
-								<textarea name="modal-details" rows="8" placeholder="Краткие характеристики Например: модель, процессор, видеокарта"></textarea>
+								<textarea data-field="description" name="modal-details" rows="8" placeholder="Краткие характеристики Например: модель, процессор, видеокарта"></textarea>
 								<label></label>
 							</span>
 							
@@ -787,7 +787,7 @@
 					<form id="modal-form-2" class="modal-form-2">
 
 						<span class="floating-label">
-							<input data-mask="phone" id="modal-2-phone" name="modal-2-phone" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+							<input data-mask="phone" id="modal-2-phone" name="modal-2-phone" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 							<label for="modal-2-phone">Ваш телефон</label>
 						</span>
 						<button class="btn btn-primary">Оценить сейчас</button>
