@@ -7,8 +7,8 @@
 	background-image: url('../i/s5-bg.png');
 	background-size: cover;
 	background-position-x: -25px;
-	@media all and (max-width: 767px) { 
-		height: 970px;	
+	@media all and (max-width: 767px) {
+		height: 970px;
 		background-image: url('../i/s5-bg-xs.jpg');
 		background-position-x: 0;
 	}
@@ -46,7 +46,7 @@
 			@media all and (max-width: 1200px) {
 				font-size: 16px;
 			}
-			
+
 			&:before {
 				display: block;
 				left: 0;
@@ -58,7 +58,7 @@
 				font-size: 28px;
 				padding: 7px;
 				margin-right: 20px;
-				transition: .3s linear font-size 0s linear;
+				transition: .3s linear;
 			}
 			&:hover,
 			&.active {

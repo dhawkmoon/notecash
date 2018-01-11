@@ -1,17 +1,20 @@
 <?php
-	
+	require 'helpers.php';
 	require 'routes.php';
+	require 'response.php';
 	require 'app.php';
-	//echo 1;
+	require 'services/mail-service.php';
+	require 'services/template-service.php';
+	require 'services/form-service.php';
 	//Create router
 	$router = new AltoRouter();
-	$router->setBasePath('/backend');
+	$router->setBasePath( BASE_PATH );
+	//echo BASE_PATH;
 	//Create APP
 	$app = new App();
-	
 	$app->setRouter( $router );
-	
+
+	$app->mapRoutes( $routes );
+
 	$app->execute();
-	
-	
-	
+	$app->end();

@@ -4,7 +4,7 @@
 function validateField( f ) {
 //	console.log( typeof f.validate )
 	if( typeof f.validate != 'undefined' ) {
-		console.log(f.validate)
+		//console.log(f.validate)
 		//Required fields checks if value is not empty
 		if( f.validate.required ) {
 			if( f.value.length == 0 ) {
@@ -30,10 +30,10 @@ function validateField( f ) {
 		}
 		//Custom callback for validation
 		if( f.validate.callback ) {
-			
+
 			return f.validate.callback( f.value )
 		}
-		
+
 		return true;
 	}
 	else {
@@ -49,7 +49,7 @@ function validateForm( e ) {
 	e.preventDefault()
 	var errors = []
 	for( var k in f.fields ) {
-		
+
 		if(  f.fields.hasOwnProperty( k )  ) {
 			var $field = $(this).find( '[data-field="' + k + '"]' )
 		//	console.log(k, $(this) )
@@ -60,23 +60,46 @@ function validateForm( e ) {
 			//console.log(result)
 			if( result !== true ) {
 				if( typeof f.fields[k].onError == 'function' ) {
-					f.fields[k].onSubmitError($field, result )
+					f.fields[k].onSubmitError( $field, result )
 				}
-				else { 
-					onSubmitError($field, result )
+				else {
+					onSubmitError( $field, result )
 				}
+				errors.push( result )
 			}
 			else {
 				if( typeof f.fields[k].onSuccess == 'function' ) {
 					f.fields[k].onSuccess( $field )
 				}
-				else { 
+				else {
 					onSuccess( $field )
 				}
 			}
 		}
-	}
+	} //endfor
 	//
+	//
+	if( errors.length == 0 ) {
+		var $form = $( this )
+		var form = forms.filter( function( form ) {
+			//console.log( form.id, $form )
+			return form.id == $form.attr('id')
+		} )
+		if( form.length == 0 ) {
+			console.log( 'No form set' )
+			onFormSuccess( $(this) )
+		}
+		else {
+			//
+			if( typeof form[0].onFormSuccess == 'function' ) {
+				form[0].onFormSuccess( $(this) )
+			}
+			else {
+					onFormSuccess( $(this) )
+			}
+			//
+		}
+	}
 }
 
 function validateSingleField( e ) {
@@ -91,7 +114,7 @@ function validateSingleField( e ) {
 		if( typeof field.onError == 'function' ) {
 			field.onFieldError($field, result )
 		}
-		else { 
+		else {
 			onFieldError($field, result )
 		}
 	}
@@ -99,7 +122,7 @@ function validateSingleField( e ) {
 		if( typeof field.onSuccess == 'function' ) {
 			field.onSuccess( $field )
 		}
-		else { 
+		else {
 			onSuccess( $field )
 		}
 	}
@@ -122,6 +145,66 @@ function onSuccess( field ) {
 	$( field ).parent().removeClass('has-error')
 	$( field ).parent().addClass('has-success')
 	$( field ).parent().find('.error-text').remove()
+}
+
+function onFormSuccess( form ) {
+	console.log(form, 'success')
+}
+
+var phoneFormSuccess = function( form ) {
+	var data = form.serialize()
+	form.addClass('is-loading');
+	form.find('button').attr('disabled', 'disabled')
+	console.log(data)
+	$.ajax({
+		url: 'http://vvikton7.beget.tech/backend/send',
+		method: 'POST',
+		data: data,
+		context: form,
+		success: function( response ) {
+			var form = $(this)
+			console.log( $(this), response )
+			setTimeout( function() {
+				form.removeClass('is-loading')
+				form.addClass('is-success')
+				form.append( '<span class="message message-success">'+response+'</span>' )
+			}, 2000 )
+		},
+		error: function( response ) {
+			console.log( $(this), response )
+			$(this).removeClass('is-loading')
+		},
+	})
+}
+
+var detailedFormSuccess = function( form ) {
+	console.log( form[0] )
+	var data = new FormData( form[0] )
+	//console.log(data)
+	form.addClass('is-loading');
+	form.find('button').attr('disabled', 'disabled')
+	//console.log(data)
+	$.ajax({
+		url: 'http://vvikton7.beget.tech/backend/detailed',
+		method: 'POST',
+		data: data,
+		context: form,
+		processData: false,
+  	contentType: false,
+		success: function( response ) {
+			var form = $(this)
+			console.log( $(this), response )
+			setTimeout( function() {
+				form.removeClass('is-loading')
+				form.addClass('is-success')
+				form.append( '<span class="message message-success">'+response+'</span>' )
+			}, 2000 )
+		},
+		error: function( response ) {
+			console.log( $(this), response )
+			$(this).removeClass('is-loading')
+		},
+	})
 }
 
 //start fields
@@ -191,18 +274,21 @@ var forms = [
 		fields: {
 			phone: fields.phone,
 		},
+		onFormSuccess: phoneFormSuccess,
 	},
 	{
 		id: 'modal-form-2',
 		fields: {
 			phone: fields.phone,
 		},
+		onFormSuccess: phoneFormSuccess,
 	},
 	{
 		id: 'prefooter-form',
 		fields: {
 			phone: fields.phone,
 		},
+		onFormSuccess: phoneFormSuccess,
 	},
 	{
 		id: 'modal-form',
@@ -213,8 +299,11 @@ var forms = [
 			notebook: fields.notebook,
 			photo: fields.photo,
 		},
+		onFormSuccess: detailedFormSuccess,
 	},
 ]
+//end forms
+
 //Handlers
 for( var i=0; i<forms.length; i++ ) {
 	$('#'+forms[i].id).on('submit', forms[i], validateForm );

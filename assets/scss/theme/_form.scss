@@ -145,8 +145,12 @@
   display: block;
 }
 
+#modal-form-button {
+  position: relative;
+}
+
 /***
-	Dropdown 
+	Dropdown
 				***/
 
 .m-dropdown {
@@ -177,13 +181,13 @@
 	    transition: .3s linear;
 		}
 	}
-	
+
 	&--opened &__current {
 		&:after {
 			transform: rotate(180deg);
 		}
 	}
-	
+
 	&__items-wrapper {
 		display: none;
 		background-color: white;
@@ -210,7 +214,7 @@
 		&:hover {
 			background-color: $primaryColor;
 			border-color: $primaryColor;
-			color: white;	
+			color: white;
 		}
 	}
 }
@@ -229,7 +233,7 @@
 			border-color: black;
 		}
 	}
-	
+
 	button.btn-primary {
 		width: 100%;
 		margin-top: 15px;
@@ -314,5 +318,30 @@
 	}
 }
 
+.is-loading {
+  .spinner {
+    display: block;
+  }
+  .btn {
+    span {
+      opacity:0;
+    }
+  }
+}
 
+form.is-success *:not(.message) {
+    display: none !important;
+}
 
+.message {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 7px 15px;
+  min-height: 25px;
+  max-width: 400px;
+  font-size: 16px;
+  &-success {
+      border-left: 4px green solid;
+  }
+}

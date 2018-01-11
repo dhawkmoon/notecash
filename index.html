@@ -108,7 +108,7 @@
 										<div class="s1-icon__title">Вы приезжаете</div>
 										<div class="s1-icon__text">приезжаете к нам или заказываете выезд курьера бесплатно</div>
 									</div>
-	
+
 									<div class="s1-icon">
 										<div class="s1-icon__circle">
 											<i class="icon-cash-1"></i>
@@ -116,7 +116,7 @@
 										<div class="s1-icon__title">Забираете деньги</div>
 										<div class="s1-icon__text">получаете свои деньги и радуетесь :)</div>
 									</div>
-	
+
 									<span class="sep sep-1"></span>
 									<span class="sep sep-2"></span>
 									<span class="arr-top"></span>
@@ -129,8 +129,18 @@
 									<input id="phone-top" name="phone-top" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 									<label for="phone-top">Ваш телефон</label>
 								</span>
-								<button class="btn btn-primary">Оценить сейчас</button>
+								<button class="btn btn-primary">
+									<span>Оценить сейчас</span>
+									<!-- START PRELOADER -->
+									<div class="spinner">
+									  <div class="bounce1"></div>
+									  <div class="bounce2"></div>
+									  <div class="bounce3"></div>
+									</div>
+									<!-- END PRELOADER -->
+								</button>
 								<p class="visible-xs text-center">Оставьте Ваш телефон и узнайте цену<br /> Вашего ноутбука</p>
+
 							</form>
 
 						</div>
@@ -167,7 +177,7 @@
 
 						<div class="col-xs-12 text-center">
 
-							<h2>Какие ноутбуки <br class="visible-xs" />мы покупаем?</h2>
+							<h2>Какие ноутбуки мы покупаем?</h2>
 
 						</div>
 
@@ -191,7 +201,7 @@
 
 										<h2>Неисправные</h2>
 
-										<p>Покупаем сломанные и неподлежащие<br class="hidden-sm" /> восстановлению ноутбуки,<br class="hidden-sm" /> разобранные и на запчасти, ноутбуки<br class="hidden-sm" /> на утилизацию и просто старые.</p>
+										<p>Покупаем сломанные и неподлежащие<br class="hidden-sm" /> восстановлению ноутбуки<span class="hidden-xs">,<br class="hidden-sm" /> разобранные и на запчасти, ноутбуки<br class="hidden-sm" /> на утилизацию и просто старые.</span></p>
 										<span class="btn btn-secondary">Узнать цену</span>
 
 									</div>
@@ -215,7 +225,7 @@
 
 										<h2>Б/У</h2>
 
-										<p>Вы можете продать свой Б/У ноутбук,<br class="hidden-sm" /> либо обменять его и получить<br class="hidden-sm" /> совершенно новый от наших<br class="hidden-sm" /> магазинов партнеров.</p>
+										<p>Вы можете продать свой Б/У ноутбук,<br class="hidden-sm" /> либо обменять его и получить<span class="hidden-xs"><br class="hidden-sm" /> совершенно новый от наших<br class="hidden-sm" /> магазинов партнеров.</span></p>
 										<span class="btn btn-secondary mt22">Узнать цену</span>
 
 									</div>
@@ -241,7 +251,7 @@
 
 										<h2>Новые</h2>
 
-										<p>Мы платим до 95% от рыночной<br class="hidden-sm" /> стоимости ноутбука. Принимаем<br class="hidden-sm" /> ноутбуки всех популярных<br class="hidden-sm" /> производителей.</p>
+										<p>Мы платим до 95% от рыночной<br class="hidden-sm" /> стоимости ноутбука. <span class="hidden-xs">Принимаем<br class="hidden-sm" /> ноутбуки всех популярных<br class="hidden-sm" /> производителей.</span></p>
 										<span class="btn btn-secondary mt22">Узнать цену</span>
 
 									</div>
@@ -348,7 +358,7 @@
 
 					<div class="row text-center">
 
-						<a href="#modal-1" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Оставить заявку</a>
+						<a href="#modal-2" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Оставить заявку</a>
 
 					</div>
 
@@ -525,7 +535,7 @@
 		<!-- START: MAP -->
 		<section class="map" id="map">
 			<h2>Схема проезда</h2>
-			
+
 		</section>
 		<!-- END: MAP -->
 
@@ -647,7 +657,16 @@
 									<input id="phone-bottom" name="phone-bottom" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 									<label for="phone-bottom">Ваш телефон</label>
 								</span>
-								<button class="btn btn-primary">Оценить сейчас</button>
+								<button class="btn btn-primary">
+									<span>Оценить сейчас</span>
+									<!-- START PRELOADER -->
+									<div class="spinner">
+									  <div class="bounce1"></div>
+									  <div class="bounce2"></div>
+									  <div class="bounce3"></div>
+									</div>
+									<!-- END PRELOADER -->
+								</button>
 
 							</form>
 					</div>
@@ -694,23 +713,24 @@
 				<span class="m-modal__closer" data-toggle="modal" data-target="#modal-1">&times;</span>
 				<div class="m-modal-inner">
 					<h2>Оставьте заявку</h2>
-					<p>Выберите способ оценки, который <br /> подходит именно вам.</p>
-					<ol class="list-secondary">
-						<li>
-							<span class="list-secondary__header">Оценка по телефону</span>
-							<span class="list-secondary__sub-header">Можете оставить только номер телефона</span>
-							<span class="list-secondary__body">Оставьте номер телефона и поставьте галочку «Оценка по телефону». Мы перезвоним через 1 минуту</span>
-						</li>
-
-						<li>
-
-							<span class="list-secondary__header">Оценка по SMS</span>
-							<span class="list-secondary__sub-header">Если вы не хотите разговаривать по телефону или вам некогда</span>
-							<span class="list-secondary__body">Сфотографируйте ваш девайс, укажите кратко характеристики и поставьте галочку «Оценка в SMS»</span>
-						</li>
-					</ol>
-
 					<form id="modal-form" class="modal-form" action="index.html" method="post">
+						<p>Выберите способ оценки, который <br /> подходит именно вам.</p>
+						<ol class="list-secondary">
+							<li>
+								<span class="list-secondary__header">Оценка по телефону</span>
+								<span class="list-secondary__sub-header">Можете оставить только номер телефона</span>
+								<span class="list-secondary__body">Оставьте номер телефона и поставьте галочку «Оценка по телефону». Мы перезвоним через 1 минуту</span>
+							</li>
+
+							<li>
+
+								<span class="list-secondary__header">Оценка по SMS</span>
+								<span class="list-secondary__sub-header">Если вы не хотите разговаривать по телефону или вам некогда</span>
+								<span class="list-secondary__body">Сфотографируйте ваш девайс, укажите кратко характеристики и поставьте галочку «Оценка в SMS»</span>
+							</li>
+						</ol>
+
+
 							<!-- START: TEXT-->
 							<div class="floating-label">
 								<input type="text" id="modal-name" name="modal-name" value="" data-field="name">
@@ -723,7 +743,7 @@
 							</div>
 							<!-- START: DROPDOWN -->
 							<div class="floating-label">
-								<input type="hidden" id="modal-note" data-field="notebook">
+								<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
 								<div class="m-dropdown">
 									<div class="m-dropdown__current"></div>
 									<label>Марка ноутбука</label>
@@ -748,9 +768,6 @@
 							</div>
 							<!-- START: PHOTO -->
 							<div class="floating-label floating-label--file">
-								
-								
-								
 								<span class="btn btn-primary">Выбрать</span>
 								<input type="file" name="modal-photo" id="modal-photo" data-field="photo">
 								<span class="file-current"></span>
@@ -761,14 +778,23 @@
 								<textarea data-field="description" name="modal-details" rows="8" placeholder="Краткие характеристики Например: модель, процессор, видеокарта"></textarea>
 								<label></label>
 							</span>
-							
-							<input class="m-radio" type="radio" id="modal-type-1" name="modal-type" value="По телефону">
+
+							<input checked="checked" class="m-radio" type="radio" id="modal-type-1" name="modal-type" value="По телефону">
 							<label for="modal-type-1">Оценка по телефону</label>
-							
+
 							<input class="m-radio" type="radio" id="modal-type-2" name="modal-type" value="SMS">
 							<label for="modal-type-2">Оценка по SMS</label>
-							
-							<button class="btn btn-primary">Оценить ноутбук</button>
+
+							<button id="modal-form-button" class="btn btn-primary">
+								<span>Оценить сейчас</span>
+								<!-- START PRELOADER -->
+								<div class="spinner">
+									<div class="bounce1"></div>
+									<div class="bounce2"></div>
+									<div class="bounce3"></div>
+								</div>
+								<!-- END PRELOADER -->
+							</button>
 					</form>
 
 				</div>
@@ -782,7 +808,7 @@
 				<span class="m-modal__closer" data-toggle="modal" data-target="#modal-2">&times;</span>
 				<div class="m-modal-inner">
 					<h2>Оставьте заявку</h2>
-					<p class="text-center">Оставьте номер своего телефона и наши специалисты перезвонять Вам</p>
+					<p class="text-center">Оставьте номер своего телефона и наши специалисты перезвонят Вам</p>
 					<!-- START: MODAL 2 FORM -->
 					<form id="modal-form-2" class="modal-form-2">
 
@@ -790,7 +816,16 @@
 							<input data-mask="phone" id="modal-2-phone" name="modal-2-phone" type="text" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-field="phone">
 							<label for="modal-2-phone">Ваш телефон</label>
 						</span>
-						<button class="btn btn-primary">Оценить сейчас</button>
+						<button class="btn btn-primary">
+							<span>Оценить сейчас</span>
+							<!-- START PRELOADER -->
+							<div class="spinner">
+								<div class="bounce1"></div>
+								<div class="bounce2"></div>
+								<div class="bounce3"></div>
+							</div>
+							<!-- END PRELOADER -->
+						</button>
 
 					</form>
 					<!-- END: MODAL 2 FORM -->
@@ -838,9 +873,9 @@
 				</ul>
 			</nav>
 		</aside>
-		
+
 		<div class="mobile-menu-overlay"></div>
-		
+
 		<!-- SCRIPTS -->
 		<script src="assets/js/jquery-3.2.1.min.js" charset="utf-8"></script>
 		<script src="assets/js/swiper.min.js" charset="utf-8"></script>

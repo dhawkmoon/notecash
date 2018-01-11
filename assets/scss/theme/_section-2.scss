@@ -11,13 +11,13 @@
 		height: 760px;
 	}
 	@media all and (max-width: 767px) {
-		height: 765px;
+		height: 650px;
 		background-image: url('../i/s2-bg-xs.jpg');
 	}
 	h2 {
 		margin-bottom: 55px;
 		@media all and (max-width: 767px) {
-			margin-bottom: 40px;	
+			margin-bottom: 30px;	
 		}
 	}
 }
@@ -30,7 +30,7 @@
 
 @media all and (max-width: 767px) {
 	.note-books-slide {
-		max-width: 375px;
+		//max-width: 375px;
 	}
 }
 
@@ -51,16 +51,37 @@
 		height: 465px;
 	}
 	@media all and (max-width: 767px) {
-		height: 545px;
+		height: 470px;
 		max-width: 350px;
-		margin: 0 auto;	
+		margin: 0 auto;
+		.btn {
+			position: relative;
+			top: -11px;
+		}
+		&__header{
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: rgba(0,0,0,.5);
+				z-index: 1;
+				transition: .3s linear;
+			}
+			.swiper-slide-active &:after {
+				background-color: rgba(0,0,0,.2);
+			}
+		}
 	}
 	&__body {
 		text-align: center;
 		h2 {
 			font-size: 28px;
 			color: $secondaryColor;
-			padding: 25px 0 15px;
+			padding: 25px 0 8px;
 			margin: 0;
 		}
 		p {
