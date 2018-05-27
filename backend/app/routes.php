@@ -9,6 +9,13 @@
 			}
 		],
 		[
+			'method'	 	=> 'GET',
+			'uri'				=>  '/amo',
+			'callback'	=>	function() {
+				return ['code'=>200, 'body'=> 'Hello, amo!'];
+			}
+		],
+		[
 			'method'		=> 'POST',
 			'uri'				=> '/send',
 			'callback'	=> function() {
@@ -69,6 +76,44 @@
 
 					$mail->send();
 					return ['code' => 200, 'body' => 'Спасибо, Ваше сообщение успешно отправлено.'];
+				}
+				else {
+					return ['code'=> 200, 'body' => 'К сожалению, данные некорректны!'];
+				}
+
+			}
+		],
+		[
+			'method'		=> 'POST',
+			'uri'				=> '/testimonials',
+			'callback'	=> function() {
+
+				$fields = validateFormFields( FORM_FIELDS );
+				// print_r( $_POST );
+				// print_r( $fields );
+
+				if( count( $fields ) > 0 ) {
+
+					$matches = [
+						'name'	=> $fields['name'],
+						'description' => $fields['description'],
+					];
+
+					$tmpl = TemplateService::load( 'mails/testimonials.tpl' );
+					$tmpl = TemplateService::replace( $tmpl, $matches );
+
+					$mail = MailService::createMail( BASIC_FROM, BASIC_TO, '++ [TEST] ++ Добавлен новый отзыв на модерацию на сайте notecash.ru', $tmpl );
+
+					if(
+						isset( $_FILES['modal-2-photo'] ) &&
+						is_image( $_FILES['modal-2-photo']['tmp_name'] ) &&
+						$_FILES['modal-2-photo']['size'] <= BASIC_UPLOAD_SIZE
+					) {
+						$mail->addAttachment( $_FILES['modal-2-photo']['tmp_name'], $_FILES['modal-2-photo']['name'] );
+					}
+
+					$mail->send();
+					return ['code' => 200, 'body' => 'Спасибо, Ваш отзыв принят на модерацию.'];
 				}
 				else {
 					return ['code'=> 200, 'body' => 'К сожалению, данные некорректны!'];

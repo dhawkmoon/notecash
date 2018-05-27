@@ -32,6 +32,10 @@
 					'name'		=> 'name',
 					'pattern'	=> '/^(.){10,60}$/i',
 			],
+			'modal-2-name'			=>   [
+					'name'		=> 'name',
+					'pattern'	=> '/^(.){10,60}$/i',
+			],
 			'modal-note'			=>	 [
 					'name'		=>	'note',
 					'pattern'	=>	'/^(Asus|Acer|Apple|Lenovo|Samsung|Sony|HP|Packard Bell|Dell|Toshiba|MSI|DNS|Medion|Fyjitsu-siemenes|Emachines)+$/',
@@ -40,9 +44,17 @@
 					'name'		=> 'photo',
 					'pattern'	=> '/(.)*/',
 			],
+			'modal-2-photo'			=>	[
+					'name'		=> 'photo',
+					'pattern'	=> '/(.)*/',
+			],
 			'modal-details'			=>	[
 					'name'		=> 'description',
-					'pattern'	=> '/^(.){20,60}$/i',
+					'pattern'	=> '/^(.){20,300}$/i',
+			],
+			'modal-2-details'			=>	[
+					'name'		=> 'description',
+					'pattern'	=> '/^(.){20,300}$/i',
 			],
 			'modal-type'			=>	[
 					'name'		=> 'type',
