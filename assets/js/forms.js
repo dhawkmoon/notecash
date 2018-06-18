@@ -157,13 +157,23 @@ var phoneFormSuccess = function( form ) {
 	form.find('button').attr('disabled', 'disabled')
 	console.log(data)
 	$.ajax({
-		url: 'http://vvikton7.beget.tech/backend/send',
+		url: '/backend/send',
 		method: 'POST',
 		data: data,
 		context: form,
 		success: function( response ) {
 			var form = $(this)
-			console.log( $(this), response )
+			
+			//dataLayer.push({'event': form.attr('id'), 'eventCategory' : 'form', 'eventAction' : 'sent'}); **deprecated
+			dataLayer.push({
+                'event' : 'formsend',
+                'eventCategory' : 'form',
+                'eventAction' : 'send-btn',
+                'eventLabel' : form.attr('id'),
+            });
+			
+			//console.log( form.attr('id'), response )
+			//console.log( $(this), response )
 			setTimeout( function() {
 				form.removeClass('is-loading')
 				form.addClass('is-success')
@@ -171,8 +181,14 @@ var phoneFormSuccess = function( form ) {
 			}, 2000 )
 		},
 		error: function( response ) {
-			console.log( $(this), response )
-			$(this).removeClass('is-loading')
+		//	console.log( $(this), response )
+
+			setTimeout( function() {
+				form.removeClass('is-loading')
+				form.addClass('is-error')
+				form.append( '<span class="message message-error">'+response+'</span>' )
+			}, 2000 )
+		},
 		},
 	})
 }
@@ -185,7 +201,7 @@ var detailedFormSuccess = function( form ) {
 	form.find('button').attr('disabled', 'disabled')
 	//console.log(data)
 	$.ajax({
-		url: 'http://vvikton7.beget.tech/backend/detailed',
+		url: '/backend/detailed',
 		method: 'POST',
 		data: data,
 		context: form,
@@ -193,7 +209,14 @@ var detailedFormSuccess = function( form ) {
   	contentType: false,
 		success: function( response ) {
 			var form = $(this)
-			console.log( $(this), response )
+			console.log( form.attr('id'), response )
+			//dataLayer.push({'event': form.attr('id'), 'eventCategory' : 'form', 'eventAction' : 'sent'}); **deprecated
+			dataLayer.push({
+                'event' : 'formsend',
+                'eventCategory' : 'form',
+                'eventAction' : 'send-btn',
+                'eventLabel' : form.attr('id'),
+            });
 			setTimeout( function() {
 				form.removeClass('is-loading')
 				form.addClass('is-success')
@@ -249,11 +272,35 @@ var fields = {
 			}
 		},
 	},
+	model: {
+		value: '',
+		validate: {
+			required: {
+				error: 'Укажите, пожалуйста, модель ноутбука',
+			},
+			callback: function( v ) {
+				if( v.length > 4 && v.length < 50 ) {
+					return true
+				}
+				else {
+					return {error: 'Длина названия модели должна быть больше 4 и меньше 50 символов'}
+				}
+			}
+		},
+	},
 	notebook: {
 		value: '',
 		validate: {
 			required: {
 				error: 'Укажите, пожалуйста, марку ноутбука'
+			}
+		}
+	},
+	state: {
+		value: '',
+		validate: {
+			required: {
+				error: 'Укажите, пожалуйста, состояние ноутбука'
 			}
 		}
 	},
@@ -298,6 +345,8 @@ var forms = [
 			description: fields.description,
 			notebook: fields.notebook,
 			photo: fields.photo,
+			state: fields.state,
+			model: fields.model
 		},
 		onFormSuccess: detailedFormSuccess,
 	},
@@ -318,3 +367,8 @@ for( var i=0; i<forms.length; i++ ) {
 $(document).on( 'click', '.error-text', function( e ) {
 	$(this).remove()
 } )
+
+//Prevent dummies from 8 in phone number error
+$('[data-field="phone"]').on( 'keypress', function(e){
+    $(this).val( $(this).val().replace( /^\+7 \(8/, '+7 (' ) )
+} )  

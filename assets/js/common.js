@@ -18,15 +18,23 @@ var testimonialsSlider = new Swiper ('#testimonials', {
       prevEl: '#testimonials-button-prev',
     },
 		
-		breakpoints: {
-			992: {
-				slidesPerView: 1,
-				spaceBetween: 70,
-			}
+	breakpoints: {
+		992: {
+			slidesPerView: 1,
+			spaceBetween: 70,
 		}
+	},
+	init: false,
 
   })
 
+testimonialsSlider.on( 'init', function(){
+    var coll = $('#testimonials-pagination>span')
+    for( var i=0; i<coll.length; i++ ) {
+        $( coll[i] ).attr('id', 'testimonials_bullets_'+i)
+    }
+} )
+testimonialsSlider.init()
 /***
 	Notebooks slider
 								***/
@@ -246,7 +254,7 @@ if( $(window).width() <= 768 ) {
     player = new YT.Player('player', {
       height: '365',
       width: '508',
-      videoId: 'M7lc1UVf-VE',
+      videoId: '0E9TOPqcttg',
       events: {
         'onReady': onPlayerReady,
         'onStateChange': timerInit
@@ -268,19 +276,19 @@ if( $(window).width() <= 768 ) {
 			element: $('.route__step:nth-child(1)'),
 		},
 		{
-			time: 300, //seconds
+			time: 28, //seconds
 			element: $('.route__step:nth-child(2)'),
 		},
 		{
-			time: 400, //seconds
+			time: 45, //seconds
 			element: $('.route__step:nth-child(3)'),
 		},
 		{
-			time: 500, //seconds
+			time: 75, //seconds
 			element: $('.route__step:nth-child(4)'),
 		},
 		{
-			time: 900, //seconds
+			time: 105, //seconds
 			element: $('.route__step:nth-child(5)'),
 		},
 	]

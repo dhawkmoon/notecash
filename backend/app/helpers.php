@@ -10,6 +10,16 @@
     }
     return $result;
   }
+  
+  /*
+   * Filters phone numbers, that are scum
+   */
+  function isBadPhone( string $field )
+  {
+  
+    return ( array_search( $field, BAD_PHONES ) !== false || !preg_match( ALLOWED_CODES, $field ) ); 
+  }
+  
   /*
    * Validate if file path is real image
    */
@@ -24,3 +34,20 @@
     }
     return false;
   }
+
+	function http_errors( int $code )
+	{
+		$errors = [
+		  301 => 'Moved permanently',
+		  400 => 'Bad request',
+		  401 => 'Unauthorized',
+		  403 => 'Forbidden',
+		  404 => 'Not found',
+		  500 => 'Internal server error',
+		  502 => 'Bad gateway',
+		  503 => 'Service unavailable'
+		];
+		
+		return isset( $errors[$code] ) ? $errors[$code] : 'Unknown http error';
+		
+	}

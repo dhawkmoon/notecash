@@ -3,14 +3,14 @@
 				***/
 
 .s6 {
-	height: 860px;
+	height: 960px;
 	background-image: url('../i/s6-bg.jpg');
 	background-size: cover;
 	@media all and (max-width: 991px) {
-		height: 930px;
+		height: 980px;
 	}
 	@media all and (max-width: 767px) {
-		height: 980px;
+		height: 840px;
 	}
 }
 
