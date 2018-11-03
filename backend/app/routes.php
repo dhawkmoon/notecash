@@ -98,13 +98,62 @@
 		],
 		[
 			'method'		=> 'POST',
+			'uri'				=> '/send-mac',
+			'callback'	=> function() {
+
+				$fields = validateFormFields( FORM_FIELDS );
+			    
+			    if( count( $fields ) == 0) {
+			        return ['code' => 403, 'body' => 'К сожалению, произошла ошибка: не найдено ни одного поля.' ];
+			    }
+			    
+                if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>.'];
+                }
+				if( count( $fields ) > 0 ) {
+					
+					$manager = AmoCRM::getManager();
+					
+					//Amo
+					AmoCRM::handleCallback( $fields['phone'], MANAGERS[$manager]['id'] );
+					
+					if( $manager == 0 ) {
+						AmoCRM::saveManager(1);
+					}
+					else {
+						AmoCRM::saveManager(0);
+					}
+					
+					$tmpl = TemplateService::load( 'mails/mac-phone.tpl' );
+					$tmpl = TemplateService::replace( $tmpl, ['phone' => $fields['phone'] ] );
+
+					$mail = MailService::createMail( BASIC_FROM, MANAGERS[$manager]['email'], /*BASIC_SUBJECT */'🍎 Заказ обратного звонка на покупку Apple', $tmpl  );
+					//echo $m
+					$mail->send();
+					
+					$mail2 = MailService::createMail( BASIC_FROM, BASIC_TO, '🍎 Заказ обратного звонка на покупку Apple', $tmpl  );
+					
+					$mail2->send();
+					
+					return ['code' => 200, 'body' => 'Спасибо, Ваше сообщение успешно отправлено.'];
+				}
+				else {
+					return ['code'=> 200, 'body' => 'К сожалению, данные некорректны!'];
+				}
+				//
+			}
+		],
+		[
+			'method'		=> 'POST',
 			'uri'				=> '/detailed',
 			'callback'	=> function() {
 
 				$fields = validateFormFields( FORM_FIELDS );
 				// print_r( $_POST );
 				// print_r( $fields );
-
+                if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>'];
+                }
 				if( count( $fields ) > 0 ) {
 
 					$matches = [
@@ -183,6 +232,71 @@
 					) {
 						$mail2->addAttachment( $_FILES['modal-photo']['tmp_name'], $_FILES['modal-photo']['name'] );
 					}
+					
+					$mail2->send();
+					
+					return ['code' => 200, 'body' => 'Спасибо, Ваше сообщение успешно отправлено.'];
+				}
+				else {
+					return ['code'=> 200, 'body' => 'К сожалению, данные некорректны!'];
+				}
+
+			}
+		],
+		[
+			'method'		=> 'POST',
+			'uri'				=> '/detailed-mac',
+			'callback'	=> function() {
+
+				$fields = validateFormFields( FORM_FIELDS );
+				// print_r( $_POST );
+				// print_r( $fields );
+
+                if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>'];
+                }
+
+				if( count( $fields ) > 0 ) {
+
+					$matches = [
+						'phone' 			=> $fields['phone'],
+						'year'              => $fields['year'],
+						'model'				=> $fields['model'],
+					];
+					
+					//AMO
+					$cf = [
+						[
+							'id' 			=> CF_BRAND,
+							'values' 	=>	[
+								[
+									'value'=> AmoCRM::getFieldId( $fields['model'] ),
+									'enum' => $fields['model'],
+								],
+							],
+						],
+					];
+					
+					$manager = AmoCRM::getManager();
+					//print_r( MANAGERS[$manager] );die();
+					AmoCRM::handleCallback( $fields['phone'], MANAGERS[$manager]['id'], '', $cf );
+					
+					if( $manager == 0 ) {
+						AmoCRM::saveManager(1);
+					}
+					else {
+						AmoCRM::saveManager(0);
+					}
+					
+					$tmpl = TemplateService::load( 'mails/mac-detailed.tpl' );
+					$tmpl = TemplateService::replace( $tmpl, $matches );
+
+					$mail = MailService::createMail( BASIC_FROM, MANAGERS[$manager]['email'], '🍎 Заказ обратного звонка на покупку Apple', $tmpl );
+
+					$mail->send();
+					
+				    $mail2 = MailService::createMail( BASIC_FROM, BASIC_TO, '🍎 Заказ обратного звонка на покупку Apple', $tmpl  );
+					
 					
 					$mail2->send();
 					

@@ -68,6 +68,22 @@
 					'name'		=> 'type',
 					'pattern'	=> '/^(По телефону|SMS)+$/',
 			],
+			'modal-form__phone'   =>   [
+				'name'    => 'phone',
+				'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/',
+			],
+			'top-form__phone'   =>   [
+				'name'    => 'phone',
+				'pattern' => '/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/',
+			],
+			'top-form__year'   =>   [
+				'name'    => 'year',
+				'pattern' => '/^(2010|2011|2012|2013|2014|2015|2016|2017|2018)$/',
+			],
+			'top-form__model'  =>   [
+				'name'    => 'model',
+				'pattern' => '/^(MacBook Air|MacBook Pro)$/',
+			],
 		]
 	);
 	
@@ -103,13 +119,16 @@
 		[
 			'id' => 2186452,
 			'email' => 'Deimos199501@gmail.com',
-			//'email' => 'dhawkmoon@mail.ru',
 		],
 		[
-			'id' => 1995433,
-			'email' => 'spriggun140493@gmail.com',
-			//'email' => 'hawkguitar@gmail.com',
+			'id' => 2186452,
+			'email' => 'Deimos199501@gmail.com',
 		],
+	//	[
+		//	'id' => 1995433,
+		//	'email' => 'spriggun140493@gmail.com',
+			//'email' => 'hawkguitar@gmail.com',
+	//	],
 	]);
 
 	define( 'TEMP_FILE', dirname( __FILE__ ) . '/temp/cookies' );

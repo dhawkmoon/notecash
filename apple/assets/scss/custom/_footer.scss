@@ -1,0 +1,260 @@
+footer {
+	position: relative;
+	padding-top: 150px;
+
+	@include media-breakpoint-down(md) {
+		padding-top: 80px;
+	}
+
+	@include media-breakpoint-down(xs) {
+		padding-top: 60px;
+		padding-bottom: 30px;
+	}
+
+	h2 {
+		margin-bottom: 70px;
+		@include media-breakpoint-down(xs) {
+			margin-bottom: 40px;
+		}
+	}
+
+	.btn-gradient--big {
+		max-width: 349px;
+	}
+}
+
+.footer-pic {
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	z-index: 2;
+	@include media-breakpoint-down(lg) {
+		width: 50%;
+	}
+	@include media-breakpoint-down(xs) {
+		display: none;
+	}
+}
+
+.faq {
+	padding: 30px 80px;
+	@include media-breakpoint-down(xs) {
+		padding: 15px 15px;
+	}
+
+	.card-block {
+		padding-right: 0;
+		padding-bottom: 30px;
+		padding-left: 60px;
+		padding-top: 0;
+
+		@include media-breakpoint-down(xs) {
+			padding-left: 40px;
+		}
+
+		ol {
+			padding-left: 20px;
+			li {
+				@extend p;
+			}
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.card {
+		position: relative;
+		z-index: 3;
+		border: none;
+		border-radius: 0;
+		background-color: transparent;
+	}
+	.card-header {
+		border-radius: 0;
+		min-height: 90px;
+		position: relative;
+		color: white;
+		border: none;
+		background-color: transparent;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		padding-left: 60px;
+		border-top: 1px solid #313131;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		-webkit-transition: .3s linear;
+		transition: .3s linear;
+
+		h4 {margin-bottom: 0; color: $link-color; font-family: $primary-font;}
+
+		&:hover {
+			h4 {color: $link-color !important;}
+		}
+
+		@include media-breakpoint-down(xs) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 40px;
+		}
+	}
+}
+
+.card-header::before {
+	content:"";
+	width: 30px;
+	height: 30px;
+	background-image: url("../img/svg/minus.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	left: 0;
+	top: 30px;
+
+	@include media-breakpoint-down(xs) {
+		width: 20px;
+		height: 20px;
+		top: 34px;
+	}
+}
+.card-header.collapsed h4 {
+	color: white;
+}
+.card-header.collapsed::before {
+	background-image: url("../img/svg/plus.svg");
+}
+.card-header:hover,
+.card-header:active,
+.card-header:focus  {
+	text-decoration: none;
+}
+
+.pro-wrapper {
+	footer {
+		background-color: $bg-color-dark;
+	}
+	.faq {
+		background-color: $bg-color-dark-alt;
+	}
+}
+
+.air-wrapper {
+	footer {
+		background-color: white;
+	}
+	.faq {
+		background-color: #f3f3f3;
+	}
+	.faq .card-header {
+		border-color: #d6d6d6;
+	}
+	.card-header.collapsed::before {
+		background-image: url("../img/svg/plus-d.svg");
+	}
+	.card-header::before {
+		background-image: url("../img/svg/minus-d.svg");
+	}
+	.card-header.collapsed h4 {
+		color: #333;
+	}
+	.page-footer {
+		border-top: 1px solid #d6d6d6;
+	}
+}
+
+.more-questions {
+	position: relative;
+	z-index: 3;
+	padding: 50px 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+
+	.btn-gradient {
+		@include media-breakpoint-down(xs) {
+			margin-top: 20px;
+		}
+	}
+}
+
+.page-footer {
+	border-top: 1px solid #313131;
+	position: relative;
+	z-index: 3;
+	min-height: 90px;
+	padding-bottom: 30px;
+
+	p {
+		font-size: 14px;
+		line-height: 1.2;
+		color: $second-font-color;
+		font-family: $light-font;
+		margin: 0;
+	}
+
+	.copyright {
+		@include media-breakpoint-down(xs) {
+			text-align: center;
+		}
+		img {
+			margin-right: 30px;
+		}
+		p {
+			display: inline-block;
+			margin-top: 30px;
+		}
+	}
+
+	.break {
+		display: none;
+		@media (width: 1024px) {
+			display: block;
+		}
+	}
+}
+
+.page-footer__contact {
+	padding-top: 30px;
+
+	a {
+		color: $second-font-color !important;
+		&:hover {
+			color: $link-color !important;
+			text-decoration: none;
+		}
+	}
+
+	&__item {
+		@include media-breakpoint-down(md) {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+	}
+
+}
+
+.icon {
+	&-heart {
+		@include glyph( url( ../icons/heart.svg ) );
+		width: 10px;
+		height: 10px;
+		margin-left: 1px;
+		margin-right: 1px;
+	}
+}
+
+.copy {
+	letter-spacing: 1px;
+}

@@ -1,0 +1,183 @@
+.recalls {
+	padding: 150px 0;
+	background-image: url("../img/recalls-bg.png");
+	background-repeat: no-repeat;
+	background-position: 50vw bottom;
+
+	@include media-breakpoint-down(md) {
+		padding: 80px 0;
+	}
+
+	@include media-breakpoint-down(xs) {
+		padding: 60px 0;
+	}
+
+
+	h2 {
+		margin-bottom: 70px;
+
+		@include media-breakpoint-down(xs) {
+			margin-bottom: 40px;
+		}
+	}
+
+	.btn-alt {
+		position: relative;
+		bottom: -20px;
+	}
+}
+
+.pro-wrapper {
+	.recalls {
+		position: relative;
+	}
+
+	.shine-recalls {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: 10%;
+		opacity: 0.3;
+	}
+}
+
+.slider-wrapper {
+	position: relative;
+}
+
+.slider {
+	&__item {
+
+		@include media-breakpoint-down(xs) {
+			min-height: 480px;
+			margin-bottom: 0;
+			p {
+				text-align: left;
+			}
+		}
+		img {
+			border-radius: 50%;
+			width: 200px;
+			height: 200px;
+			-o-object-fit: cover;
+			   object-fit: cover;
+			@include media-breakpoint-down(xs) {
+				margin: auto;
+			}
+		}
+	}
+
+	.slick-dots {
+		list-style: none;
+		padding: 0;
+		margin-top: 70px;
+		margin-bottom: 0;
+		display: -webkit-box !important;
+		display: -ms-flexbox !important;
+		display: flex !important;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+
+		@include media-breakpoint-down(xs) {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+
+		li {
+			margin-right: 20px;
+		}
+
+		li:last-child {
+			margin-right: 0;
+		}
+
+		button {
+			font-size: 0;
+			border: none;
+			background-color: #63636e;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			padding: 0;
+		}
+
+		.slick-active button {
+			background-color: white;
+		}
+	}
+}
+
+.slider__arrow {
+	position: absolute;
+	bottom: -2px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	z-index: 10;
+	-webkit-transition: 0.2s linear;
+	transition: 0.2s linear;
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&--next {
+		right: 38%;
+		border-bottom: 1px solid white;
+		border-right: 1px solid white;
+		-webkit-transform: rotate(-45deg);
+		        transform: rotate(-45deg);
+		@include media-breakpoint-down(md){
+			right: 30%;
+		}
+		@include media-breakpoint-down(xs){
+			right: 20%;
+		}
+	}
+
+	&--prev {
+		left: 38%;
+		border-bottom: 1px solid white;
+		border-left: 1px solid white;
+		-webkit-transform: rotate(45deg);
+		        transform: rotate(45deg);
+		@include media-breakpoint-down(md){
+			left: 30%;
+		}
+		@include media-breakpoint-down(xs) {
+			left: 20%;
+		}
+	}
+}
+
+// .pro-wrapper {
+// 	.recalls {
+// 		background-image: url("../img/shine-recalls.png");
+// 		background-size: contain;
+// 		background-repeat: no-repeat;
+// 		background-position: center;
+// 	}
+// }
+
+
+
+
+
+.air-wrapper {
+	.slider__arrow {
+		border-color: #111;
+	}
+	.recalls {
+		background-image: url("../img/recalls-bg-air.png");
+	}
+	.slick-dots button {
+		background-color: #d7d7d7 !important;
+	}
+	.slick-active button {
+		background-color: #333 !important;
+	}
+}

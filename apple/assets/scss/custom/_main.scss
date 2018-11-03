@@ -1,0 +1,187 @@
+html, body {
+	height: 100%;
+}
+
+.bg-dark {
+	background-color: $bg-color-dark;
+}
+
+.container-limit {
+	width: 100%;
+	max-width: 1174px;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+.pro-wrapper {background-color: $bg-color-dark;}
+.air-wrapper {background-color: white;}
+
+// Какие макбуки мы покупаем?
+
+.we-are-buying {
+	padding: 150px 0;
+
+	@include media-breakpoint-down(md) {
+		padding-top: 80px;
+	}
+
+	@include media-breakpoint-down(xs) {
+		padding: 60px 0;
+	}
+
+	h2 {
+		margin-bottom: 70px;
+		@include media-breakpoint-down(xs) {
+			margin-bottom: 50px;
+		}
+	}
+
+
+	&__item {
+		@include media-breakpoint-down(md) {
+			margin-bottom: 60px;
+		}
+
+		h3 {
+			margin-top: 40px;
+			margin-bottom: 25px;
+			@include media-breakpoint-down(xs) {
+				margin-top: 20px;
+				margin-bottom: 15px;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+			text-align: left;
+			min-height: 105px;
+			@include media-breakpoint-down(sm) {
+				min-height: auto;
+				text-align: center;
+			}
+		}
+
+		.btn-alt {
+			margin-top: 40px;
+			@include media-breakpoint-down(md) {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+.shine-pro {
+	position: relative;
+	z-index: 3;
+
+	&__img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+		height: 65%;
+		opacity: 0;
+		-webkit-transition: 0.2s linear;
+		transition: 0.2s linear;
+	}
+	&:hover .shine-pro__img {
+		opacity: 1;
+	}
+}
+
+.pro-wrapper {
+	.we-are-buying,
+	.recalls,
+	.route-section {
+		background-color: $bg-color-dark-alt;
+	}
+	.why-we {
+		.container-limit {
+			background-color: $bg-color-dark;
+			background-image: url("../img/hidden-pro.png");
+		}
+	}
+}
+
+.air-wrapper {
+	.we-are-buying,
+	.recalls,
+	.route-section {
+		background-color: #fafafa;
+	}
+	.why-we {
+		background-color: white;
+		.container-limit {
+			background-image: url("../img/hidden-air.png");
+			background-position: right -5%;
+		}
+	}
+	.route-section {
+		background-color: white;
+	}
+}
+
+// Почему мы?
+
+.why-we {
+
+	.container-limit {
+		padding: 100px 0;
+		background-repeat: no-repeat;
+		background-position: 140% -55px;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 80px 0;
+	}
+
+	@include media-breakpoint-down(xs) {
+		padding: 50px 15px;
+		background-position: right -5%;
+		background-size: contain;
+	}
+
+	h2 {
+		margin-bottom: 30px;
+	}
+
+	&__item {
+		margin-top: 70px;
+		@include media-breakpoint-down(md) {
+			text-align: center;
+			margin-bottom: 0;
+			margin-top: 60px;
+		}
+	}
+
+	.btn-gradient {
+		margin-top: 70px;
+		@include media-breakpoint-down(xs) {
+			margin-top: 40px;
+		}
+	}
+
+	p {
+		min-height: auto;
+	}
+
+}
+
+.air-wrapper {
+	.why-we {
+		@include media-breakpoint-down(xs) {
+			background-position: right -2%;
+		}
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	.text-center-xs {
+		text-align: center;
+	}
+}

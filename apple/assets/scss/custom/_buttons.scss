@@ -1,0 +1,128 @@
+.header-btn {
+	background-color: #40a0eb;
+	background-image: -webkit-gradient(linear,left top, right top,from(#40a0eb),color-stop(50%, #07c),to(#40a0eb));
+	background-image: linear-gradient(90deg,#40a0eb,#07c 50%,#40a0eb);
+	color: #fefefe;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 16px;
+	height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 4px;
+	-webkit-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	border: none;
+	cursor: pointer;
+	background-size: 200% auto;
+	background-position: -100% 0;
+
+	&:hover {
+		background-color: #147bcd;
+		text-decoration: none;
+		color: #fefefe;
+		background-color: #b074a7;
+		background-position: -200% 0;
+	}
+}
+
+.btn-gradient {
+	width: 100%;
+	height: 40px;
+	background-color: #0f3278;
+	color: white;
+	font-size: 16px;
+	line-height: 1;
+	background-image: -webkit-gradient(linear,left top, right top,from(#b074a7),color-stop(50%, #0f3278),to(#b074a7));
+	background-image: linear-gradient(90deg,#b074a7,#0f3278 50%,#b074a7);
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	-webkit-transition: 0.3s linear;
+	transition: 0.3s linear;
+	background-size: 200% auto;
+	background-position: -100% 0;
+
+	&:hover {
+		background-color: #b074a7;
+		background-position: -200% 0;
+	}
+
+	&--big {
+		font-size: 20px;
+		height: 60px;
+		max-width: 294px;
+		font-family: $light-font;
+	}
+}
+
+
+
+
+
+.btn-alt {
+	height: 50px;
+	border: 1px solid white;
+	color: white;
+	background-color: transparent;
+	-webkit-transition: 0.2s linear;
+	transition: 0.2s linear;
+	border-radius: 30px;
+	font-size: 20px;
+	line-height: 1;
+	padding: 0 37px;
+	cursor: pointer;
+
+	@include media-breakpoint-down(xs) {
+		height: 40px;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: white;
+		color: $bg-color-dark;
+	}
+}
+
+a.btn-alt {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.air-wrapper {
+	.btn-gradient {
+		background-image: -webkit-gradient(linear, left top, right top, from(#3f9fea), color-stop(50%, #0178cd), to(#3f9fea));
+		background-image: linear-gradient(90deg, #3f9fea, #0178cd 50%, #3f9fea);
+	}
+	.btn-alt {
+		border: 1px solid #111;
+		color: #111;
+		&:hover,
+		&:focus {
+			background-color: #111;
+			color: white;
+		}
+	}
+}
+
+button:disabled,
+.btn:disabled
+{
+	opacity: .5;
+	cursor: progress;
+}

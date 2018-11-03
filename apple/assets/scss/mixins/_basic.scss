@@ -1,0 +1,35 @@
+@mixin trans( $t: .1s, $f: linear )
+{
+	-webkit-transition: $t $f;
+	transition: $t $f;
+}
+
+@mixin font-smooth
+{
+	 -webkit-font-smoothing: antialiased;
+	 -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin reset-font-smooth
+{
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+}
+
+@mixin link-border( $color: #9cc94e )
+{
+	border-bottom: 1px solid transparent;
+	text-decoration: none !important;
+	@include trans;
+	&:hover {
+		border-bottom-color: $color;
+	}
+}
+
+@mixin glyph( $bg-image, $bg-size: cover )
+{
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: $bg-size;
+	background-image: $bg-image;
+}
