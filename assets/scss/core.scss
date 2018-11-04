@@ -1,24 +1,25 @@
 //Sourcess
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-
+//Mixins
+@import 'mixins/_basic';
 //Theme
-@import './fonts/_index.scss';
-@import './icons/_index.scss';
-@import './fonts/_typo.scss';
-@import './theme/_animations.scss';
-@import './theme/_btns.scss';
-@import './theme/_form.scss';
-@import './theme/_modals.scss';
-@import './theme/_common.scss';
-@import './theme/_header.scss';
-@import './theme/_section-1.scss';
-@import './theme/_section-2.scss';
-@import './theme/_section-3.scss';
-@import './theme/_section-4.scss';
-@import './theme/_section-5.scss';
-@import './theme/_section-6.scss';
-@import './theme/_prefooter.scss';
-@import './theme/_footer.scss';
-@import './theme/_mobile-menu.scss';
-@import './theme/_spinner.scss';
+@import 'fonts/_index';
+@import 'icons/_index';
+@import 'fonts/_typo';
+@import 'theme/_animations';
+@import 'theme/_btns';
+@import 'theme/_form';
+@import 'theme/_modals';
+@import 'theme/_common';
+@import 'theme/_header';
+@import 'theme/_section-1';
+@import 'theme/_section-2';
+@import 'theme/_section-3';
+@import 'theme/_section-4';
+@import 'theme/_section-5';
+@import 'theme/_section-6';
+@import 'theme/_prefooter';
+@import 'theme/_footer';
+@import 'theme/_mobile-menu';
+@import 'theme/_spinner';

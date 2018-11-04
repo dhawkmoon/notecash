@@ -10,7 +10,7 @@
     	<script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif-->
 	<link rel="stylesheet" href="assets/css/swiper.min.css">
-	<link rel="stylesheet" href="assets/css/core.min.css" />
+	<link rel="stylesheet" href="assets/css/core.css" />
     <!--[if IE]>
     	<link rel="stylesheet" href="assets/css/ie.min.css" />
     <![endif]-->
@@ -39,10 +39,10 @@
 				<div class="row">
 
 
-					<div class="col-xs-12 col-sm-3">
+					<div class="col-xs-3">
 						<!-- START: Logo-->
 						<a id="link_1" href="/" class="header__logo">
-							<h1 class="header__title"><span class="hidden">Notecash - </span>Сервис по <br />выкупу ноутбуков</h1>
+							<h1 class="header__title hidden-xs"><span class="hidden">Notecash - </span>Сервис по <br />выкупу ноутбуков</h1>
 						</a>
 						<!-- END: Logo-->
 					</div>
@@ -70,16 +70,17 @@
 
 					</div>
 
-					<div class="col-xs-6 col-xs-push-6 col-sm-offset-5 col-sm-push-0 col-sm-3 col-md-offset-0 col-md-push-0 col-md-2 text-right header-contacts-wrapper">
+					<div class="col-xs-6 col-sm-offset-5 col-sm-push-0 col-sm-3 col-md-offset-0 col-md-push-0 col-md-2 text-right header-contacts-wrapper">
 						<!-- SART: HEADER CONTACTS -->
 						<div class="header-contacts">
-							Ежедневно с <time>10:00</time> до <time>20:00</time><br />
+							<span class="hidden-xs">Ежедневно с <time>10:00</time> до <time>20:00</time></span>
+							<span class="visible-xs">Москва, ул. Павловская, д, 18</span><br class="hidden-xs" />
 							<a id="link_6" href="tel:+74954779683">+7 (495) 477-96-83</a>
 						</div>
 						<!-- END: HEADER CONTACTS -->
 					</div>
 
-					<div class="visible-xs col-xs-2 col-xs-pull-6 visible-sm col-sm-1 col-sm-pull-0 text-right pr0">
+					<div class="visible-xs col-xs-3 visible-sm col-sm-1 col-sm-pull-0 text-right pr0">
 						<span class="mobile-menu-toggler">
 							<span class="mobile-menu-toggler__line"></span>
 							<span class="mobile-menu-toggler__line"></span>
@@ -111,10 +112,10 @@
 											<i class="icon-phone"></i>
 										</div>
 										<div class="s1-icon__title">Мы оцениваем</div>
-										<div class="s1-icon__text">оставьте заявку,<br /> чтобы мы оценили Ваше устройство</div>
+										<div class="s1-icon__text">оставьте заявку,<br class="hidden-xs" /> чтобы мы<br class="visible-xs" /> оценили Ваше устройство</div>
 									</div>
 									<!-- END: ICON 1 -->
-									<div class="s1-icon s1-icon--less-margin">
+									<div class="s1-icon s1-icon--less-margin hidden-xs">
 										<div class="s1-icon__circle">
 											<i class="icon-car s1-icon-small"></i>
 										</div>
@@ -122,7 +123,7 @@
 										<div class="s1-icon__text">приезжаете к нам или заказываете выезд курьера бесплатно</div>
 									</div>
 
-									<div class="s1-icon">
+									<div class="s1-icon hidden-xs">
 										<div class="s1-icon__circle">
 											<i class="icon-cash-1"></i>
 										</div>
@@ -130,9 +131,9 @@
 										<div class="s1-icon__text">получаете свои деньги и радуетесь :)</div>
 									</div>
 
-									<span class="sep sep-1"></span>
-									<span class="sep sep-2"></span>
-									<span class="arr-top"></span>
+									<span class="sep sep-1 hidden-xs"></span>
+									<span class="sep sep-2 hidden-xs"></span>
+									<span class="arr-top hidden-xs"></span>
 								</div>
 							</div>
 							<!-- END: S1 ICONS -->
@@ -152,9 +153,35 @@
 									</div>
 									<!-- END PRELOADER -->
 								</button>
-								<p class="visible-xs text-center">Оставьте Ваш телефон и узнайте цену<br /> Вашего ноутбука</p>
 
 							</form>
+
+							<!-- START: S1 MOBILE ICONS -->
+							<div class="s1-icons s1-icons--mobile visible-xs">
+								<div class="s1-icons-inner">
+
+									<span class="sep sep-3"></span>
+									<div class="s1-icon">
+										<div class="s1-icon__circle">
+											<i class="icon-car s1-icon-small"></i>
+										</div>
+										<div class="s1-icon__title">Вы приезжаете</div>
+										<div class="s1-icon__text lh-1_2">приезжаете к нам или заказываете выезд курьера бесплатно</div>
+									</div>
+									<span class="sep sep-4"></span>
+
+									<div class="s1-icon">
+										<div class="s1-icon__circle">
+											<i class="icon-cash-1"></i>
+										</div>
+										<div class="s1-icon__title">Забираете деньги</div>
+										<div class="s1-icon__text lh-1_2">получаете свои деньги и радуетесь :)</div>
+									</div>
+
+
+								</div>
+							</div>
+							<!-- END: S1 MOBILE ICONS -->
 
 						</div>
 
@@ -165,10 +192,10 @@
 						<h2 class="visible-xs text-center"><strong>Деньги</strong> за ноутбук</h2>
 						<div class="s1-notebook">
 							<div class="s1-notebook__video">
-		
-								
+
+
 								<iframe width="628" height="368" src="https://www.youtube.com/embed/kSrH1wI6-hY" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-								
+
 							</div>
 							<div class="mini-logo hidden-xs"></div>
 						</div>
@@ -316,7 +343,7 @@
 
 								<div class="feature__header">
 
-									<i class="icon-time"></i>
+									<i class="glyph-time"></i>
 
 								</div>
 								<div class="feature__body">
@@ -336,7 +363,7 @@
 
 								<div class="feature__header">
 
-									<i class="icon-cash"></i>
+									<i class="glyph-money"></i>
 
 								</div>
 								<div class="feature__body">
@@ -357,7 +384,7 @@
 
 								<div class="feature__header">
 
-									<i class="icon-ok"></i>
+									<i class="glyph-like"></i>
 
 								</div>
 								<div class="feature__body">
@@ -402,7 +429,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col-xs-10 col-xs-offset-1">
+						<div class="col-xs-10 col-xs-offset-1 text-center">
 							<!-- Slider main container -->
 							<div id="testimonials" class="swiper-container testimonials">
 							    <!-- Additional required wrapper -->
@@ -464,9 +491,9 @@
 									        </div>
 								        </div>
 								        <div class="testimonials-item__body small-text">
-									        Обратился в компанию эту, ребята адекватно и не навязчиво общались, 
-приехал, посмотрели ноут, предложили цену, ту которую ранее озвучили по телефону, 
-хотя и ноут у меня был без всяких "сюрпризов". 
+									        Обратился в компанию эту, ребята адекватно и не навязчиво общались,
+приехал, посмотрели ноут, предложили цену, ту которую ранее озвучили по телефону,
+хотя и ноут у меня был без всяких "сюрпризов".
 Ранее ездил в пару других компаний по телефону озвучивали одну сумму, а по факту просто так снижали цену.
 Вообщем остался доволен, рекомендую.
 								        </div>
@@ -480,6 +507,9 @@
 							<!-- START: NAV ARROWS-->
 					    <div id="testimonials-button-prev" class="swiper-button-prev"></div>
 					    <div id="testimonials-button-next" class="swiper-button-next"></div>
+
+							<a href="#" class="btn btn-primary btn-play">Видео отзывы</a>
+
 						</div>
 
 					</div>
@@ -601,7 +631,7 @@
 									Все делается очень легко и быстро:
 									<ol>
 										<li>Вам нужно позвонить по указанному на сайте телефону, либо оставить заявку.</li>
-										<li>Наш менеджер свяжется с Вами и оценит ноутбук.</li> 
+										<li>Наш менеджер свяжется с Вами и оценит ноутбук.</li>
 										<li>Приезжаете к нам в офис и забираете свои деньги, либо вызываете оценщика на дом.</li>
 									</ol>
 								</div>
@@ -610,7 +640,7 @@
 							<!-- START: QUESTION ITEM -->
 							<div id="question_2" class="questions__item">
 								<div class="questions-item__header">
-									Как происходит оценка ноутбука? 
+									Как происходит оценка ноутбука?
 								</div>
 								<div class="questions-item__body">
 									Для того, чтобы получить качественную оценку  устройства, Вам необходимо позвонить нам, и сообщить менеджеру марку и модель ноутбука, либо назвать технические характеристики (модель процессора, видеокарты, кол-во оперативной памяти и объем жесткого диска), а также описать его состояние.
@@ -625,7 +655,7 @@
 								<div class="questions-item__body">
 									Основным критерием является ЛИКВИДНОСТЬ - востребованность ноутбука на рынке.
 									Ликвидность зависит от года выпуска, марки и модели ноутбука, а также от его состояния. <br />
-									Что касается неисправных ноутбуков или устройств с серьезными дефектами, то в данном случае основными критериями оценки служат состояние и ликвидность отдельных частей ноутбука, а также критичность повреждения и возможность его восстановления. 
+									Что касается неисправных ноутбуков или устройств с серьезными дефектами, то в данном случае основными критериями оценки служат состояние и ликвидность отдельных частей ноутбука, а также критичность повреждения и возможность его восстановления.
 								</div>
 							</div>
 							<!-- END: QUESTION ITEM -->
@@ -652,7 +682,7 @@
 							<!-- START: QUESTION ITEM -->
 							<div id="question_6" class="questions__item">
 								<div class="questions-item__header">
-									Почему стоит обратиться именно к нам? 
+									Почему стоит обратиться именно к нам?
 								</div>
 								<div class="questions-item__body">
 									Ещё на стадии оценки по телефону мы стараемся дать максимально точную цену, чтобы вы знали на что можете рассчитывать, приехав к нам в офис и не тратили свое время зря.
@@ -669,7 +699,7 @@
 									<div class="text-center">
 										<span id="spanbtn_5" data-toggle="modal" data-target="#modal-1" class="btn btn-primary">Оценить сейчас</span>
 									</div>
-									
+
 								</div>
 							</div>
 							<!-- END: QUESTION ITEM -->
@@ -907,7 +937,7 @@
 					<form id="modal-form-3" class="modal-form-3 text-center">
 
 						<p class="text-center">Дорогие клиенты, мы ценим Вас, поэтому нам важен каждый Ваш отзыв. Вы можете оставить его, заполнив форму ниже:</p>
-						
+
 						<div class="floating-label">
 							<input type="text" id="modal-2-name" name="modal-2-name" value="" data-field="name">
 							<label for="modal-2-name">Представьтесь</label>

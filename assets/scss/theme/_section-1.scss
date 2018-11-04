@@ -24,7 +24,7 @@
 			}
 			@media all and (max-width: 767px) {
 				height: auto;
-		    
+
 			}
 			form {
 				position: absolute;
@@ -43,7 +43,7 @@
 					  display: block;
 					  margin: 0 auto;
 			    }
-		    
+
 				  p {
 						color: white;
 						font-size: 16px;
@@ -60,12 +60,14 @@
 		margin-top: 0;
 		color: $basicFontColor;
 		font-size: $headingFontSize;
-		
+
 	}
 
 	@media all and (max-width: 767px) {
 		.s1-content__promo {
-			padding-top: 30px;
+			position: relative;
+    	top: -20px;
+			padding-top: 0;
 		}
 		h2 {
 			font-size: 30px;
@@ -80,18 +82,22 @@
 	text-align: center;
 	margin-top: 70px;
 	margin-right: 40px;
+	-webkit-transition: .3s linear;
 	transition: .3s linear;
 	cursor: pointer;
 	&:hover {
 		@media all and (min-width: 768px) {
-			transform: translateY(-20px);
+			-webkit-transform: translateY(-20px);
+			        transform: translateY(-20px);
 		}
 	}
 	@media all and (max-width: 1200px) and (min-width: 767px) {
 		margin-right: 20px;
 	}
 	@media all and (max-width: 767px) {
-		margin-top: 0;
+		margin: 0 !important;
+    margin-top: 0;
+    width: 100%;
 	}
 	&--less-margin {
 		margin-right: 30px;
@@ -105,6 +111,7 @@
 		height: 70px;
 		border: 1px solid $basicFontColor;
 		border-radius: 50%;
+		-webkit-transition: .3s linear;
 		transition: .3s linear;
 		font-size: 32px;
     padding: 16px;
@@ -115,10 +122,16 @@
 	    font-size: 28px;
 		}
 		i:before {
+			-webkit-transition: .3s linear;
 			transition: .3s linear;
 		}
+		@media all and (max-width: 768px) {
+			display: block;
+			float: left;
+			margin-right: 15px;
+		}
 	}
-	
+
 	&:hover &__circle {
 		@media all and (min-width: 768px) {
 			border-color: $primaryColor;
@@ -145,10 +158,19 @@
 			bottom: 0;
 			@include topDownOpaque;
 		}
+		@media all and (max-width: 768px) {
+			text-align: left;
+			color: $primaryColor;
+			font-size: 18px;
+			margin-top: 0;
+		}
 	}
 
 	&:hover &__title:after {
 		display: block;
+		@media all and (max-width: 768px) {
+			display: none;
+		}
 	}
 	&__text {
 		color: $basicFontColor;
@@ -160,6 +182,8 @@
     @include topDownOpaque20(.3s);
     @media all and (max-width: 767px) {
 	    display: block;
+			text-align: left;
+			max-width: 100%;
     }
 	}
 	&:hover &__text {
@@ -180,19 +204,18 @@
 	display: inline-block;
 	position: relative;
 	@media all and (max-width: 991px) {
-		left: 15px;	
+		left: 15px
 	}
 	@media all and (max-width: 767px) {
-		
-		width: calc(100vw - 15px);
+		display: block;
 		left: 0;
 		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
+		padding: 0 30px;
 		.s1-icons-inner {
 			position: relative;
-			display: inline-block;
-			width: 515px;
-			left: 10px;	
+			// display: inline-block;
+			// width: 515px;
+			// left: 10px;
 		}
 	}
 	.sep {
@@ -215,6 +238,22 @@
 			@media all and (max-width: 1200px) and (min-width: 768px) {
 				left: 265px;
 			}
+		}
+		&-3 {
+			left: 0;
+		  right: 0;
+			top: 40px;
+		  margin: auto;
+		  -webkit-transform: rotate(90deg);
+		          transform: rotate(90deg);
+		}
+		&-4 {
+			left: 0;
+		  right: 0;
+			top: 198px;
+		  margin: auto;
+		  -webkit-transform: rotate(90deg);
+		          transform: rotate(90deg);
 		}
 	}
 }
@@ -244,15 +283,16 @@
     top: 0;
   }
   @media all and (max-width: 767px ) {
-	  position: relative;
+		position: relative;
     left: 0;
     right: 0;
-    margin: 55px -15px 30px;
-    /* top: 30px; */
+    margin: 25px -15px 30px;
+    top: -15px;
     width: 100vw;
     height: 55vw;
     background-size: contain;
-    transform: scale(1.25);
+    -webkit-transform: scale(.98);
+            transform: scale(.98);
   }
 	&__video {
 		position: relative;
@@ -271,7 +311,7 @@
 			iframe {
 			 	width: 77vw;
 	    height: 45.5vw;
-			} 
+			}
 	  }
 	}
 	.mini-logo {
@@ -306,4 +346,13 @@
   &--active {
 	  display: block;
   }
+}
+
+@media all and (max-width: 768px) {
+
+	.s1-icons--mobile {
+		.s1-icon {
+			padding-top: 75px
+		}
+	}
 }

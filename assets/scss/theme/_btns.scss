@@ -6,8 +6,17 @@
 	padding: 14px;
   border-radius: 50px;
   font-size: 16px;
+  -webkit-transition: .1s linear;
   transition: .1s linear;
   outline: none !important;
+	&-play {
+		width: 250px;
+		margin-top: 15px;
+    background-image: url(../i/play-button.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: 96% center;
+	}
 }
 
 .btn-primary {

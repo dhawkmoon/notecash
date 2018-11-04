@@ -60,3 +60,21 @@
   content: "\e908";
   color: #fff;
 }
+
+.glyph-time {
+	@include glyph( url(../i/time.svg) );
+	width: 50px;
+	height: 50px;
+}
+
+.glyph-like {
+	@include glyph( url(../i/like.svg) );
+	width: 50px;
+	height: 50px;
+}
+
+.glyph-money {
+	@include glyph( url(../i/money.svg) );
+	width: 50px;
+	height: 50px;
+}

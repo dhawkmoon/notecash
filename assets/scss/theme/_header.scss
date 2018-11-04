@@ -6,7 +6,8 @@ header {
 	padding: 15px 0;
 	border-bottom: 1px solid rgba(255,255,255, .2);
 	@media all and (max-width:767px) {
-		height: 160px;
+		height: 65px;
+		overflow: hidden;
 	}
 	.header__logo {
 		display: block;
@@ -17,9 +18,8 @@ header {
 		background-repeat: no-repeat;
 		@media all and (max-width: 767px) {
 			position: relative;
-			left: 50%;
-			transform: translateX(-100%);
-			
+			width: 55px;
+
 		}
 	}
 	.header__title {
@@ -87,10 +87,11 @@ header {
 .header-contacts {
 	color: white;
 	font-size: 14px;
+	margin-top: 18px;
 	@media all and (max-width: 1200px) {
 		font-size: 12px;
+		margin-top: 0;
 	}
-	margin-top: 18px;
 	a {
 		font-size: 16px;
 		color:white;
@@ -99,7 +100,8 @@ header {
 	&-wrapper {
 		padding: 0;
 		@media all and (max-width: 767px) {
-			padding: 0 25px 0 0;
+			padding: 0;
+			text-align: center;
 		}
 	}
 }
