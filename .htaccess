@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$ 
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]

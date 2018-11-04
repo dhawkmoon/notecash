@@ -1,0 +1,224 @@
+/***
+	SECTION 5
+				***/
+
+.s5 {
+	height: 785px;
+	background-image: url('../i/s5-bg.jpg');
+	background-size: cover;
+	background-position-x: -25px;
+	@media all and (max-width: 767px) {
+		height: 970px;
+		background-image: url('../i/s5-bg-xs.jpg');
+		background-position-x: 0;
+	}
+	h2 {
+		color: $basicFontColor;
+		margin-bottom: 60px;
+		@media all and (max-width: 767px) {
+			margin-bottom: 45px;
+		}
+	}
+}
+
+.route {
+	&__step {
+		height: 50px;
+		margin-bottom: 50px;
+		@media all and (max-width: 991px) {
+			position: relative;
+			&:nth-child(4) {
+				top:5px;
+			}
+			&:nth-child(5) {
+				top:15px;
+			}
+		}
+		a {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+			@include proximaLight;
+			color: $basicFontColor;
+			font-size: 18px;
+			line-height: 1.3;
+			text-decoration: none !important;
+			-webkit-transition: .3s linear;
+			transition: .3s linear;
+			@media all and (max-width: 1200px) {
+				font-size: 16px;
+			}
+
+			&:before {
+				display: block;
+				left: 0;
+				min-width: 50px;
+				height: 50px;
+				border: 1px solid $basicFontColor;
+				border-radius: 50%;
+				text-align: center;
+				font-size: 28px;
+				padding: 7px;
+				margin-right: 20px;
+				-webkit-transition: .3s linear;
+				transition: .3s linear;
+			}
+			&:hover,
+			&.active {
+				color: $primaryColor;
+				-webkit-transform: translateX(20px);
+				        transform: translateX(20px);
+				&:before {
+					border-color: $primaryColor;
+					color: $primaryColor;
+					background-color: rgba(255,255,255,.2);
+				}
+			}
+		}
+		&:hover,
+		&--active {
+			.sep-vert {
+				-webkit-transform: rotate(25deg);
+				        transform: rotate(25deg);
+				-webkit-transform-origin: bottom;
+				        transform-origin: bottom;
+				&--transform {
+					-webkit-transform: rotate(-25deg) rotate(25deg) translateX(20px);
+					        transform: rotate(-25deg) rotate(25deg) translateX(20px);
+				}
+			}
+			a {
+				color: $primaryColor;
+				-webkit-transform: translateX(20px);
+				        transform: translateX(20px);
+				&:before {
+					border-color: $primaryColor;
+					color: $primaryColor;
+					background-color: rgba(255,255,255,.2);
+				}
+			}
+
+		}
+
+	}
+	&__step--active {
+		.sep-vert--transform {
+			-webkit-transform: rotate(-25deg) rotate(25deg) translateX(20px) !important;
+			        transform: rotate(-25deg) rotate(25deg) translateX(20px) !important;
+		}
+	}
+	&__step:nth-child(1) {
+		a:before {
+			content: '1';
+		}
+	}
+	&__step:nth-child(2) {
+		a:before {
+			content: '2';
+		}
+	}
+	&__step:nth-child(3) {
+		a:before {
+			content: '3';
+		}
+	}
+	&__step:nth-child(4) {
+		a:before {
+			content: '4';
+		}
+	}
+	&__step:nth-child(5) {
+		a:before {
+			content: '5';
+		}
+	}
+	&__step--active {
+		a:before {
+			content: "\e907" !important;
+			font-family: 'icomoon' !important;
+			padding: 10px 0 0 7px;
+			font-size: 22px;
+			text-align: center;
+			@include play;
+		}
+		a.paused:before {
+			content: '||' !important;
+			padding: 8px 13px;
+			-webkit-animation: none;
+			        animation: none;
+		}
+	}
+
+}
+
+.planshet {
+	width: 615px;
+	height: 410px;
+	position: absolute;
+  background-size: cover;
+  background-position: center;
+	background-image: url('../i/planshet.svg');
+	@media all and (max-width:767px) {
+		position: relative;
+		width: 100%;
+    height: 60vw;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    margin-bottom: 40px;
+	}
+	&-video {
+		position: relative;
+    left: 56px;
+    top: 22px;
+    background-color: black;
+    width: 508px;
+    height: 365px;
+    overflow: hidden;
+    @media all and (max-width: 767px) {
+	    left: 9.5vw;
+	    top: 3vw;
+	    width: 80%;
+	    height: 90%;
+    }
+	}
+}
+
+.s5 {
+	.sep-vert {
+		position: relative;
+		top: 10px;
+		left: 25px;
+		display: block;
+		height: 30px;
+		width: 2px;
+		background-image: url('../i/sep-vert.svg');
+		background-size: cover;
+		-webkit-transition: .3s linear;
+		transition: .3s linear;
+		&--transform {
+			-webkit-transform: rotate(-25deg);
+			        transform: rotate(-25deg);
+			-webkit-transform-origin:top;
+			        transform-origin:top;
+		}
+	}
+
+}
+
+.map {
+	height: 570px;
+	background-image: url('../i/map-bg.png');
+	background-position-x: -25px;
+	@media all and (max-width: 767px) {
+		height: 320px;
+		overflow: hidden;
+	}
+	h2{
+		font-size: 0;
+		padding: 0;
+		margin: 0;
+	}
+}

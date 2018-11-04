@@ -1,0 +1,62 @@
+/***
+		BUTTONS
+					***/
+
+.btn {
+	padding: 14px;
+  border-radius: 50px;
+  font-size: 16px;
+  -webkit-transition: .1s linear;
+  transition: .1s linear;
+  outline: none !important;
+	&-play {
+		width: 250px;
+		margin-top: 15px;
+    background-image: url(../i/play-button.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: 96% center;
+	}
+}
+
+.btn-primary {
+	background-color: $primaryColor;
+	&:focus {
+		background-color: $primaryColor;
+	}
+	&[disabled] {
+		background-color: lighten( $primaryColor, 20% ) !important;
+		opacity: 1;
+	}
+	border: none;
+	color: white;
+	min-width: 230px;
+	text-transform: uppercase;
+	&:active,
+	&:hover,
+	&:active:hover
+	{
+		background-color: $primaryHoverColor;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+}
+
+.btn-secondary {
+	background-color: transparent;
+	color: $secondaryColor;
+	&:focus {
+		color: $secondaryColor;
+	}
+	border: 1px solid $secondaryColor;
+	min-width: 160px;
+	&:active,
+	&:hover,
+	&:active:hover
+  {
+		background-color: $secondaryColor;
+		color: white;
+		box-shadow: none;
+		-webkit-box-shadow: none;
+	}
+}

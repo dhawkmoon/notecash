@@ -1,0 +1,54 @@
+/***
+	FOOTER
+			***/
+
+footer {
+	background-image: url('../i/footer-bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 118px;
+	padding-top: 45px;
+	color: #717171;
+	@media all and (max-width: 767px) {
+		height: 220px;
+		text-align: center;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background-image: url('../i/footer-bg-xs.jpg');
+		.row > div {
+			padding-bottom: 15px;
+		}
+	}
+	a {
+		position: relative;
+		display: inline-block;
+		margin-bottom: 5px;
+		color: $secondaryColor !important;
+		text-decoration: none !important;
+		&:after {
+			content: '';
+			display: block;
+			opacity: 0;
+			position: absolute;
+			width: 100%;
+			border-bottom: 1px solid;
+			border-color: inherit;
+			bottom: 0;
+			@include downTopOpaque;
+		}
+		&:hover:after {
+			@include topDownOpaque;
+			opacity: 1;
+		}
+	}
+	a.grey-link {
+		color: #717171 !important;
+	}
+	.copy {
+		display: block;
+		margin-bottom: 5px;
+		@media all and (min-width: 992px) {
+			white-space: nowrap;
+		}
+	}
+}

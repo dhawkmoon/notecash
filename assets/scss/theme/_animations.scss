@@ -1,0 +1,175 @@
+/***
+	Animations
+					***/
+
+@keyframes topDownOpaque {
+	0% {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes topDownOpaque {
+	0% {
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@mixin topDownOpaque( $dur:.2s ) {
+	animation-name: topDownOpaque;
+	animation-duration: $dur;
+	animation-timing-function: linear;
+}
+
+@keyframes topDownOpaque20 {
+	0% {
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes topDownOpaque20 {
+	0% {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@mixin topDownOpaque20( $dur:.2s ) {
+	animation-name: topDownOpaque20;
+	animation-duration: $dur;
+	animation-timing-function: linear;
+}
+
+@keyframes downTopOpaque {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+}
+
+@-webkit-keyframes downTopOpaque {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+}
+
+@mixin downTopOpaque( $dur:.2s ) {
+	animation-name: downTopOpaque;
+	animation-duration: $dur;
+	animation-timing-function: ease-out;
+}
+
+@keyframes play {
+
+	0% {
+		color: inherit;
+	}
+	50% {
+		color: transparent;
+	}
+	0% {
+		color: inherit;
+	}
+}
+
+@-webkit-keyframes play {
+
+	0% {
+		color: inherit;
+	}
+	50% {
+		color: transparent;
+	}
+	0% {
+		color: inherit;
+	}
+}
+
+@mixin play {
+	animation-name: play;
+	animation-duration: 3.0s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@mixin fadeIn($dur:.6s) {
+	animation-name: fadeIn;
+	animation-duration: $dur;
+	//animation-delay: .3s;
+	animation-timing-function: linear;
+}
+
+
+@keyframes fadeInTop {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeInTop {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@mixin fadeInTop($dur:.6s) {
+	animation-name: fadeInTop;
+	animation-duration: $dur;
+	//animation-delay: .3s;
+	animation-timing-function: ease-in;
+}

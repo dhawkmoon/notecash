@@ -1,0 +1,82 @@
+.mobile-menu {
+
+	display: block;
+	position: fixed;
+	top: 104px;
+	bottom: 0;
+	-webkit-transition: .4s ease-in;
+	transition: .4s ease-in;
+	width: 400px;
+	height: calc(100vh - 104px);
+	background-color: rgba(255,255,255,.98);
+	z-index: 9000;
+	-webkit-transform: translateX(-100%);
+	        transform: translateX(-100%);
+	@media all and (max-width: 767px) {
+		top: 0;
+    height: 100vh;
+    width: 300px;
+	}
+	&--active {
+		-webkit-transform: translateX(0);
+		        transform: translateX(0);
+	}
+	&-overlay {
+		position: fixed;
+		height: calc(100vh - 104px);
+		top: 104px;
+		z-index: 8999;
+		display: none;
+		background-color: rgba(0,0,0,.4);
+		left: 0;
+		right: 0;
+		@media all and (max-width: 767px) {
+			top: 160px;
+			height: calc(100vh - 160px);
+			width: 100vw;
+		}
+	}
+	&-toggler {
+		display: inline-block;
+		width: 100%;
+		padding-top: 29px;
+		cursor: pointer;
+		@media all and (max-width: 767px) {
+			padding-top: 13px;
+			padding-left: 23px;
+			padding-right: 23px;
+		}
+		&__line {
+			display: block;
+			width: 100%;
+			height: 1px;
+			border-bottom: 1px solid white;
+			margin-bottom: 15px;
+			@media all and (max-width: 767px) {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	ul {
+		padding-top: 10px;
+	}
+	a {
+		font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: block;
+    @include proximaLight;
+    color: $secondaryColor;
+    text-decoration: none;
+    &:hover {
+	    color: white;
+	    background-color: $secondaryColor;
+    }
+	}
+
+
+}
+
+.pr0 {
+	padding-right: 0 !important;
+}
