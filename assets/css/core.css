@@ -6714,7 +6714,8 @@ form.is-success *:not(.message) {
     position: absolute;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; }
+    -webkit-overflow-scrolling: touch;
+    background-color: #427098; }
   .row-xs-reversed {
     display: -webkit-box;
     display: -ms-flexbox;
