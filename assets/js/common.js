@@ -17,7 +17,7 @@ var testimonialsSlider = new Swiper ('#testimonials', {
       nextEl: '#testimonials-button-next',
       prevEl: '#testimonials-button-prev',
     },
-		
+
 	breakpoints: {
 		992: {
 			slidesPerView: 1,
@@ -42,7 +42,7 @@ testimonialsSlider.init()
 if( $(window).width() <= 768 ) {
 
 	var notebooksSlider = new Swiper ('.note-books-wrapper', {
-	
+
 			slidesPerView:1,
 			//spaceBetween: 51,
 	    // If we need pagination
@@ -57,14 +57,14 @@ if( $(window).width() <= 768 ) {
 	      prevEl: '#notebooks-button-prev',
 	    },
 
-	
+
 	  })
-}//end if 
+}//end if
   /***
 	  Separators transformations
 	  											***/
 	jQuery(document).ready( function($) {
-		
+
 		/***
 			MAPS
 				***/
@@ -74,7 +74,7 @@ if( $(window).width() <= 768 ) {
 		else {
 			$('#map').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9b56d2dccc1a9c2d7c4a2288b40b6b28b565495af943f64b026e4ccc72fd012c&amp;width=100%25&amp;height=320&amp;lang=ru_RU&amp;scroll=false"></script>')
 		}
-		
+
 		$( '.route__step' ).on( 'mouseenter', function() {
 
 			if( !$(this).hasClass('route__step--active') ) {
@@ -187,7 +187,7 @@ if( $(window).width() <= 768 ) {
 			var to = $( target ).offset().top
 
 			$('html,body').animate({scrollTop: to}, 400)
-			
+
 			$('.mobile-menu').removeClass('mobile-menu--active')
 			$('.mobile-menu').trigger('mutation')
 			return false
@@ -206,7 +206,7 @@ if( $(window).width() <= 768 ) {
 				}, 400 );
 			}
 		} )
-		
+
 		/***
 			FILEs
 					***/
@@ -214,18 +214,18 @@ if( $(window).width() <= 768 ) {
 			e.preventDefault()
 			$(this).next().trigger('click')
 		})
-				
+
 		$('.floating-label--file input').on('change', function(e){
 			var name = getFileName( $(this).val() )
 			$(this).next().text( name )
 			$(this).next().addClass('not-empty')
-		})			
+		})
 
 		function getFileName( path ) {
 			return path.split(/(\\|\/)/g).pop()
 		}
-		
-		
+
+
 		/***
 			Mobile menu
 								***/
@@ -233,7 +233,7 @@ if( $(window).width() <= 768 ) {
 			$('.mobile-menu').toggleClass('mobile-menu--active')
 			$('.mobile-menu').trigger('mutation')
 		})
-		
+
 		$('.mobile-menu').on('mutation', function(){
 			if( $(this).hasClass('mobile-menu--active') ) {
 				$('.mobile-menu-overlay').fadeIn(300)
@@ -244,10 +244,11 @@ if( $(window).width() <= 768 ) {
 				$('html,body').removeClass('mobile-menu-is-open')
 			}
 		})
-		
+
 } );//end document.ready
 
 /*** VIDEO ***/
+if( $(window).width() > 640 ) {
 
   var player; //init
   function onYouTubeIframeAPIReady() {
@@ -384,3 +385,33 @@ if( $(window).width() <= 768 ) {
 
 
 	})
+
+}//end if
+else {
+	console.log('yeeeah')
+	$('.route__step>a').click( function(e){e.preventDefault;} )
+	var routesSlider = new Swiper ('#routes-slider', {
+
+			slidesPerView:1,
+			//spaceBetween: 51,
+	    // If we need pagination
+	    pagination: {
+	      el: '#mobile-routes-pagination',
+	      clickable: true,
+	    },
+			//slideClass: 'note-books-slide',
+	    // Navigation arrows
+			navigation: {
+				nextEl: '#route-slider-arrow-right',
+				prevEl: '#route-slider-arrow-left',
+			},
+
+	  })
+
+	routesSlider.on( 'slideChange', function(){
+		var n = this.activeIndex+1
+
+		$('.route-slide').removeClass('route-slide--active')
+		$('.route-slide:nth-child('+n+')').addClass('route-slide--active')
+	} )
+}

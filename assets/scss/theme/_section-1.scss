@@ -5,6 +5,8 @@
 	background-image: url('../i/s1-bg.png');
 	background-size: cover;
 	height: 626px;
+	margin-top: -104px;
+	padding-top: 104px;
 	@media all and (max-width: 991px) {
 		height: 1071px;
 		.floating-label + btn {
@@ -12,8 +14,10 @@
 		}
 	}
 	@media all and (max-width: 767px) {
+		margin-top: 0;
 		background-image: url('../i/s1-bg-xs.jpg');
 		height: calc(754px + 55vw);
+		padding-top: 65px;
 	}
 	&-content {
 		&__promo {
@@ -250,7 +254,12 @@
 		&-4 {
 			left: 0;
 		  right: 0;
-			top: 198px;
+			top: 178px;
+			@media all and (max-width: 404px) {
+				top: 190px;
+			}
+
+
 		  margin: auto;
 		  -webkit-transform: rotate(90deg);
 		          transform: rotate(90deg);

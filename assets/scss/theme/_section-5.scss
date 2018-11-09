@@ -8,9 +8,13 @@
 	background-size: cover;
 	background-position-x: -25px;
 	@media all and (max-width: 767px) {
-		height: 970px;
-		background-image: url('../i/s5-bg-xs.jpg');
-		background-position-x: 0;
+		height: 605px;
+    background-image: url(../i/s5-bg-xs.jpg);
+    background-position-x: 0;
+    padding-top: 50px;
+		.btn-primary {
+			 margin-top: 5px;
+		}
 	}
 	h2 {
 		color: $basicFontColor;
@@ -68,18 +72,21 @@
 			}
 			&:hover,
 			&.active {
-				color: $primaryColor;
-				-webkit-transform: translateX(20px);
-				        transform: translateX(20px);
-				&:before {
-					border-color: $primaryColor;
+				@media all and (min-width: 641px) {
 					color: $primaryColor;
-					background-color: rgba(255,255,255,.2);
+					-webkit-transform: translateX(20px);
+					        transform: translateX(20px);
+					&:before {
+						border-color: $primaryColor;
+						color: $primaryColor;
+						background-color: rgba(255,255,255,.2);
+					}
 				}
 			}
 		}
 		&:hover,
 		&--active {
+			@media all and (min-width: 641px) {
 			.sep-vert {
 				-webkit-transform: rotate(25deg);
 				        transform: rotate(25deg);
@@ -102,7 +109,7 @@
 			}
 
 		}
-
+	}
 	}
 	&__step--active {
 		.sep-vert--transform {
@@ -133,6 +140,51 @@
 	&__step:nth-child(5) {
 		a:before {
 			content: '5';
+		}
+	}
+	&__step:nth-child(6) {
+		a:before {
+			content: '6';
+		}
+	}
+	&__step:nth-child(7) {
+		a:before {
+			content: '7';
+		}
+	}
+	&__step:nth-child(8) {
+		a:before {
+			content: '8';
+		}
+	}
+	&__step:nth-child(9) {
+		a:before {
+			content: '9';
+		}
+	}
+	&__step:nth-child(10) {
+		a:before {
+			content: '10';
+		}
+	}
+	&__step:nth-child(11) {
+		a:before {
+			content: '11';
+		}
+	}
+	&__step:nth-child(12) {
+		a:before {
+			content: '12';
+		}
+	}
+	&__step:nth-child(13) {
+		a:before {
+			content: '13';
+		}
+	}
+	&__step:nth-child(14) {
+		a:before {
+			content: '14';
 		}
 	}
 	&__step--active {
@@ -178,7 +230,7 @@
     height: 365px;
     overflow: hidden;
     @media all and (max-width: 767px) {
-	    left: 9.5vw;
+	    left: 9.4vw;
 	    top: 3vw;
 	    width: 80%;
 	    height: 90%;
@@ -220,5 +272,101 @@
 		font-size: 0;
 		padding: 0;
 		margin: 0;
+	}
+}
+
+.route-slide {
+	display: none;
+	height: 100%;
+	background-size: cover;
+	&--active {
+		display: block;
+	}
+	&-1 {
+		background-image: url( ../i/path/1-1.jpg );
+		@include animateSlides( slide1, url(../i/path/1-1.jpg), url(../i/path/1-2.jpg) );
+	}
+	&-2 {
+		background-image: url( ../i/path/2.jpg );
+	}
+	&-3 {
+		background-image: url( ../i/path/3-1.jpg );
+		@include animateSlides( slide3, url(../i/path/3-1.jpg), url(../i/path/3-2.jpg) );
+	}
+	&-4 {
+		background-image: url( ../i/path/4-1.jpg );
+		@include animateSlides( slide4, url(../i/path/4-1.jpg), url(../i/path/4-2.jpg) );
+	}
+	&-5 {
+		background-image: url( ../i/path/5-1.jpg );
+		@include animateSlides( slide5, url(../i/path/5-1.jpg), url(../i/path/5-2.jpg) );
+	}
+	&-6 {
+		background-image: url( ../i/path/6-1.jpg );
+		@include animateSlides( slide6, url(../i/path/6-1.jpg), url(../i/path/6-2.jpg) );
+	}
+	&-7 {
+		background-image: url( ../i/path/7-1.jpg );
+		@include animateSlides( slide7, url(../i/path/7-1.jpg), url(../i/path/7-2.jpg) );
+	}
+	&-8 {
+		background-image: url( ../i/path/8-1.jpg );
+		@include animateSlides( slide8, url(../i/path/8-1.jpg), url(../i/path/8-2.jpg) );
+	}
+	&-9 {
+		background-image: url( ../i/path/9.jpg );
+	}
+	&-10 {
+		background-image: url( ../i/path/10-1.jpg );
+		@include animateSlides( slide10, url(../i/path/10-1.jpg), url(../i/path/10-2.jpg) );
+	}
+	&-11 {
+		background-image: url( ../i/path/11.jpg );
+		@include animateSlides( slide11, url(../i/path/11.jpg), url(../i/path/12.jpg) );
+	}
+	&-12 {
+		background-image: url( ../i/path/12.jpg );
+	}
+	&-13 {
+		background-image: url( ../i/path/13-1.jpg );
+		@include animateSlides( slide13, url(../i/path/13-1.jpg), url(../i/path/13-2.jpg) );
+	}
+	&-14 {
+		background-image: url( ../i/path/14-1.jpg );
+		@include animateSlides( slide14, url(../i/path/14-1.jpg), url(../i/path/14-2.jpg) );
+	}
+}
+
+.arrow {
+	display: block;
+	width: 16px;
+	height: 30px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	&-left {
+		-webkit-transform: rotate(180deg);
+		        transform: rotate(180deg);
+		background-image: url(../i/arrow.svg);
+	}
+	&-right {
+		background-image: url(../i/arrow.svg);
+	}
+}
+
+.slider-nav {
+	position: relative;
+	z-index: 1;
+	top: -20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+	.swiper-pagination {
+		position: relative;
 	}
 }

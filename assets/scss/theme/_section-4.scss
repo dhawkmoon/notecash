@@ -122,6 +122,19 @@
 	}
 }
 
+.swiper-pagintion-xs {
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		margin: 0 5px !important;
+		&-active {
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
 .swiper-button {
 	&-next {
 		background-image: url('../i/icons/arrow.svg');

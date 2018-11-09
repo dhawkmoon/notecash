@@ -5,85 +5,106 @@
 @keyframes topDownOpaque {
 	0% {
 		opacity: 0;
-		transform: translateY(-5px);
+		-webkit-transform: translateY(-5px);
+		        transform: translateY(-5px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 	}
 }
 
 @-webkit-keyframes topDownOpaque {
 	0% {
 		opacity: 0;
-		transform: translateY(-40px);
+		-webkit-transform: translateY(-40px);
+		        transform: translateY(-40px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 	}
 }
 
 @mixin topDownOpaque( $dur:.2s ) {
-	animation-name: topDownOpaque;
-	animation-duration: $dur;
-	animation-timing-function: linear;
+	-webkit-animation-name: topDownOpaque;
+	        animation-name: topDownOpaque;
+	-webkit-animation-duration: $dur;
+	        animation-duration: $dur;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 
 @keyframes topDownOpaque20 {
 	0% {
 		opacity: 0;
-		transform: translateY(-40px);
+		-webkit-transform: translateY(-40px);
+		        transform: translateY(-40px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 	}
 }
 
 @-webkit-keyframes topDownOpaque20 {
 	0% {
 		opacity: 0;
-		transform: translateY(-5px);
+		-webkit-transform: translateY(-5px);
+		        transform: translateY(-5px);
 	}
 	100% {
 		opacity: 1;
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 	}
 }
 
 @mixin topDownOpaque20( $dur:.2s ) {
-	animation-name: topDownOpaque20;
-	animation-duration: $dur;
-	animation-timing-function: linear;
+	-webkit-animation-name: topDownOpaque20;
+	        animation-name: topDownOpaque20;
+	-webkit-animation-duration: $dur;
+	        animation-duration: $dur;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 
 @keyframes downTopOpaque {
 	0% {
 		opacity: 1;
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 	}
 	100% {
 		opacity: 0;
-		transform: translateY(-5px);
+		-webkit-transform: translateY(-5px);
+		        transform: translateY(-5px);
 	}
 }
 
 @-webkit-keyframes downTopOpaque {
 	0% {
 		opacity: 1;
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 	}
 	100% {
 		opacity: 0;
-		transform: translateY(-5px);
+		-webkit-transform: translateY(-5px);
+		        transform: translateY(-5px);
 	}
 }
 
 @mixin downTopOpaque( $dur:.2s ) {
-	animation-name: downTopOpaque;
-	animation-duration: $dur;
-	animation-timing-function: ease-out;
+	-webkit-animation-name: downTopOpaque;
+	        animation-name: downTopOpaque;
+	-webkit-animation-duration: $dur;
+	        animation-duration: $dur;
+	-webkit-animation-timing-function: ease-out;
+	        animation-timing-function: ease-out;
 }
 
 @keyframes play {
@@ -113,10 +134,14 @@
 }
 
 @mixin play {
-	animation-name: play;
-	animation-duration: 3.0s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	-webkit-animation-name: play;
+	        animation-name: play;
+	-webkit-animation-duration: 3.0s;
+	        animation-duration: 3.0s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 
 @keyframes fadeIn {
@@ -138,38 +163,98 @@
 }
 
 @mixin fadeIn($dur:.6s) {
-	animation-name: fadeIn;
-	animation-duration: $dur;
+	-webkit-animation-name: fadeIn;
+	        animation-name: fadeIn;
+	-webkit-animation-duration: $dur;
+	        animation-duration: $dur;
 	//animation-delay: .3s;
-	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 
 
 @keyframes fadeInTop {
 	0% {
-		transform: translateY(-50px);
+		-webkit-transform: translateY(-50px);
+		        transform: translateY(-50px);
 		opacity: 0;
 	}
 	100% {
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 		opacity: 1;
 	}
 }
 
 @-webkit-keyframes fadeInTop {
 	0% {
-		transform: translateY(-50px);
+		-webkit-transform: translateY(-50px);
+		        transform: translateY(-50px);
 		opacity: 0;
 	}
 	100% {
-		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
 		opacity: 1;
 	}
 }
 
 @mixin fadeInTop($dur:.6s) {
-	animation-name: fadeInTop;
-	animation-duration: $dur;
+	-webkit-animation-name: fadeInTop;
+	        animation-name: fadeInTop;
+	-webkit-animation-duration: $dur;
+	        animation-duration: $dur;
 	//animation-delay: .3s;
-	animation-timing-function: ease-in;
+	-webkit-animation-timing-function: ease-in;
+	        animation-timing-function: ease-in;
+}
+
+@mixin animateSlides( $name, $from, $to, $dur: 6s, $del: 0s )
+{
+	@include createSlidesAnimation( $name, $from, $to );
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-name: $name;
+	        animation-name: $name;
+	-webkit-animation-duration: $dur;
+	        animation-duration: $dur;
+	-webkit-animation-delay: $del;
+	        animation-delay: $del;
+}
+
+@mixin createSlidesAnimation( $name, $from, $to ) {
+	@-webkit-keyframes #{$name} {
+		0% {
+			background-image: $from;
+		}
+		45% {
+			background-image: $from;
+		}
+		50% {
+			background-image: $to;
+		}
+		95% {
+			background-image: $to;
+		}
+		100% {
+			background-image: $from;
+		}
+	}
+	@keyframes #{$name} {
+		0% {
+			background-image: $from;
+		}
+		45% {
+			background-image: $from;
+		}
+		50% {
+			background-image: $to;
+		}
+		95% {
+			background-image: $to;
+		}
+		100% {
+			background-image: $from;
+		}
+	}
 }

@@ -2,12 +2,18 @@
 	Header
 			***/
 header {
+	position: relative;
+	z-index: 1;
 	height: 104px;
 	padding: 15px 0;
 	border-bottom: 1px solid rgba(255,255,255, .2);
 	@media all and (max-width:767px) {
+		position: fixed;
 		height: 65px;
 		overflow: hidden;
+		width: 100%;
+		background-color: rgba(66, 112, 152, 0.97);
+		z-index: 9;
 	}
 	.header__logo {
 		display: block;
