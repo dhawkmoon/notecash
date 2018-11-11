@@ -377,3 +377,21 @@
 	-webkit-animation: arrow2 6s linear infinite;
 	        animation: arrow2 6s linear infinite;
 }
+
+@-webkit-keyframes phone {
+	0% {
+		background-image: url(../i/phone-1.png);
+	}
+	100% {
+		background-image: url(../i/phone.png);
+	}
+}
+
+@keyframes phone {
+	0% {
+		background-image: url(../i/phone-1.png);
+	}
+	100% {
+		background-image: url(../i/phone.png);
+	}
+}

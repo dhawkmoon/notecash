@@ -2,9 +2,8 @@
 	height: 340px;
 	padding-top: 65px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f7592+0,337cef+35,337cef+65,3f7592+100 */
-background: rgb(63,117,146); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(63,117,146,1) 0%, rgba(51,124,239,1) 35%, rgba(51,124,239,1) 65%, rgba(63,117,146,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(63,117,146,1) 0%,rgba(51,124,239,1) 35%,rgba(51,124,239,1) 65%,rgba(63,117,146,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: rgb(63,117,146); /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+background: -webkit-gradient(linear, left top, left bottom, from(rgba(63,117,146,1)),color-stop(35%, rgba(51,124,239,1)),color-stop(65%, rgba(51,124,239,1)),to(rgba(63,117,146,1)));
 background: linear-gradient(to bottom, rgba(63,117,146,1) 0%,rgba(51,124,239,1) 35%,rgba(51,124,239,1) 65%,rgba(63,117,146,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f7592', endColorstr='#3f7592',GradientType=0 ); /* IE6-9 */
 	h2,
@@ -67,12 +66,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f7592', end
 .phone {
 	width: 615px;
 	height: 468px;
-	background-image: url('../i/phone.png');
+	background-image: url('../i/phone-1.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: absolute;
   top: -193px;
   cursor: pointer;
+	&.animate {
+		-webkit-animation-name: phone;
+		        animation-name: phone;
+		-webkit-animation-duration: 3s;
+		        animation-duration: 3s;
+		-webkit-animation-fill-mode: both;
+		        animation-fill-mode: both;
+	}
   @media all and (max-width: 991px) {
 	  left:-155px;
   }

@@ -415,3 +415,35 @@ else {
 		$('.route-slide:nth-child('+n+')').addClass('route-slide--active')
 	} )
 }
+
+//trigger phone animation
+
+var $w = $(window)
+var $d = $(document)
+var $pf = $('#prefooter')
+var $b = $('body')
+
+var animatePhone = function(){
+	window.requestAnimationFrame( function(){
+		var wh = $w.height()
+		var d = $pf.offset().top - $d.scrollTop()
+		//console.log( d, wh )
+		if( d < wh ) {
+			$( '.phone' ).addClass('animate')
+			$w.off( 'scroll', animatePhone )
+		}
+
+	})
+}
+
+var animatePhoneXS = function(){
+	window.requestAnimationFrame( function(){
+		if( $pf.offset().top < 60 ) {
+			$( '.phone' ).addClass('animate')
+			$b.off( 'scroll', animatePhoneXS )
+		}
+	})
+}
+
+$w.on( 'scroll', animatePhone )
+$b.on( 'scroll', animatePhoneXS )

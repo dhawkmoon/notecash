@@ -3,7 +3,7 @@
 				***/
 
 .s3 {
-	height: 670px;
+	height: 715px;
 	background-image: url('../i/s3-bg.png');
 	background-size: cover;
 	@media all and (max-width: 991px) {
@@ -11,7 +11,7 @@
 	}
 	@media all and (max-width: 767px) {
 		background-image: url('../i/s3-bg-xs.jpg');
-		height: auto;	
+		height: auto;
 	}
 	h2 {
 		color: $basicFontColor;
@@ -45,7 +45,7 @@
     right: 0;
     height: 270px;
     @media all and (max-width: 767px) {
-	    display: none; 
+	    display: none;
 	  }
   }
 }

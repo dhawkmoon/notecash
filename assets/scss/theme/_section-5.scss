@@ -8,7 +8,7 @@
 	background-size: cover;
 	background-position-x: -25px;
 	@media all and (max-width: 767px) {
-		height: 605px;
+		height: 635px;
     background-image: url(../i/s5-bg-xs.jpg);
     background-position-x: 0;
     padding-top: 50px;
@@ -187,6 +187,11 @@
 			content: '14';
 		}
 	}
+	&__step:nth-child(14) {
+		a:before {
+			content: '15';
+		}
+	}
 	&__step--active {
 		a:before {
 			content: "\e907" !important;
@@ -302,14 +307,14 @@
 		background-image: url( ../i/path/3-1.jpg );
 		@include animateSlides( slide3, url(../i/path/3-1.jpg), url(../i/path/3-2.jpg) );
 		.route-arrow-wrapper.arrow-1 {
-			top: 17vw;
-    	left: 30vw;
+			top: 36vw;
+    	left: 46vw;
 			-webkit-transform: rotate(-74deg);
 			        transform: rotate(-74deg);
 		}
 		.route-arrow-wrapper.arrow-2 {
-			top: 77px;
-			left: 112px;
+			top: 23vw;
+    	left: 31vw;
 	    -webkit-transform: rotate(134deg);
 	            transform: rotate(134deg);
 		}
@@ -330,21 +335,23 @@
 	}
 	&-5 {
 		background-image: url( ../i/path/5-1.jpg );
-		@include animateSlides( slide5, url(../i/path/5-1.jpg), url(../i/path/5-2.jpg) );
-		.route-arrow-wrapper.arrow-1 {
+		.route-arrow-wrapper {
 			top: 40vw;
     	left: 22vw;
     	-webkit-transform: rotate(-15deg);
     	        transform: rotate(-15deg);
 		}
-		.route-arrow-wrapper.arrow-2 {
+	}
+	&-6 {
+		background-image: url( ../i/path/5-2.jpg );
+		.route-arrow-wrapper {
 			top: 10vw;
     	left: 35vw;
 	    -webkit-transform: rotate(134deg);
 	            transform: rotate(134deg);
 		}
 	}
-	&-6 {
+	&-7 {
 		background-image: url( ../i/path/6-1.jpg );
 		@include animateSlides( slide6, url(../i/path/6-1.jpg), url(../i/path/6-2.jpg) );
 		.route-arrow-wrapper.arrow-1 {
@@ -360,7 +367,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-7 {
+	&-8 {
 		background-image: url( ../i/path/7-1.jpg );
 		@include animateSlides( slide7, url(../i/path/7-1.jpg), url(../i/path/7-2.jpg) );
 		.route-arrow-wrapper.arrow-1 {
@@ -376,7 +383,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-8 {
+	&-9 {
 		background-image: url( ../i/path/8-1.jpg );
 		@include animateSlides( slide8, url(../i/path/8-1.jpg), url(../i/path/8-2.jpg) );
 		.route-arrow-wrapper.arrow-1 {
@@ -390,7 +397,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-9 {
+	&-10 {
 		background-image: url( ../i/path/9.jpg );
 		.route-arrow-wrapper {
 			top: 32vw;
@@ -399,7 +406,7 @@
 		          transform: rotate(-115deg);
 		}
 	}
-	&-10 {
+	&-11 {
 		background-image: url( ../i/path/10-1.jpg );
 		@include animateSlides( slide10, url(../i/path/10-1.jpg), url(../i/path/10-2.jpg) );
 		.route-arrow-wrapper.arrow-1 {
@@ -415,7 +422,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-11 {
+	&-12 {
 		background-image: url( ../i/path/11.jpg );
 		@include animateSlides( slide11, url(../i/path/11.jpg), url(../i/path/12.jpg) );
 		.route-arrow-wrapper.arrow-1 {
@@ -431,7 +438,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-12 {
+	&-13 {
 		background-image: url( ../i/path/12.jpg );
 		.route-arrow-wrapper {
 			top: 13vw;
@@ -440,7 +447,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-13 {
+	&-14 {
 		background-image: url( ../i/path/13-1.jpg );
 		@include animateSlides( slide13, url(../i/path/13-1.jpg), url(../i/path/13-2.jpg) );
 		.route-arrow-wrapper.arrow-1 {
@@ -456,7 +463,7 @@
 	            transform: rotate(134deg);
 		}
 	}
-	&-14 {
+	&-15 {
 		background-image: url( ../i/path/14-1.jpg );
 		@include animateSlides( slide14, url(../i/path/14-1.jpg), url(../i/path/14-2.jpg) );
 	}

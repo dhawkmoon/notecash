@@ -6068,6 +6068,22 @@ button.close {
   width: 50px;
   height: 50px; }
 
+.glyph-map {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../i/map.svg);
+  width: 50px;
+  height: 50px; }
+
+.glyph-heart {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../i/heart.svg);
+  width: 10px;
+  height: 10px; }
+
 /***
 	Typography
 					***/
@@ -6315,6 +6331,18 @@ h2 {
 .arrow-2 {
   -webkit-animation: arrow2 6s linear infinite;
   animation: arrow2 6s linear infinite; }
+
+@-webkit-keyframes phone {
+  0% {
+    background-image: url(../i/phone-1.png); }
+  100% {
+    background-image: url(../i/phone.png); } }
+
+@keyframes phone {
+  0% {
+    background-image: url(../i/phone-1.png); }
+  100% {
+    background-image: url(../i/phone.png); } }
 
 /***
 		BUTTONS
@@ -7341,7 +7369,7 @@ header {
 	SECTION 3
 				***/
 .s3 {
-  height: 670px;
+  height: 715px;
   background-image: url("../i/s3-bg.png");
   background-size: cover; }
   @media all and (max-width: 991px) {
@@ -7542,7 +7570,7 @@ header {
   background-position-x: -25px; }
   @media all and (max-width: 767px) {
     .s5 {
-      height: 605px;
+      height: 635px;
       background-image: url(../i/s5-bg-xs.jpg);
       background-position-x: 0;
       padding-top: 50px; }
@@ -7668,6 +7696,9 @@ header {
 
 .route__step:nth-child(14) a:before {
   content: '14'; }
+
+.route__step:nth-child(14) a:before {
+  content: '15'; }
 
 .route__step--active a:before {
   content: "\e907" !important;
@@ -7833,13 +7864,13 @@ header {
   100% {
     background-image: url(../i/path/3-1.jpg); } }
     .route-slide-3 .route-arrow-wrapper.arrow-1 {
-      top: 17vw;
-      left: 30vw;
+      top: 36vw;
+      left: 46vw;
       -webkit-transform: rotate(-74deg);
       transform: rotate(-74deg); }
     .route-slide-3 .route-arrow-wrapper.arrow-2 {
-      top: 77px;
-      left: 112px;
+      top: 23vw;
+      left: 31vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
   .route-slide-4 {
@@ -7885,50 +7916,20 @@ header {
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
   .route-slide-5 {
-    background-image: url(../i/path/5-1.jpg);
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-name: slide5;
-    animation-name: slide5;
-    -webkit-animation-duration: 6s;
-    animation-duration: 6s;
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s; }
-
-@-webkit-keyframes slide5 {
-  0% {
     background-image: url(../i/path/5-1.jpg); }
-  45% {
-    background-image: url(../i/path/5-1.jpg); }
-  50% {
-    background-image: url(../i/path/5-2.jpg); }
-  95% {
-    background-image: url(../i/path/5-2.jpg); }
-  100% {
-    background-image: url(../i/path/5-1.jpg); } }
-
-@keyframes slide5 {
-  0% {
-    background-image: url(../i/path/5-1.jpg); }
-  45% {
-    background-image: url(../i/path/5-1.jpg); }
-  50% {
-    background-image: url(../i/path/5-2.jpg); }
-  95% {
-    background-image: url(../i/path/5-2.jpg); }
-  100% {
-    background-image: url(../i/path/5-1.jpg); } }
-    .route-slide-5 .route-arrow-wrapper.arrow-1 {
+    .route-slide-5 .route-arrow-wrapper {
       top: 40vw;
       left: 22vw;
       -webkit-transform: rotate(-15deg);
       transform: rotate(-15deg); }
-    .route-slide-5 .route-arrow-wrapper.arrow-2 {
+  .route-slide-6 {
+    background-image: url(../i/path/5-2.jpg); }
+    .route-slide-6 .route-arrow-wrapper {
       top: 10vw;
       left: 35vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
-  .route-slide-6 {
+  .route-slide-7 {
     background-image: url(../i/path/6-1.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -7962,17 +7963,17 @@ header {
     background-image: url(../i/path/6-2.jpg); }
   100% {
     background-image: url(../i/path/6-1.jpg); } }
-    .route-slide-6 .route-arrow-wrapper.arrow-1 {
+    .route-slide-7 .route-arrow-wrapper.arrow-1 {
       top: 37vw;
       left: 26vw;
       -webkit-transform: rotate(-15deg);
       transform: rotate(-15deg); }
-    .route-slide-6 .route-arrow-wrapper.arrow-2 {
+    .route-slide-7 .route-arrow-wrapper.arrow-2 {
       top: 17vw;
       left: 34vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
-  .route-slide-7 {
+  .route-slide-8 {
     background-image: url(../i/path/7-1.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -8006,17 +8007,17 @@ header {
     background-image: url(../i/path/7-2.jpg); }
   100% {
     background-image: url(../i/path/7-1.jpg); } }
-    .route-slide-7 .route-arrow-wrapper.arrow-1 {
+    .route-slide-8 .route-arrow-wrapper.arrow-1 {
       top: 37vw;
       left: 26vw;
       -webkit-transform: rotate(-30deg);
       transform: rotate(-30deg); }
-    .route-slide-7 .route-arrow-wrapper.arrow-2 {
+    .route-slide-8 .route-arrow-wrapper.arrow-2 {
       top: 12vw;
       left: 24vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
-  .route-slide-8 {
+  .route-slide-9 {
     background-image: url(../i/path/8-1.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -8050,22 +8051,22 @@ header {
     background-image: url(../i/path/8-2.jpg); }
   100% {
     background-image: url(../i/path/8-1.jpg); } }
-    .route-slide-8 .route-arrow-wrapper.arrow-1 {
+    .route-slide-9 .route-arrow-wrapper.arrow-1 {
       top: 37vw;
       left: 20vw; }
-    .route-slide-8 .route-arrow-wrapper.arrow-2 {
+    .route-slide-9 .route-arrow-wrapper.arrow-2 {
       top: 22vw;
       left: 28vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
-  .route-slide-9 {
+  .route-slide-10 {
     background-image: url(../i/path/9.jpg); }
-    .route-slide-9 .route-arrow-wrapper {
+    .route-slide-10 .route-arrow-wrapper {
       top: 32vw;
       left: 24vw;
       -webkit-transform: rotate(-115deg);
       transform: rotate(-115deg); }
-  .route-slide-10 {
+  .route-slide-11 {
     background-image: url(../i/path/10-1.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -8099,17 +8100,17 @@ header {
     background-image: url(../i/path/10-2.jpg); }
   100% {
     background-image: url(../i/path/10-1.jpg); } }
-    .route-slide-10 .route-arrow-wrapper.arrow-1 {
+    .route-slide-11 .route-arrow-wrapper.arrow-1 {
       top: 40vw;
       left: 22vw;
       -webkit-transform: rotate(-15deg);
       transform: rotate(-15deg); }
-    .route-slide-10 .route-arrow-wrapper.arrow-2 {
+    .route-slide-11 .route-arrow-wrapper.arrow-2 {
       top: 10vw;
       left: 35vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
-  .route-slide-11 {
+  .route-slide-12 {
     background-image: url(../i/path/11.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -8143,24 +8144,24 @@ header {
     background-image: url(../i/path/12.jpg); }
   100% {
     background-image: url(../i/path/11.jpg); } }
-    .route-slide-11 .route-arrow-wrapper.arrow-1 {
+    .route-slide-12 .route-arrow-wrapper.arrow-1 {
       top: 40vw;
       left: 22vw;
       -webkit-transform: rotate(-15deg);
       transform: rotate(-15deg); }
-    .route-slide-11 .route-arrow-wrapper.arrow-2 {
-      top: 13vw;
-      left: 39vw;
-      -webkit-transform: rotate(134deg);
-      transform: rotate(134deg); }
-  .route-slide-12 {
-    background-image: url(../i/path/12.jpg); }
-    .route-slide-12 .route-arrow-wrapper {
+    .route-slide-12 .route-arrow-wrapper.arrow-2 {
       top: 13vw;
       left: 39vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
   .route-slide-13 {
+    background-image: url(../i/path/12.jpg); }
+    .route-slide-13 .route-arrow-wrapper {
+      top: 13vw;
+      left: 39vw;
+      -webkit-transform: rotate(134deg);
+      transform: rotate(134deg); }
+  .route-slide-14 {
     background-image: url(../i/path/13-1.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -8194,17 +8195,17 @@ header {
     background-image: url(../i/path/13-2.jpg); }
   100% {
     background-image: url(../i/path/13-1.jpg); } }
-    .route-slide-13 .route-arrow-wrapper.arrow-1 {
+    .route-slide-14 .route-arrow-wrapper.arrow-1 {
       top: 26vw;
       left: 35vw;
       -webkit-transform: rotate(-75deg);
       transform: rotate(-75deg); }
-    .route-slide-13 .route-arrow-wrapper.arrow-2 {
+    .route-slide-14 .route-arrow-wrapper.arrow-2 {
       top: 3vw;
       left: 34vw;
       -webkit-transform: rotate(134deg);
       transform: rotate(134deg); }
-  .route-slide-14 {
+  .route-slide-15 {
     background-image: url(../i/path/14-1.jpg);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
@@ -8367,10 +8368,9 @@ header {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3f7592+0,337cef+35,337cef+65,3f7592+100 */
   background: #3f7592;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #3f7592 0%, #337cef 35%, #337cef 65%, #3f7592 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #3f7592 0%, #337cef 35%, #337cef 65%, #3f7592 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#3f7592), color-stop(35%, #337cef), color-stop(65%, #337cef), to(#3f7592));
   background: linear-gradient(to bottom, #3f7592 0%, #337cef 35%, #337cef 65%, #3f7592 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f7592', endColorstr='#3f7592',GradientType=0 );
@@ -8423,12 +8423,19 @@ header {
 .phone {
   width: 615px;
   height: 468px;
-  background-image: url("../i/phone.png");
+  background-image: url("../i/phone-1.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: -193px;
   cursor: pointer; }
+  .phone.animate {
+    -webkit-animation-name: phone;
+    animation-name: phone;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
   @media all and (max-width: 991px) {
     .phone {
       left: -155px; } }
