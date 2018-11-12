@@ -414,7 +414,22 @@ else {
 		$('.route-slide').removeClass('route-slide--active')
 		$('.route-slide:nth-child('+n+')').addClass('route-slide--active')
 	} )
+
+	//Change slide on tap
+	$('.route-slide-next').on( 'click', function(e){
+		e.preventDefault();
+		routesSlider.slideNext()
+
+	} )
+
+	$('.route-slide-prev').on( 'click', function(e){
+		e.preventDefault();
+		routesSlider.slidePrev()
+
+	} )
 }
+
+
 
 //trigger phone animation
 

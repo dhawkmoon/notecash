@@ -8285,6 +8285,19 @@ header {
 .route-arrow-wrapper {
   position: absolute; }
 
+.route-slide-next, .route-slide-prev {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  z-index: 9;
+  cursor: pointer; }
+
+.route-slide-next {
+  right: 0; }
+
+.route-slide-prev {
+  left: 0; }
+
 /***
 	SECTION 6
 				***/
