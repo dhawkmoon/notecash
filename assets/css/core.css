@@ -7697,7 +7697,7 @@ header {
 .route__step:nth-child(14) a:before {
   content: '14'; }
 
-.route__step:nth-child(14) a:before {
+.route__step:nth-child(15) a:before {
   content: '15'; }
 
 .route__step--active a:before {
@@ -8287,13 +8287,14 @@ header {
 
 .route-slide-next, .route-slide-prev {
   position: absolute;
+  top: 0;
   height: 100%;
-  width: 50%;
+  width: 100%;
   z-index: 9;
   cursor: pointer; }
 
 .route-slide-next {
-  right: 0; }
+  left: 0; }
 
 .route-slide-prev {
   left: 0; }

@@ -409,7 +409,9 @@ else {
 	  })
 
 	routesSlider.on( 'slideChange', function(){
+		console.log(this.activeIndex)
 		var n = this.activeIndex+1
+		console.log(n)
 
 		$('.route-slide').removeClass('route-slide--active')
 		$('.route-slide:nth-child('+n+')').addClass('route-slide--active')
