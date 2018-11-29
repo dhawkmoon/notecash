@@ -193,7 +193,7 @@ var phoneFormSuccess = function( form ) {
 				form.append( '<span class="message message-error">'+response+'</span>' )
 			}, 2000 )
 		},
-		},
+		
 	})
 }
 
