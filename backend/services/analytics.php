@@ -22,7 +22,7 @@
 			// echo 'Preg :: '.preg_match_all( '/yandex/', $r );
 
 			//
-			if( $r == '' || !preg_match_all( '/utm_source|utm_medium/', $s ) ) {
+			if( $r == '' && !preg_match_all( '/utm_source|utm_medium/', $s ) ) {
 				$tags[] = 'organic';
 			}
 			elseif( preg_match_all( '/yandex/', $r ) ) {
