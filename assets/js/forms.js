@@ -154,7 +154,7 @@ function onFormSuccess( form ) {
 var phoneFormSuccess = function( form ) {
 	var data = form.serialize()
 	//analytics
-	data += '&s=' + location.search
+	//data += '&s=' + location.search
 	data += '&r=' + document.referrer
 	form.addClass('is-loading');
 	form.find('button').attr('disabled', 'disabled')
@@ -193,7 +193,7 @@ var phoneFormSuccess = function( form ) {
 				form.append( '<span class="message message-error">'+response+'</span>' )
 			}, 2000 )
 		},
-		
+
 	})
 }
 
@@ -201,7 +201,7 @@ var detailedFormSuccess = function( form ) {
 	console.log( form[0] )
 	var data = new FormData( form[0] )
 	//analytics
-	data.append( 's', location.search )
+	//data.append( 's', location.search )
 	data.append( 'r', document.referrer )
 
 	form.addClass('is-loading');

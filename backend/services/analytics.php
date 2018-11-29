@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 	//echo '1';
 	Class Analytics
 	{
@@ -9,14 +7,15 @@ ini_set('display_errors', 1);
 		{
 			$tags = [];
 			$r = '';
-			$s = '';
+
+			$s = @explode( '?', $_SERVER['HTTP_REFERRER'] )[1];
 
 			if( isset( $_POST['r'] )  ) {
 				$r = $_POST['r'];
 			}
-			if( isset( $_POST['s'] )  ) {
-				$s = $_POST['s'];
-			}
+			// if( isset( $_POST['s'] )  ) {
+			// 	$s = $_POST['s'];
+			// }
 
 			// echo $r.'<br>';
 			//
@@ -36,22 +35,22 @@ ini_set('display_errors', 1);
 			if( preg_match_all( '/utm_source|utm_medium/', $s ) ) {
 				$u = [];
 				parse_str( $s, $u );
-				
-				
+
+
 				$tags[] = $u['utm_source'];
 				$tags[] = $u['utm_medium'];
-				
+
 				if( preg_match( '/^display/', $u['utm_campaign'] ) ) {
 					$tags[] = 'РСЯ';
 				}
-				
+
 				$c = explode( '|', $u['utm_content'] );
-				
+
 				$tags[] = $c[0];
 				if( $c[1] != 'none' ) {
 					$tags[] = $c[1];
 				}
-				
+
 				$tags[] = $c[4];
 
 			}
