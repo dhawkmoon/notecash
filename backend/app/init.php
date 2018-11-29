@@ -6,6 +6,7 @@
 	require 'services/mail-service.php';
 	require 'services/template-service.php';
 	require 'services/form-service.php';
+	require 'services/analytics.php';
 	require 'services/amo-crm.php';
 	//Create router
 	$router = new AltoRouter();

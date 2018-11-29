@@ -153,9 +153,13 @@ function onFormSuccess( form ) {
 
 var phoneFormSuccess = function( form ) {
 	var data = form.serialize()
+	//analytics
+	data += '&s=' + location.search
+	data += '&r=' + document.referrer
 	form.addClass('is-loading');
 	form.find('button').attr('disabled', 'disabled')
-	console.log(data)
+	//console.log(data)
+
 	$.ajax({
 		url: '/backend/send',
 		method: 'POST',
@@ -163,7 +167,7 @@ var phoneFormSuccess = function( form ) {
 		context: form,
 		success: function( response ) {
 			var form = $(this)
-			
+
 			//dataLayer.push({'event': form.attr('id'), 'eventCategory' : 'form', 'eventAction' : 'sent'}); **deprecated
 			dataLayer.push({
                 'event' : 'formsend',
@@ -171,7 +175,7 @@ var phoneFormSuccess = function( form ) {
                 'eventAction' : 'send-btn',
                 'eventLabel' : form.attr('id'),
             });
-			
+
 			//console.log( form.attr('id'), response )
 			//console.log( $(this), response )
 			setTimeout( function() {
@@ -196,10 +200,13 @@ var phoneFormSuccess = function( form ) {
 var detailedFormSuccess = function( form ) {
 	console.log( form[0] )
 	var data = new FormData( form[0] )
-	//console.log(data)
+	//analytics
+	data.append( 's', location.search )
+	data.append( 'r', document.referrer )
+
 	form.addClass('is-loading');
 	form.find('button').attr('disabled', 'disabled')
-	//console.log(data)
+
 	$.ajax({
 		url: '/backend/detailed',
 		method: 'POST',
@@ -371,4 +378,4 @@ $(document).on( 'click', '.error-text', function( e ) {
 //Prevent dummies from 8 in phone number error
 $('[data-field="phone"]').on( 'keypress', function(e){
     $(this).val( $(this).val().replace( /^\+7 \(8/, '+7 (' ) )
-} )  
+} )
