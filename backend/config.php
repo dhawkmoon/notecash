@@ -95,7 +95,7 @@
 	
 	define( 'USER_LOGIN', 'spriggun140493@gmail.com' );
 	
-	define( 'USER_HASH', '6fd0736456069ae843ae772e82b75d56' );
+	define( 'USER_HASH', '11e6a551ad972ecd6796bf9325080fc54e7c7409' );
 	
 	define( 'CF_PHONE', 226253 );
 	
@@ -116,19 +116,24 @@
 	//2186464 - Maksim
 
 	define( 'MANAGERS', [
+		//[
+		//	'id' => 2186452,
+		//	'email' => 'Deimos199501@gmail.com',
+		//],
+		//[
+		//	'id' => 2186452,
+		//	'email' => 'Deimos199501@gmail.com',
+		//],
 		[
-			'id' => 2186452,
-			'email' => 'Deimos199501@gmail.com',
-		],
-		[
-			'id' => 2186452,
-			'email' => 'Deimos199501@gmail.com',
-		],
-	//	[
-		//	'id' => 1995433,
-		//	'email' => 'spriggun140493@gmail.com',
+			'id' => 1995433,
+			'email' => 'spriggun140493@gmail.com',
 			//'email' => 'hawkguitar@gmail.com',
-	//	],
+		],
+		[
+			'id' => 1995433,
+			'email' => 'spriggun140493@gmail.com',
+			//'email' => 'hawkguitar@gmail.com',
+		],
 	]);
 
 	define( 'TEMP_FILE', dirname( __FILE__ ) . '/temp/cookies' );

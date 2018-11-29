@@ -114,7 +114,7 @@
 					$manager = AmoCRM::getManager();
 					
 					//Amo
-					AmoCRM::handleCallback( $fields['phone'], MANAGERS[$manager]['id'] );
+					AmoCRM::handleCallback( $fields['phone'], MANAGERS[$manager]['id'], '', false, ' с сайта Apple' );
 					
 					if( $manager == 0 ) {
 						AmoCRM::saveManager(1);
@@ -278,7 +278,7 @@
 					
 					$manager = AmoCRM::getManager();
 					//print_r( MANAGERS[$manager] );die();
-					AmoCRM::handleCallback( $fields['phone'], MANAGERS[$manager]['id'], '', $cf );
+					AmoCRM::handleCallback( $fields['phone'], MANAGERS[$manager]['id'], '', $cf, ' с сайта Apple' );
 					
 					if( $manager == 0 ) {
 						AmoCRM::saveManager(1);
