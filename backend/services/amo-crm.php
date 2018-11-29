@@ -95,7 +95,7 @@
 			
 		}
 		
-		static function addLead( $contact, $responsible_user, $cf=false )
+		static function addLead( $contact, $responsible_user, $cf=false, $add='' )
 		{
 			$r = AmoCRM::auth();
 			$cookies = AmoCRM::getCookies( $r );
@@ -104,7 +104,7 @@
 			if( $response->auth ) {
 				$lead['add'] = [
 					[
-						'name' 				=> 'Обратный звонок #' . $contact['ID'],
+						'name' 				=> 'Обратный звонок #' . $contact['ID'] . $add,
 						'responsible_user_id' => $responsible_user,
 						'created_at' 	=>  time(),
 						'status_id'		=>	PL_STATUS,
@@ -209,29 +209,29 @@
 			else return false;
 		}
 		
-		static function handleCallback( $phone, $responsible_user, $name=false, $cf=false )
+		static function handleCallback( $phone, $responsible_user, $name=false, $cf=false, $add='' )
 		{
 			if( $name )
 				$contact = AmoCRM::addContact( $phone, $responsible_user, $name );
 			else
 				$contact = AmoCRM::addContact( $phone, $responsible_user );
 				
-				if( $contact ) {
-					$lead = AmoCRM::addLead( $contact, $responsible_user, $cf );
+			if( $contact ) {
+				$lead = AmoCRM::addLead( $contact, $responsible_user, $cf, $add );
+				
+				if( $lead ) {
+					$task = AmoCRM::addTask( $lead, $responsible_user );
 					
-					if( $lead ) {
-						$task = AmoCRM::addTask( $lead, $responsible_user );
-						
-						if( $task ) {
-							return ['code'=>200,'body'=> 'Сделка успешно добавлена.'];	
-						}
-						
+					if( $task ) {
+						return ['code'=>200,'body'=> 'Сделка успешно добавлена.'];	
 					}
-					
 					
 				}
 				
-				return ['code'=>403,'body'=>null];
+				
+			}
+			
+			return ['code'=>403,'body'=>null];
 		}
 		
 		static function getFieldId( $field )
