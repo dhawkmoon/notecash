@@ -8,7 +8,7 @@
 			$tags = [];
 			$r = '';
 
-			$s = @explode( '?', $_SERVER['HTTP_REFERRER'] )[1];
+			$s = @explode( '?', $_SERVER['HTTP_REFERER'] )[1];
 
 			if( isset( $_POST['r'] )  ) {
 				$r = $_POST['r'];
