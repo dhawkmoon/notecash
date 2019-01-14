@@ -464,3 +464,18 @@ var animatePhoneXS = function(){
 
 $w.on( 'scroll', animatePhone )
 $b.on( 'scroll', animatePhoneXS )
+
+
+jQuery( document ).ready( function($){
+
+	$('[data-src]').each( function(){
+
+		$.ajax({
+			method: 'get',
+			url: $(this).data('src'),
+
+		})
+
+	} )
+
+} );
