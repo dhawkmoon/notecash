@@ -1,3 +1,13 @@
+import Swiper from 'swiper';
+import $ from 'jquery';
+
+window.$ = $
+window.jQuery = $
+
+import 'jquery-mask-plugin';
+
+
+
 /***
 	Tetimonials slider
 								***/
@@ -63,7 +73,7 @@ if( $(window).width() <= 768 ) {
   /***
 	  Separators transformations
 	  											***/
-	jQuery(document).ready( function($) {
+	$(document).ready( function($) {
 
 		/***
 			MAPS
@@ -247,192 +257,6 @@ if( $(window).width() <= 768 ) {
 
 } );//end document.ready
 
-/*** VIDEO ***/
-if( $(window).width() > 640 ) {
-
-  var player; //init
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '365',
-      width: '508',
-      videoId: '0E9TOPqcttg',
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': timerInit
-      }
-    });
-  }
-
-  function onPlayerReady(event) {
-    //timerInit()
-  }
-
-  function stopVideo() {
-    player.stopVideo();
-  }
-
-	var labels = [
-		{
-			time: 0, //seconds
-			element: $('.route__step:nth-child(1)'),
-		},
-		{
-			time: 28, //seconds
-			element: $('.route__step:nth-child(2)'),
-		},
-		{
-			time: 45, //seconds
-			element: $('.route__step:nth-child(3)'),
-		},
-		{
-			time: 75, //seconds
-			element: $('.route__step:nth-child(4)'),
-		},
-		{
-			time: 105, //seconds
-			element: $('.route__step:nth-child(5)'),
-		},
-	]
-	//Sets handlers for click - video seeking
-	for( var i = 0; i < labels.length; i++ ) {
-
-		//console.log(labels[i])
-
-		labels[i].element.on( 'click', labels[i].time, function( e ) {
-
-			player.seekTo( e.data )
-
-		} )
-
-	}
-
-	//Listen to video and activate labels
-	var timer
-
-	function timerInit( e )
-	{
-		//console.log(timer)
-		if( e.data == 1 ) {
-			$('.route__step--active a').removeClass('paused')
-			timer = setInterval( function(){
-				switchLabels( player.getCurrentTime() )
-			}, 300 )
-		}
-		else {
-			if( e.data == 2 ) {
-				$('.route__step--active a').addClass('paused')
-			}
-			clearInterval( timer )
-		}
-	}
-
-	var currentLabel;
-
-	function switchLabels( time ) {
-		//
-		for( var t = labels.length-1; t >= 0; t-- ) {
-
-			if( t == labels.length-1 && time >= labels[t].time ) {
-				//console.log('last')
-				if( currentLabel != labels.indexOf( labels[t] ) ) {
-					currentLabel = labels.indexOf( labels[t] )
-					labels[t].element.find( 'a' ).trigger('reached')
-				}
-
-			}
-			else if( typeof labels[t+1] != 'undefined' && time >= labels[t].time && time < labels[t+1].time ) {
-				//console.log('middle:' + labels[t].time)
-				if( currentLabel != labels.indexOf( labels[t] ) ) {
-					currentLabel = labels.indexOf( labels[t] )
-					labels[t].element.find( 'a' ).trigger('reached')
-				}
-			}
-		}
-		//
-	}
-
-	//Click events - visual changes
-	$('.route__step a').on('click', function(e){
-
-		e.preventDefault();
-
-		$(this).parent().trigger('mouseenter')
-
-		$('.route__step').removeClass('route__step--active')
-		$('.sep-vert').removeClass('sep-vert--transform')
-		$(this).parent().prev().find('.sep-vert').addClass('sep-vert--transform')
-
-		var i = $(this).attr('href')
-
-		labels[i].element.addClass('route__step--active')
-
-
-	})
-
-	$('.route__step a').on('reached', function(e){
-
-		e.preventDefault();
-
-		$(this).parent().trigger('mouseenter')
-
-		$('.route__step').removeClass('route__step--active')
-		$('.sep-vert').removeClass('sep-vert--transform')
-		$(this).parent().prev().find('.sep-vert').addClass('sep-vert--transform')
-
-		var i = $(this).attr('href')
-
-		labels[i].element.addClass('route__step--active')
-
-
-	})
-
-}//end if
-else {
-	console.log('yeeeah')
-	$('.route__step>a').click( function(e){e.preventDefault;} )
-	var routesSlider = new Swiper ('#routes-slider', {
-
-			slidesPerView:1,
-			//spaceBetween: 51,
-	    // If we need pagination
-	    pagination: {
-	      el: '#mobile-routes-pagination',
-	      clickable: true,
-	    },
-			//slideClass: 'note-books-slide',
-	    // Navigation arrows
-			navigation: {
-				nextEl: '#route-slider-arrow-right',
-				prevEl: '#route-slider-arrow-left',
-			},
-
-	  })
-
-	routesSlider.on( 'slideChange', function(){
-		console.log(this.activeIndex)
-		var n = this.activeIndex+1
-		console.log(n)
-
-		$('.route-slide').removeClass('route-slide--active')
-		$('.route-slide:nth-child('+n+')').addClass('route-slide--active')
-	} )
-
-	//Change slide on tap
-	$('.route-slide-next').on( 'click', function(e){
-		e.preventDefault();
-		routesSlider.slideNext()
-
-	} )
-
-	$('.route-slide-prev').on( 'click', function(e){
-		e.preventDefault();
-		routesSlider.slidePrev()
-
-	} )
-}
-
-
-
 //trigger phone animation
 
 var $w = $(window)
@@ -466,7 +290,7 @@ $w.on( 'scroll', animatePhone )
 $b.on( 'scroll', animatePhoneXS )
 
 
-jQuery( document ).ready( function($){
+$( document ).ready( function($){
 
 	$('[data-src]').each( function(){
 

@@ -1,4 +1,6 @@
-jQuery(document).ready(function($){
+import $ from 'jquery';
+
+$(document).ready(function($){
 
   var modal = {
     toggle: function( e ){

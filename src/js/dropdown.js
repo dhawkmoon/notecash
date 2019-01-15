@@ -1,9 +1,11 @@
+import $ from 'jquery';
+
 /***
 	DROPDOWNS
 					***/
 
-jQuery(document).ready(function($){
-	
+$(document).ready(function($){
+
 	var dropdown = {
 		open: function(e) {
 			e.preventDefault();
@@ -13,9 +15,9 @@ jQuery(document).ready(function($){
 			//e.preventDefault();
 			e.stopPropagation()
 			//console.log($(this), e.currentTarget)
-			
+
 			if( !$(e.currentTarget).hasClass('m-dropdown') && !$(e.currentTarget).hasClass('m-dropdown__current') && !$(e.currentTarget).hasClass('m-dropdown__item') ) {
-				
+
 				$('.m-dropdown--opened').removeClass('m-dropdown--opened')
 			}
 		},
@@ -36,9 +38,9 @@ jQuery(document).ready(function($){
 			$(this).parents('.floating-label').find('input').trigger('change')
 		}
 	}
-	
+
 	$(document).on('click', '.m-dropdown', dropdown.toggle )
-	
+
 	$(document).on('click', '.m-dropdown__item', dropdown.setVal)
 	$(window).on('click', dropdown.closeAll)
 });
