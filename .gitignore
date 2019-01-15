@@ -3,5 +3,6 @@ src2/
 backend/vendor
 apple/
 validate-us/
-dist/
 v8-compile-cache-*/
+.bash_history
+backend/temp/managers
