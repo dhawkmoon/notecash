@@ -8279,7 +8279,7 @@ header {
 
 .map {
   height: 570px;
-  background-image: url("../i/map-bg.png");
+  background-image: url("../i/map-bg.jpg");
   background-position-x: -25px; }
   @media all and (max-width: 767px) {
     .map {

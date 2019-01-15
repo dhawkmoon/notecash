@@ -292,14 +292,25 @@ $b.on( 'scroll', animatePhoneXS )
 
 $( document ).ready( function($){
 
-	$('[data-src]').each( function(){
+	$('img[data-src]').each( function(){
+		var src = $(this).data('src')
+		$(this).attr('src', src )
+	} )
+
+	$('span[data-src]').each( function(){
 
 		$.ajax({
 			method: 'get',
 			url: $(this).data('src'),
-
 		})
 
 	} )
 
+	if( $( window ).width() > 768 ) {
+		//MAPS
+		$('#map-lg').attr('src', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9b56d2dccc1a9c2d7c4a2288b40b6b28b565495af943f64b026e4ccc72fd012c&amp;width=100%25&amp;height=320&amp;lang=ru_RU&amp;scroll=false' )
+	}
+	else {
+		$('#map-xs').attr( 'src', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abc8de033ccad85b440e3effd6cae68f1c65fc86e6c60ed84d63420daa76ea4ff&amp;width=100%25&amp;height=570&amp;lang=ru_RU&amp;scroll=false' )
+	}
 } );
