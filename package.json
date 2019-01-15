@@ -4,15 +4,16 @@
   "description": "Frontend for Notecash website landing page.",
   "main": "index.js",
   "scripts": {
-		 "dev": "webpack --mode development",
-		 "build": "webpack --mode production",
-		 "watch": "webpack --mode development --watch",
-		 "start": "webpack-dev-server --mode development --open"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open"
   },
-	"author": "dhawk",
+  "author": "dhawk",
   "license": "MIT",
-	"devDependencies": {
+  "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.1.6",
     "apply-loader": "^2.0.0",
     "babel-core": "^6.26.3",

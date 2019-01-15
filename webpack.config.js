@@ -9,7 +9,9 @@ module.exports = {
 		'./src/sass/core.scss',
   ],
   output: {
-    filename: './js/bundle.js'
+
+    filename: './js/bundle.js',
+		publicPath: '/dist/',
   },
   devtool: "source-map",
   module: {
