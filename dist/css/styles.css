@@ -7187,7 +7187,8 @@ h2 {
 .is-loading .btn span {
   opacity: 0; }
 
-form.is-success *:not(.message) {
+form.is-success *:not(.message),
+form.is-error *:not(.message) {
   display: none !important; }
 
 .message {
@@ -7466,11 +7467,12 @@ header {
 	Section 1
 				***/
 .s1 {
-  background-image: url("../i/s1-bg.png");
   background-size: cover;
   height: 626px;
   margin-top: -104px;
   padding-top: 104px; }
+  .s1.lazy-bg-loaded {
+    background-image: url("../i/s1-bg.png"); }
   @media all and (max-width: 991px) {
     .s1 {
       height: 1071px; }
@@ -7479,9 +7481,10 @@ header {
   @media all and (max-width: 767px) {
     .s1 {
       margin-top: 0;
-      background-image: url("../i/s1-bg-xs.jpg");
       height: calc(754px + 55vw);
-      padding-top: 65px; } }
+      padding-top: 65px; }
+      .s1.lazy-bg-loaded {
+        background-image: url("../i/s1-bg-xs.jpg"); } }
   .s1-content__promo {
     height: 522px;
     padding-top: 80px; }
@@ -7705,9 +7708,10 @@ header {
   left: -95px;
   width: 815px;
   height: 445px;
-  background-image: url("../i/notebook.svg");
   background-size: cover;
   background-repeat: no-repeat; }
+  .s1-notebook.lazy-bg-loaded {
+    background-image: url("../i/notebook.svg"); }
   @media all and (max-width: 1200px) {
     .s1-notebook {
       left: -155px; } }
@@ -7791,16 +7795,18 @@ header {
 				***/
 .s2 {
   height: 808px;
-  background-image: url("../i/s2-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
+  .s2.lazy-bg-loaded {
+    background-image: url("../i/s2-bg.jpg"); }
   @media all and (max-width: 1200px) {
     .s2 {
       height: 760px; } }
   @media all and (max-width: 767px) {
     .s2 {
-      height: 680px;
-      background-image: url("../i/s2-bg-xs.jpg"); } }
+      height: 680px; }
+      .s2.lazy-bg-loaded {
+        background-image: url("../i/s2-bg-xs.jpg"); } }
   .s2 h2 {
     margin-bottom: 55px; }
     @media all and (max-width: 767px) {
@@ -7816,6 +7822,7 @@ header {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
+  -webkit-transition: .2s linear;
   transition: .2s linear; }
   @media all and (max-width: 1200px) {
     .note-books-item {
@@ -7844,6 +7851,7 @@ header {
           bottom: 0;
           background-color: rgba(0, 0, 0, 0.5);
           z-index: 1;
+          -webkit-transition: .3s linear;
           transition: .3s linear; }
         .swiper-slide-active .note-books-item__header:after {
           background-color: rgba(0, 0, 0, 0.2); } }
@@ -7868,6 +7876,7 @@ header {
     color: white; }
   @media all and (min-width: 768px) {
     .note-books-item:hover {
+      -webkit-box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.15);
       box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.15); } }
 
 @media all and (min-width: 768px) {
@@ -7885,15 +7894,17 @@ header {
 				***/
 .s3 {
   height: 715px;
-  background-image: url("../i/s3-bg.png");
   background-size: cover; }
+  .s3.lazy-bg-loaded {
+    background-image: url("../i/s3-bg.png"); }
   @media all and (max-width: 991px) {
     .s3 {
       height: 715px; } }
   @media all and (max-width: 767px) {
     .s3 {
-      background-image: url("../i/s3-bg-xs.jpg");
-      height: auto; } }
+      height: auto; }
+      .s3.lazy-bg-loaded {
+        background-image: url("../i/s3-bg-xs.jpg"); } }
   .s3 h2 {
     color: white; }
   .s3 p {
@@ -7954,12 +7965,14 @@ header {
 				***/
 .s4 {
   height: 670px;
-  background-image: url("../i/s4-bg.jpg");
   background-size: cover; }
+  .s4.lazy-bg-loaded {
+    background-image: url("../i/s4-bg.jpg"); }
   @media all and (max-width: 767px) {
     .s4 {
-      height: 600px;
-      background-image: url("../i/s4-bg-xs.jpg"); } }
+      height: 600px; }
+      .s4.lazy-bg-loaded {
+        background-image: url("../i/s4-bg-xs.jpg"); } }
 
 /***
 		TESTIMONIALS
@@ -8080,15 +8093,17 @@ header {
 				***/
 .s5 {
   height: 785px;
-  background-image: url("../i/s5-bg.jpg");
   background-size: cover;
   background-position-x: -25px; }
+  .s5.lazy-bg-loaded {
+    background-image: url("../i/s5-bg.jpg"); }
   @media all and (max-width: 767px) {
     .s5 {
       height: 635px;
-      background-image: url(../i/s5-bg-xs.jpg);
       background-position-x: 0;
       padding-top: 50px; }
+      .s5.lazy-bg-loaded {
+        background-image: url(../i/s5-bg-xs.jpg); }
       .s5 .btn-primary {
         margin-top: 5px; } }
   .s5 h2 {
@@ -8241,8 +8256,9 @@ header {
   height: 410px;
   position: absolute;
   background-size: cover;
-  background-position: center;
-  background-image: url("../i/planshet.svg"); }
+  background-position: center; }
+  .planshet.lazy-bg-loaded {
+    background-image: url("../i/planshet.svg"); }
   @media all and (max-width: 767px) {
     .planshet {
       position: relative;
@@ -8285,8 +8301,9 @@ header {
 
 .map {
   height: 570px;
-  background-image: url("../i/map-bg.jpg");
   background-position-x: -25px; }
+  .map.lazy-bg-loaded {
+    background-image: url("../i/map-bg.jpg"); }
   @media all and (max-width: 767px) {
     .map {
       height: 320px;
@@ -8819,8 +8836,9 @@ header {
 				***/
 .s6 {
   height: 960px;
-  background-image: url("../i/s6-bg.jpg");
   background-size: cover; }
+  .s6.lazy-bg-loaded {
+    background-image: url("../i/s6-bg.jpg"); }
   @media all and (max-width: 991px) {
     .s6 {
       height: 980px; } }
@@ -8832,6 +8850,7 @@ header {
   position: relative;
   border: 1px solid #d7d7d7;
   padding: 25px 30px 25px 65px;
+  -webkit-transition: .3s linear;
   transition: .3s linear;
   cursor: pointer; }
   .questions__item:hover {

@@ -4,13 +4,17 @@
 
 .s3 {
 	height: 715px;
-	background-image: url('../i/s3-bg.png');
+	&.lazy-bg-loaded {
+		background-image: url('../i/s3-bg.png');
+	}
 	background-size: cover;
 	@media all and (max-width: 991px) {
 		height: 715px;
 	}
 	@media all and (max-width: 767px) {
-		background-image: url('../i/s3-bg-xs.jpg');
+		&.lazy-bg-loaded {
+			background-image: url('../i/s3-bg-xs.jpg');
+		}
 		height: auto;
 	}
 	h2 {

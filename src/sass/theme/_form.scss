@@ -338,7 +338,8 @@
   }
 }
 
-form.is-success *:not(.message) {
+form.is-success *:not(.message),
+form.is-error *:not(.message) {
     display: none !important;
 }
 

@@ -4,12 +4,16 @@
 
 .s5 {
 	height: 785px;
-	background-image: url('../i/s5-bg.jpg');
+	&.lazy-bg-loaded {
+		background-image: url('../i/s5-bg.jpg');
+	}
 	background-size: cover;
 	background-position-x: -25px;
 	@media all and (max-width: 767px) {
 		height: 635px;
-    background-image: url(../i/s5-bg-xs.jpg);
+		&.lazy-bg-loaded {
+    	background-image: url(../i/s5-bg-xs.jpg);
+		}
     background-position-x: 0;
     padding-top: 50px;
 		.btn-primary {
@@ -217,7 +221,9 @@
 	position: absolute;
   background-size: cover;
   background-position: center;
-	background-image: url('../i/planshet.svg');
+	&.lazy-bg-loaded {
+		background-image: url('../i/planshet.svg');
+	}
 	@media all and (max-width:767px) {
 		position: relative;
 		width: 100%;
@@ -267,7 +273,9 @@
 
 .map {
 	height: 570px;
-	background-image: url('../i/map-bg.jpg');
+	&.lazy-bg-loaded {
+		background-image: url('../i/map-bg.jpg');
+	}
 	background-position-x: -25px;
 	@media all and (max-width: 767px) {
 		height: 320px;

@@ -4,11 +4,15 @@
 
 .s4 {
 	height: 670px;
-	background-image: url('../i/s4-bg.jpg');
+	&.lazy-bg-loaded {
+		background-image: url('../i/s4-bg.jpg');
+	}
 	background-size: cover;
 	@media all and (max-width: 767px) {
 		height: 600px;
-		background-image: url('../i/s4-bg-xs.jpg');
+		&.lazy-bg-loaded {
+			background-image: url('../i/s4-bg-xs.jpg');
+		}
 	}
 }
 

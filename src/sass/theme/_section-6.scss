@@ -4,7 +4,9 @@
 
 .s6 {
 	height: 960px;
-	background-image: url('../i/s6-bg.jpg');
+	&.lazy-bg-loaded {
+		background-image: url('../i/s6-bg.jpg');
+	}
 	background-size: cover;
 	@media all and (max-width: 991px) {
 		height: 980px;
@@ -19,18 +21,19 @@
 		position: relative;
 		border:1px solid #d7d7d7;
 		padding: 25px 30px 25px 65px;
+		-webkit-transition: .3s linear;
 		transition: .3s linear;
 		cursor: pointer;
 		&:hover {
 			background-color: rgba(255,255,255,.4);
-			
+
 		}
 	}
 	&__item + &__item {
 		border-top: none;
 	}
 	&-item {
-		
+
 		&__header {
 			position: relative;
 			font-size: 18px;
@@ -62,7 +65,7 @@
 			font-size: 16px;
 			color:black;
 			@include proximaLight;
-			@media all and (max-width: 767px) { 
+			@media all and (max-width: 767px) {
 				font-size: 14px;
 				margin-left: -40px;
 				margin-right: -10px;

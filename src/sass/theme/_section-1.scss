@@ -2,11 +2,13 @@
 	Section 1
 				***/
 .s1 {
-	background-image: url('../i/s1-bg.png');
 	background-size: cover;
 	height: 626px;
 	margin-top: -104px;
 	padding-top: 104px;
+	&.lazy-bg-loaded {
+		background-image: url('../i/s1-bg.png');
+	}
 	@media all and (max-width: 991px) {
 		height: 1071px;
 		.floating-label + btn {
@@ -15,9 +17,12 @@
 	}
 	@media all and (max-width: 767px) {
 		margin-top: 0;
-		background-image: url('../i/s1-bg-xs.jpg');
+
 		height: calc(754px + 55vw);
 		padding-top: 65px;
+		&.lazy-bg-loaded {
+			background-image: url('../i/s1-bg-xs.jpg');
+		}
 	}
 	&-content {
 		&__promo {
@@ -279,7 +284,9 @@
 	left:-95px;
 	width: 815px;
 	height: 445px;
-	background-image: url('../i/notebook.svg');
+	&.lazy-bg-loaded {
+		background-image: url('../i/notebook.svg');
+	}
 	background-size: cover;
 	background-repeat: no-repeat;
 	@media all and (max-width: 1200px) {
