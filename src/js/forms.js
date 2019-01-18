@@ -177,7 +177,7 @@ var phoneFormSuccess = function( form ) {
             });
 
 			//console.log( form.attr('id'), response )
-			//console.log( $(this), response )
+			console.log( response )
 			setTimeout( function() {
 				form.removeClass('is-loading')
 				form.addClass('is-success')
@@ -185,12 +185,18 @@ var phoneFormSuccess = function( form ) {
 			}, 2000 )
 		},
 		error: function( response ) {
-		//	console.log( $(this), response )
+			console.log( response )
 
 			setTimeout( function() {
 				form.removeClass('is-loading')
 				form.addClass('is-error')
-				form.append( '<span class="message message-error">'+response+'</span>' )
+				if( response.responseText && response.responseText.length > 0 ) {
+					form.append( '<span class="message message-error">Ошибка '+response.responseText+'</span>' )
+				}
+				else {
+					form.append( '<span class="message message-error">Ошибка '+response.status+' '+response.statusText+'</span>' )
+				}
+
 			}, 2000 )
 		},
 
@@ -233,6 +239,13 @@ var detailedFormSuccess = function( form ) {
 		error: function( response ) {
 			console.log( $(this), response )
 			$(this).removeClass('is-loading')
+			form.addClass('is-error')
+			if( response.responseText && response.responseText.length > 0 ) {
+				form.append( '<span class="message message-error">Ошибка '+response.responseText+'</span>' )
+			}
+			else {
+				form.append( '<span class="message message-error">Ошибка '+response.status+' '+response.statusText+'</span>' )
+			}
 		},
 	})
 }

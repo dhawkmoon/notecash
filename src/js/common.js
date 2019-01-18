@@ -291,20 +291,36 @@ $b.on( 'scroll', animatePhoneXS )
 
 
 $( document ).ready( function($){
+		if( $(window).width() > 768 ) {
 
-	$('img[data-src]').each( function(){
-		var src = $(this).data('src')
-		$(this).attr('src', src )
-	} )
+			$('img[data-src][data-media="desktop"]').each( function(){
+				var src = $(this).data('src')
+				$(this).attr('src', src )
+			} );
 
-	$('span[data-src]').each( function(){
+			$('span[data-src][data-media="desktop"]').each( function(){
 
-		$.ajax({
-			method: 'get',
-			url: $(this).data('src'),
-		})
+		 		$.ajax({
+		 			method: 'get',
+		 			url: $(this).data('src'),
+		 		})
+			});
+		}
+		else {
+			$('img[data-src][data-media="mobile"]').each( function(){
+				var src = $(this).data('src')
+				$(this).attr('src', src )
+			} )
 
-	} )
+			$('span[data-src][data-media="mobile"]').each( function(){
+
+		 		$.ajax({
+		 			method: 'get',
+		 			url: $(this).data('src'),
+		 		})
+			})
+		} 
+
 
 	if( $( window ).width() > 768 ) {
 		//MAPS

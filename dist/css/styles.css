@@ -6959,6 +6959,7 @@ h2 {
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     cursor: pointer;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2); }
     .floating-label .error-text:after {
       content: '';
@@ -7006,7 +7007,9 @@ h2 {
     font-family: "Proxima Nova", Arial;
     font-weight: 300;
     color: #999;
-    transition: .1s linear; }
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+    cursor: text; }
   .floating-label input.not-empty + label,
   .floating-label textarea.not-empty + label,
   .floating-label .file-current.not-empty + label {
@@ -7069,8 +7072,10 @@ h2 {
       top: 19px;
       width: 20px;
       height: 10px;
+      -webkit-transition: .3s linear;
       transition: .3s linear; }
   .m-dropdown--opened .m-dropdown__current:after {
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   .m-dropdown__items-wrapper {
     display: none;
@@ -7083,6 +7088,7 @@ h2 {
     max-height: 250px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    -webkit-box-shadow: 2px 4px 7px 1px rgba(192, 192, 192, 0.2);
     box-shadow: 2px 4px 7px 1px rgba(192, 192, 192, 0.2); }
   .m-dropdown--opened .m-dropdown__items-wrapper {
     display: block; }

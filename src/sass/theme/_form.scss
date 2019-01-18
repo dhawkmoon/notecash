@@ -53,7 +53,8 @@
     white-space: nowrap;
     @include fadeIn(.2s);
     cursor: pointer;
-    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
     &:after {
 			content: '';
 			display: block;
@@ -106,7 +107,9 @@
 		font-size: 16px;
 		@include proximaLight;
 		color: #999;
+		-webkit-transition: .1s linear;
 		transition: .1s linear;
+		cursor: text;
 	}
 	input.not-empty + label,
 	textarea.not-empty + label,
@@ -181,13 +184,15 @@
 	    top: 19px;
 	    width: 20px;
 	    height: 10px;
+	    -webkit-transition: .3s linear;
 	    transition: .3s linear;
 		}
 	}
 
 	&--opened &__current {
 		&:after {
-			transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			        transform: rotate(180deg);
 		}
 	}
 
@@ -202,7 +207,8 @@
 		max-height: 250px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    box-shadow: 2px 4px 7px 1px rgba(192,192,192, .2);
+    -webkit-box-shadow: 2px 4px 7px 1px rgba(192,192,192, .2);
+            box-shadow: 2px 4px 7px 1px rgba(192,192,192, .2);
 	}
 	&--opened &__items-wrapper {
 		display: block;
