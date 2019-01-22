@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 module.exports = {
   entry: [
     './src/js/index.js',
-		'./src/sass/core.scss',
   ],
   output: {
 
@@ -36,7 +35,9 @@ module.exports = {
 				// ],
         use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
-					use: [{
+					use: [
+
+						{
               loader: "css-loader",
               options: {
                 sourceMap: true,
@@ -44,6 +45,7 @@ module.exports = {
                 url: false
               }
             },
+						'postcss-loader',
             {
               loader: "sass-loader",
               options: {

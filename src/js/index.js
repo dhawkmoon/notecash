@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+import '../sass/core.scss';
+
 window.$ = $
 import './dropdown.js';
 import './modals.js';
