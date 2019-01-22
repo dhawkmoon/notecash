@@ -7184,7 +7184,7 @@ h2 {
 .is-loading .spinner {
   display: block; }
 
-.is-loading .btn span {
+.is-loading .btn span:not([class]) {
   opacity: 0; }
 
 form.is-success *:not(.message),
@@ -9122,7 +9122,8 @@ footer {
   bottom: 0;
   height: 18px; }
 
-.spinner > div {
+.spinner > span {
+  display: block;
   width: 18px;
   height: 18px;
   background-color: #fff;
