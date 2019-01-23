@@ -12,6 +12,9 @@ module.exports = {
     filename: './js/bundle.js',
 		publicPath: '/dist/',
   },
+	externals: {
+		jquery: 'jQuery',
+	},
   devtool: "source-map",
   module: {
     rules: [
