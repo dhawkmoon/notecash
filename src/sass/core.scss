@@ -3,12 +3,12 @@
 //Sourcess
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-//Mixins
+//Mixin
 @import 'mixins/_basic';
 //Theme
+@import 'fonts/_typo';
 @import 'fonts/_index';
 @import 'icons/_index';
-@import 'fonts/_typo';
 
 @import 'theme/_animations';
 @import 'theme/_btns';

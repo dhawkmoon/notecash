@@ -41,6 +41,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap-sass": "^3.0.0",
+    "cssnano": "^4.1.8",
     "jquery-mask-plugin": "^1.14.15",
     "popper.js": "^1.14.5",
     "swiper": "^4.4.2"
