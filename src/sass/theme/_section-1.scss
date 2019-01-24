@@ -317,6 +317,19 @@
     width: 628px;
     height: 368px;
     background-color: black;
+		cursor: pointer;
+		&.lazy-bg-loaded {
+			background-image: url('../i/s1-cover.jpg');
+		}
+		.sk-fading-circle {
+			display: none;
+		}
+		&.is-loading {
+			background-image: none !important;
+			.sk-fading-circle {
+				display: block;
+			}
+		}
     @media all and (max-width: 767px ) {
 		  left: 0;
 		  top: 2.5vw;
