@@ -279,3 +279,12 @@ var animatePhoneXS = function(){
 
 $w.on( 'scroll', animatePhone )
 $b.on( 'scroll', animatePhoneXS )
+
+
+$(document).ready( function(){
+
+	if( $(window).width() >= 768 ) {
+		$('#map-holder').html( '<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abc8de033ccad85b440e3effd6cae68f1c65fc86e6c60ed84d63420daa76ea4ff&amp;width=100%25&amp;height=570&amp;lang=ru_RU&amp;scroll=true"></script>' )
+	}
+
+} )

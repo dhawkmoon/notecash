@@ -14,6 +14,7 @@ module.exports = {
   },
 	externals: {
 		jquery: 'jQuery',
+		swiper: 'Swiper',
 	},
   devtool: "source-map",
   module: {
