@@ -75,15 +75,6 @@ if( $(window).width() <= 768 ) {
 	  											***/
 	$(document).ready( function($) {
 
-		/***
-			MAPS
-				***/
-		if( $(window).width() > 768 ) {
-			$('#map').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abc8de033ccad85b440e3effd6cae68f1c65fc86e6c60ed84d63420daa76ea4ff&amp;width=100%25&amp;height=570&amp;lang=ru_RU&amp;scroll=false"></script>')
-		}
-		else {
-			$('#map').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9b56d2dccc1a9c2d7c4a2288b40b6b28b565495af943f64b026e4ccc72fd012c&amp;width=100%25&amp;height=320&amp;lang=ru_RU&amp;scroll=false"></script>')
-		}
 
 		$( '.route__step' ).on( 'mouseenter', function() {
 
@@ -288,16 +279,3 @@ var animatePhoneXS = function(){
 
 $w.on( 'scroll', animatePhone )
 $b.on( 'scroll', animatePhoneXS )
-
-
-$( document ).ready( function($){
-
-
-		$('#video-holder').on('click', function(){
-			$(this).addClass( 'is-loading' )
-			$(this).load( '/s1-video.html #video' )
-		})
-
-
-
-} );
