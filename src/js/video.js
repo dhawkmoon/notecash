@@ -14,6 +14,12 @@ function getRoutesSlider()
 /*** VIDEO ***/
 if( $(window).width() > 640 ) {
 
+	// 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 	window.onYouTubeIframeAPIReady = function() {
 		//console.log('I\'am ready')
@@ -22,8 +28,8 @@ if( $(window).width() > 640 ) {
       width: '508',
       videoId: '0E9TOPqcttg',
       events: {
-        'onReady': player.onPlayerReady.bind(this),
-        'onStateChange': player.initTimer.bind(this)
+        'onReady': player.onPlayerReady.bind(player),
+        'onStateChange': player.initTimer.bind(player)
       }
     });
   }

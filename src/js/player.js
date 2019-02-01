@@ -50,7 +50,7 @@ var Player = function()
 			$('.route__step--active a').removeClass('paused')
 			this.timer = setInterval( function(){
 				this.switchLabels( this.player.getCurrentTime() )
-			}, 300 )
+			}.bind( this ), 300 )
 		}
 		else {
 			if( e.data == 2 ) {
@@ -74,7 +74,7 @@ var Player = function()
 			}
 			else if( typeof this.labels[t+1] != 'undefined' && time >= this.labels[t].time && time < this.labels[t+1].time ) {
 				//console.log('middle:' + labels[t].time)
-				if( this.currentLabel != this.labels.indexOf( lthis.abels[t] ) ) {
+				if( this.currentLabel != this.labels.indexOf( this.labels[t] ) ) {
 					this.currentLabel = this.labels.indexOf( this.labels[t] )
 					this.labels[t].element.find( 'a' ).trigger('reached')
 				}
