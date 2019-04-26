@@ -6,9 +6,11 @@
 
 	define( 'BASIC_TO', 'lihaletov.dm@gmail.com' );
 
+//	define( 'BASIC_TO', 'dhawkmoon@mail.ru' );
+
 	define( 'BASIC_SUBJECT', 'Заказ ноутбука с сайта notecash.ru' );
 
-	define( 'BASIC_UPLOAD_SIZE', 1024*1024*3 );
+	define( 'BASIC_UPLOAD_SIZE', 1024*1024*32 );
 
 	define( 'FORM_FIELDS',
 		[
@@ -95,7 +97,7 @@
 	
 	define( 'USER_LOGIN', 'spriggun140493@gmail.com' );
 	
-	define( 'USER_HASH', '11e6a551ad972ecd6796bf9325080fc54e7c7409' );
+	define( 'USER_HASH', '00c182be57cb515fba12ff977b9bd800aeb12be0' );
 	
 	define( 'CF_PHONE', 226253 );
 	
