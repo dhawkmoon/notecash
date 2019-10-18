@@ -14,7 +14,7 @@ var _jquery = __webpack_require__(/*! jquery */ "jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _swiper = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
+var _swiper = __webpack_require__(/*! swiper */ "swiper");
 
 var _swiper2 = _interopRequireDefault(_swiper);
 

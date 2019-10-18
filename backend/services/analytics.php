@@ -52,7 +52,7 @@
 				}
 
 				$tags[] = $c[4];
-
+				$tags[] = $c[13];
 			}
 
 			return implode( ',', array_unique( $tags ) );
