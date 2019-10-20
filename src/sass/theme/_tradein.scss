@@ -1,0 +1,20 @@
+.tradein {
+  margin-top: -85px;
+  width: 592px;
+  height: 389px;
+  background-image: url(../i/tradein.png);
+  background-size: cover;
+  @media all and(max-width: 768px ) {
+    margin-top: 60px;
+  }
+}
+
+#tradein {
+  border-bottom: 1px solid hsla(0,0%,100%,.2);
+  h2 {
+    margin-top: 25px;
+    @media all and(max-width: 768px ) {
+      margin-top: 0;
+    }
+  }
+}
