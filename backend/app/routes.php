@@ -60,7 +60,7 @@
 				$fields = validateFormFields( FORM_FIELDS );
 				
                 if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
-                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>.'];
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (499) 647-99-87</span>.'];
                 }
 				if( count( $fields ) > 0 ) {
 					
@@ -107,7 +107,7 @@
 			    }
 			    
                 if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
-                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>.'];
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (499) 647-99-87</span>.'];
                 }
 				if( count( $fields ) > 0 ) {
 					
@@ -151,7 +151,7 @@
 				// print_r( $_POST );
 				// print_r( $fields );
                 if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
-                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>'];
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (499) 647-99-87</span>'];
                 }
 				if( count( $fields ) > 0 ) {
 
@@ -252,7 +252,7 @@
 				// print_r( $fields );
 
                 if( isBadPhone( $fields['phone'] ) ) { //filter BAD and SCUM phones
-                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (495) 477-96-83</span>'];
+                    return ['code'=> 403, 'body' => 'К сожалению, введенный Вами номер телефона содержит неправильный код* оператора.<span style="font-size: 13px; display: block !important; border-top: 1px dashed #3f7592; padding-top: 5px; margin-top: 5px;">* Если Ваш телефон содержит действующий код оператора, но Вы видите данное сообщение, свяжитесь с нами по телефону +7 (499) 647-99-87</span>'];
                 }
 
 				if( count( $fields ) > 0 ) {
