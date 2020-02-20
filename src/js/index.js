@@ -9,5 +9,6 @@ import './common.js';
 import './forms.js';
 import './video.js';
 import './yall.min.js';
+import './quiz-dropdown.js'
 
 document.addEventListener("DOMContentLoaded", window.yall);

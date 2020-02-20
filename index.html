@@ -229,7 +229,8 @@
 											<h2 id="brand">Выберете бренд вашего ноутбука</h2>
 										</div>
 										<div class="col-lg-5 col-md-5 text-right">
-											<h2 id="log">1/2</h2>
+											<!--<img src="./src/i/quiz-figure-1.png" alt="">-->
+											<h2 id="log">1 <span>/2</span></h2>
 										</div>
 									</div>
 									<div class="row">
@@ -239,15 +240,23 @@
 									</div>
 									<div class="row text-left">
 										<div class="col">
-											<select class="first-select" name="1">
-												<option value="1"></option>
-												<option value="2"></option>
-											</select>
+											<div class="quiz-floating-label">
+												<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
+												<div class="quiz-dropdown">
+													<div class="quiz-dropdown__current"></div>
+													<label>Не выбрано... </label>
+													<div class="quiz-dropdown__items-wrapper">
+														<div class="quiz-dropdown__item">Asus</div>
+														<div class="quiz-dropdown__item">Acer</div>
+														<div class="quiz-dropdown__item">Apple</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="row text-right">
 										<div class="col">
-											<button type="button" name="button_1">СЛЕДУЮЩИЙ ШАГ ></button>
+											<button type="button" name="button_1" class="btn btn-primary">СЛЕДУЮЩИЙ ШАГ ></button>
 										</div>
 									</div>
 							</div>
