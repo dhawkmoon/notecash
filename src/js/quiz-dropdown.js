@@ -6,41 +6,23 @@ import $ from 'jquery';
 
 $(document).ready(function($){
 
-	var dropdown = {
-		open: function(e) {
-			e.preventDefault();
-			$(this).addClass('quiz-dropdown--opened')
-		},
-		closeAll: function(e) {
-			//e.preventDefault();
-			e.stopPropagation()
-			//console.log($(this), e.currentTarget)
+	var Quiz = function() {
+		this.$steps = $('.quiz-step')
 
-			if( !$(e.currentTarget).hasClass('quiz-dropdown') && !$(e.currentTarget).hasClass('quiz-dropdown__current') && !$(e.currentTarget).hasClass('quiz-dropdown__item') ) {
+		this.state = {
+			currentStep: 0,
+		}
 
-				$('.quiz-dropdown--opened').removeClass('quiz-dropdown--opened')
-			}
-		},
-		toggle: function(e) {
-			e.preventDefault()
-			e.stopPropagation()
-			if( $(this).hasClass('quiz-dropdown--opened') ) {
-				$(this).removeClass('quiz-dropdown--opened')
-			}
-			else {
-				$(this).addClass('quiz-dropdown--opened')
-			}
-		},
-		setVal: function(e) {
-			$(this).parents('.quiz-dropdown').find('.quiz-dropdown__current').text( $(this).text() ).addClass('quiz-dropdown__current--not-empty')
-			//$(this).data( 'value', $(this).text() )
-			$(this).parents('quiz-floating-label').find('input').val( $(this).text() )
-			$(this).parents('quiz-floating-label').find('input').trigger('change')
+		this.setStep( i )
+		{
+			this.state.currentStep = i
+			this.$steps.removeClass('.quiz-step--active')
+			this.$steps.eq(i).addClass('.quiz-step--active')
 		}
 	}
 
-	$(document).on('click', '.quiz-dropdown', dropdown.toggle )
+	quiz = new Quiz()
 
-	$(document).on('click', '.quiz-dropdown__item', dropdown.setVal)
-	$(window).on('click', dropdown.closeAll)
+	quiz.setStep(2)
+
 });
