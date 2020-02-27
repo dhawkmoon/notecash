@@ -5,6 +5,7 @@ import $ from 'jquery';
 					***/
 
 $(document).ready(function($){
+	var i = 0;
 
 	var Quiz = function() {
 		this.$steps = $('.quiz-step')
@@ -23,6 +24,6 @@ $(document).ready(function($){
 
 	quiz = new Quiz()
 
-	quiz.setStep(2)
+	quiz.setStep(0)
 
 });
