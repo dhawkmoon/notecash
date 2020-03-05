@@ -1,11 +1,8 @@
 
-@mixin text-in-quiz {
-  font-size: 28px;
-}
 .quiz-bg{
 	padding-top: 65px;
 	padding-bottom: 65px;
-	height: 900px;
+	height: 100%;
 	background-image: url("../i/bg-quiz.png");
 	h2 {
 		margin-top: 0;
@@ -14,33 +11,39 @@
 }
 
 .quiz-step__header{
-  padding-bottom: 10px;
+  padding-bottom: 4px;
+	position: relative;
 
   .quiz-title-1{
-    display: inline-block;
-    @include text-in-quiz;
+    font-size: 28px;
     @include proximaLight;
-    color: #fff;
+    color: $basicFontColor;
     .title-left-1{
-      float: left;
+      text-align: left;
+			display: inline-block;
     }
     img {
-      position: absolute;
+      position: relative;
       z-index: 2;
-      right: 200px;
-      top: 820px;
+			left: 295px;
       }
     .number-step-1{
-      float: right;
-      margin-left: 320px;
+			display: inline-block;
+			left: 230px;
+			position: relative;
+			z-index: 3;
       span {
         font-size: 24px;
       }
     }
   }
+		a{
+			position: absolute;
+    	left: -45px;
+    	top: 15px;
+		}
     .quiz-title-2{
-      display: inline-block;
-      @include text-in-quiz;
+      font-size: 28px;
       @include proximaLight;
       color: #fff;
       .button-back{
@@ -50,17 +53,20 @@
         top: 835px;
       }
       .title-left-2{
-        float: left;
+        display:inline-block;
+				text-align: left;
       }
-      img {
-        position: absolute;
-        z-index: 2;
-        right: 200px;
-        top: 820px;
-        }
+			img {
+	      position: relative;
+	      z-index: 2;
+				left: 500px;
+	      }
       .number-step-2{
-        float: right;
-        margin-left: 525px;
+        display: inline-block;
+				text-align:right;
+				position: relative;
+	      z-index: 2;
+        left: 435px;
         span {
           font-size: 24px;
         }
@@ -76,7 +82,7 @@
       .title3-right{
         display: inline-block;
         font-size: 28px;
-        color: #fff;
+        color: $basicFontColor;
         vertical-align: middle;
         margin-left: 10px;
         @include proximaLight;
@@ -87,6 +93,7 @@
       font-size: 28px;
       @include proximaLight;
       color: $basicFontColor;
+			padding-bottom: 10px;
     }
   border-bottom: 1px solid hsla(0,0%,100%,.2);
 }
@@ -120,232 +127,58 @@
 }
 
 .quiz-step__body{
-  .quiz-floating-label {
-  	position: relative;
-  	display: inline-block;
-    vertical-align: top;
-    height: 50px;
-    width: 388px;
-    top: 30px;
-    bottom: 160px;
-    border: none;
-    border-radius: 50px;
-    min-width: 130px;
-    outline: none;
-    font-size: 16px;
-    padding: 0 30px;
-  	background-color: white;
-  	&.has-success {
-  		background-color: #d1ffd1;
-  		input,
-  		textarea {
-  			background-color: #d1ffd1;
-  		}
-  	}
-  	&.has-error {
-  		background-color: #ffd1d1;
-  		input,
-  		textarea {
-  			background-color: #ffd1d1;
-  		}
-  	}
-  	.error-text {
-  		position: absolute;
-      top: -40px;
-      color: #ce0000;
-      background-color: rgba(255,255,255,0.9);
-      display: block;
-      padding: 3px 10px;
-      left: 25px;
-      //border-left: 4px solid #ce0000;
-      font-size: 16px;
-      white-space: nowrap;
-      @include fadeIn(.2s);
-      cursor: pointer;
-      -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
-              box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
-      &:after {
-  			content: '';
-  			display: block;
-  			position: absolute;
-  			left: 15px;
-  			bottom: -20px;
-  			border: 10px solid rgba(255,255,255,0.9);
-  			width: 2px;
-  			height: 1px;
-  			border-bottom-color: transparent;
-  			border-right-color: transparent;
-      }
-      &:before {
-  			content: '';
-  	    display: block;
-  	    position: absolute;
-  	    left: 18px;
-  	    bottom: -20px;
-  	    border: 10px solid rgba(0, 0, 0, 0.2);
-  	    width: 2px;
-  	    height: 1px;
-  	    border-bottom-color: transparent;
-  	    border-right-color: transparent;
-      }
-  	}
-  	&--textarea {
-  		height: auto;
-  		padding: 15px 30px;
-  		width: 100%;
-  		border-radius: 25px;
-  		textarea {
-  			border: none;
-  			outline: none;
-  			width: 100%;
-  			resize: none;
-  		}
-  	}
-  	cursor: text;
-  	input {
-  		position: relative;
-  		top:15px;
-  		border: none;
-  		outline: none;
-  		width: 100%;
-  	}
-  	label {
-  		position: absolute;
-  		left: 30px;
-  		top: 14px;
-  		font-size: 16px;
-  		@include proximaLight;
-  		color: #999;
-  		-webkit-transition: .1s linear;
-  		transition: .1s linear;
-  		cursor: text;
-  	}
-  	input.not-empty + label,
-  	textarea.not-empty + label,
-  	.file-current.not-empty + label
-  	{
-  		font-size: 12px;
-  		color: black;
-  		top: 2px;
-  	}
-  	& + .btn {
-  		position: relative;
-  		position: relative;
-  		min-width: 190px;
-  		margin-left: -45px;
-  		@media all and (max-width: 767px) {
-  			margin-left: 0;
-  			margin-top: 15px;
-  			min-width: 235px;
-  		}
-  	}
-  	&--file {
-  		input{
-  			display: none;
-  		}
-  		.btn {
-  			min-width: 120px;
-        width: auto !important;
-  	    position: absolute;
-  	    right: 0;
-  	    top: 0;
-  	    height: 48px;
-        margin-top: 0 !important;
-  		}
-  	}
-  }
-  .file-current {
-  	padding: 15px 0;
-    display: block;
-    text-align: left;
-  }
-
-  #modal-form-button {
-    position: relative;
-  }
-
-   .quiz-dropdown{
-     height: 50px;
-     //width: 33%;
-     cursor: pointer;
-   	&__current {
-   		padding: 15px 0;
-   		cursor: pointer;
-   		&--not-empty + label {
-   			font-size: 12px;
-   			color: black;
-   			top: 2px;
-   		}
-   		&:after {
-   	    content: '';
-   	    background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjAiIHk9IjAiIHdpZHRoPSIzNy4yIiBoZWlnaHQ9IjE5LjQiIHZpZXdCb3g9IjAsIDAsIDM3LjIsIDE5LjQiPg0KICA8ZyBpZD0iTGF5ZXJfMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM4Ny4yLCAtMjgwLjgpIj4NCiAgICA8cGF0aCBkPSJNMzkyLjcsMjg2LjMgTDQwNi4zLDI5NS43IEw0MTkuOSwyODYuMyIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiNGN0JFMzMiIHN0cm9rZS13aWR0aD0iMiIvPg0KICA8L2c+DQo8L3N2Zz4NCg==');
-   	    background-size: cover;
-   	    background-repeat: no-repeat;
-   	    position: absolute;
-   	    display: block;
-   	    right: 20px;
-   	    top: 19px;
-   	    width: 20px;
-   	    height: 10px;
-   	    -webkit-transition: .3s linear;
-   	    transition: .3s linear;
-   		}
-   	}
-
-   	&--opened &__current {
-   		&:after {
-   			-webkit-transform: rotate(180deg);
-   			        transform: rotate(180deg);
-   		}
-   	}
-
-   	&__items-wrapper {
-   		display: none;
-   		background-color: white;
-       position: absolute;
-       width: calc(100% - 40px);
-       margin: 0 -10px;
-       top: 48px;
-   		z-index: 1;
-   		max-height: 250px;
-       overflow: auto;
-       -webkit-overflow-scrolling: touch;
-       -webkit-box-shadow: 2px 4px 7px 1px rgba(192,192,192, .2);
-               box-shadow: 2px 4px 7px 1px rgba(192,192,192, .2);
-   	}
-   	&--opened &__items-wrapper {
-   		display: block;
-   	}
-   	&__item {
-   		cursor: pointer;
-   		padding: 20px;
-   		border: 1px solid #f7f7f7;
-   		&:not(:first-child){
-   			border-top:none;
-   		}
-   		&:hover {
-   			background-color: $primaryColor;
-   			border-color: $primaryColor;
-   			color: white;
-   		}
-   	}
-  }
+	.quiz-dropdown-1, .quiz-dropdown-2{
+		position: relative;
+		padding-bottom: 90px;
+		.quiz-floating-label {
+	  	top: 30px !important;
+			.quiz-dropdown{
+	      height: 50px !important;
+	      width: 388px !important;
+	    	 cursor: pointer;
+			 }
+	  }
+	}
   .body-title-3{
     text-align: center;
     padding-top: 20px;
-    color: #fff;
+		padding-bottom: 45px;
+    color: $basicFontColor;
     font-size: 32px;
+		line-height: 1.2;
     @include proximaLight;
     span {
       @include proximaRegular;
       color: $primaryColor;
     }
-    img{
-      margin-left: 10px;
-      vertical-align: baseline;
-    }
+		a{
+			position:relative;
+			img{
+	      margin-left: 10px;
+	      vertical-align: baseline;
+			}
+				.info-mess{
+					display: none;
+				}
+				&:hover{
+					.info-mess{
+					display:block !important;
+					position: absolute;
+					bottom: 40px;
+					right: -97px;
+					width: 220px;
+					height: 82px;
+					background-image: url('../i/info.png');
+					z-index: 5;
+					@include proximaRegular;
+					font-size: 14px;
+					color: $basicFontColor;
+			    }
+				}
+		}
   }
   .body-title-top-4{
+		padding-top:90px;
     display:block;
     text-align: center;
     img{
@@ -370,16 +203,47 @@
     font-size: 18px;
     color: $basicFontColor;
   }
+	.body-5{
+		position: relative;
+			.row{
+				margin: 0;
+			}
+	}
+	.first-dropdown, .third-dropdown, .second-dropdown, .fourth-dropdown{
+		position: relative !important;
+		min-width: 388px !important;
+		padding-left: 0;
+		padding-right: 0;
+		left: 0;
+		right: 0;
+		top: 30px;
+		bottom: 0;
+	}
+	.second-dropdown, .fourth-dropdown{
+		left: -155px !important;
+	}
+	.fourth-dropdown, .third-dropdown{
+		top: 60px !important;
+	}
+
   .text-body-5{
+		position: relative;
+		a{
+			img{
+				position: absolute;
+				left: -30px;
+				top: 15px;
+			}
+		}
     color: $basicFontColor;
     @include proximaLight;
     .list-5{
         font-size: 20px;
     }
-    #list-item-1{
-      padding-bottom: 15px;
-    }
-    #list-item-2{
+		#list-item-1{
+			padding-top: 15px;
+		}
+    #list-item-1, #list-item-2{
       padding-bottom: 15px;
     }
     #list-item-3{
@@ -389,9 +253,9 @@
       a{
         font-size: 18px;
         color: inherit;
+				border-bottom: 1px solid hsla(0,0%,100%,.2);
         &:link{
-          text-decoration: underline;
-          text-decoration-color: hsla(0,0%,100%,.2);
+          text-decoration: none;
         }
       }
     }
@@ -405,32 +269,40 @@
 }
 
 .quiz-step__footer{
-  .butt-1{
-    width:200px;
-    margin-left: 610px;
-    margin-top: 80px;
+	.butt-2{
+		margin-left: 287px !important;
+		vertical-align: text-bottom;
+	}
+  .butt-1, .butt-2{
+		display: inline-block;
+		margin-left: 620px;
+		a{
+				min-width: 200px !important;
+			img{
+				position: relative;
+				left: 5px;
+				vertical-align: middle;
+			}
+		}
+
+
   }
   .footer-text-2{
-    float: left;
+		display: inline-block;
+    text-align: left;
     a {
       color: #fff;
       font-size: 18px;
       line-height: 0.5;
       @include proximaLight;
-      &:link{
-        text-decoration: underline;
-        text-decoration-color:hsla(0,0%,100%,.2);
-      }
+			border-bottom: 1px solid hsla(0,0%,100%,.2);
+			&:hover{
+				text-decoration: none;
+			}
     }
-  }
-  .butt-2{
-    width:200px;
-    margin-left: 610px;
-    margin-top: 80px;
   }
   .footer-text-3{
     display: block;
-    padding-top: 45px;
     .text-3-left{
       display: inline-block;
       text-align: left;
@@ -438,15 +310,19 @@
         @include proximaLight;
         color: $basicFontColor;
         font-size: 18px;
+				border-bottom: 1px solid hsla(0,0%,100%,.2);
         &:link{
-          text-decoration: underline;
-          text-decoration-color:hsla(0,0%,100%,.2);
+          text-decoration: none;
         }
       }
     }
     .butt-3{
       display: inline-block;
-      margin-left: 390px;
+			margin-left: 424px;
+    	vertical-align: middle;
+			a{
+				min-width: 190px;
+			}
     }
   }
   .footer-text-4{
@@ -467,5 +343,8 @@
   .butt-4{
     text-align: center;
     padding-top: 25px;
+		a{
+			min-width: 190px;
+		}
   }
 }

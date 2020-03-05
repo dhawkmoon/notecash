@@ -1,10 +1,8 @@
-import $ from 'jquery';
-
 /***
 	DROPDOWNS
 					***/
 
-$(document).ready(function($){
+jQuery(document).ready(function($){
 
 	var dropdown = {
 		open: function(e) {
