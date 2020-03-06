@@ -205,22 +205,25 @@
   }
 	.body-5{
 		position: relative;
-			.row{
-				margin: 0;
-			}
 	}
 	.first-dropdown, .third-dropdown, .second-dropdown, .fourth-dropdown{
 		position: relative !important;
 		min-width: 388px !important;
 		padding-left: 0;
 		padding-right: 0;
-		left: 0;
+		left: -15px;
 		right: 0;
 		top: 30px;
 		bottom: 0;
+		img{
+			position: absolute;
+			z-index: 10;
+			top: 12px;
+			right: 55px;
+		}
 	}
 	.second-dropdown, .fourth-dropdown{
-		left: -155px !important;
+		left: -170px !important;
 	}
 	.fourth-dropdown, .third-dropdown{
 		top: 60px !important;
