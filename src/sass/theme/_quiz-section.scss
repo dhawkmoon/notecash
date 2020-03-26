@@ -1,4 +1,5 @@
 
+@media all and (min-width: 992px){
 .quiz-bg{
 	padding-top: 65px;
 	padding-bottom: 65px;
@@ -9,40 +10,128 @@
 		margin-bottom: 50px;
 	}
 }
+}
+@media all and (max-width: 991px){
+.quiz-bg{
+	padding-top: 35px;
+	padding-bottom: 35px;
+	height: 100%;
+	background-image: url("../i/bg-quiz.png");
+	h2 {
+		margin-top: 0;
+		margin-bottom: 50px;
+	}
+}
+}
+@media all and (max-width: 768px){
+.quiz-bg{
+	padding-top: 35px;
+	padding-bottom: 35px;
+	height: 100%;
+	background-image: url("../i/bg-quiz.png");
+	h2 {
+		margin-top: 0;
+		margin-bottom: 40px;
+		font-size: 30px !important;
+	}
+}
+}
 
 .quiz-step__header{
   padding-bottom: 4px;
 	position: relative;
 
   .quiz-title-1{
-    font-size: 28px;
     @include proximaLight;
     color: $basicFontColor;
     .title-left-1{
       text-align: left;
 			display: inline-block;
     }
-    img {
-      position: relative;
-      z-index: 2;
-			left: 295px;
-      }
-    .number-step-1{
-			display: inline-block;
-			left: 230px;
+		img{
+			position: relative;
+			z-index: 2;
+		}
+		.number-step-1{
 			position: relative;
 			z-index: 3;
-      span {
-        font-size: 24px;
-      }
-    }
+			display: inline-block;
+		}
+		@media all and (max-width: 2000px){
+			font-size: 28px;
+	    img {
+				left: 295px;
+	      }
+	    .number-step-1{
+				left: 230px;
+	      span {
+	        font-size: 24px;
+	      }
+	    }
+		}
+		@media all and (max-width: 991px){
+			font-size: 24px;
+			img {
+				position: relative;
+				display:inline-block;
+				left: 85px;
+	      }
+	    .number-step-1{
+				position: relative;
+				display: inline-block;
+				left:25px;
+	      span {
+	        font-size: 24px;
+	      }
+	    }
+		}
+		@media all and (max-width: 768px){
+			font-size: 20px;
+
+			img {
+				position: absolute;
+				width: 45px;
+				height: 35px;
+				left: 91%;
+				top: -5px;
+	      }
+	    .number-step-1{
+				position: absolute;
+				left: 93%;
+				top: -3px;
+	      span {
+	        font-size: 16px;
+	      }
+	    }
+		}
+		@media all and (max-width: 576px){
+			font-size: 20px;
+			.title-left-1{
+	      text-align: center;
+				display: block;
+	    }
+			img {
+				display: none;
+	      }
+	    .number-step-1{
+				display: none;
+	      }
+	    }
   }
 		a{
 			position: absolute;
     	left: -45px;
     	top: 15px;
 		}
+		@media all and (max-width: 768px){
+			a{
+				position: absolute;
+	    	left: -45px;
+	    	top: 0px;
+			}
+		}
     .quiz-title-2{
+			position: relative;
       font-size: 28px;
       @include proximaLight;
       color: #fff;
@@ -56,21 +145,64 @@
         display:inline-block;
 				text-align: left;
       }
-			img {
-	      position: relative;
-	      z-index: 2;
-				left: 500px;
-	      }
-      .number-step-2{
-        display: inline-block;
-				text-align:right;
+			img{
 				position: relative;
-	      z-index: 2;
-        left: 435px;
-        span {
-          font-size: 24px;
-        }
-      }
+				z-index: 2;
+			}
+			.number-step-2{
+				display: inline-block;
+				position: relative;
+				z-index: 2;
+				span {
+					font-size: 24px;
+				}
+			}
+			@media all and (max-width: 2000px){
+				img {
+					left: 500px;
+		      }
+	      .number-step-2{
+	        left: 435px;
+	      }
+			}
+			@media all and (max-width: 991px){
+				img {
+					left: 230px;
+		      }
+	      .number-step-2{
+	        left: 165px;
+	      }
+			}
+			@media all and (max-width: 768px){
+				font-size: 20px;
+				img {
+					position: absolute;
+					width: 45px;
+					height: 35px;
+					left: 91%;
+					top: -5px;
+		      }
+	      .number-step-2{
+					position: absolute;
+					left: 93%;
+					top: -3px;
+		      span {
+		        font-size: 16px;
+		      }
+	      }
+			}
+			@media all and (max-width: 576px){
+				.title-left-2{
+		      text-align: center;
+					display: block;
+		    }
+				img {
+					display: none;
+		      }
+		    .number-step-2{
+					display: none;
+		      }
+		    }
     }
     .quiz-title-3{
       display:block;
@@ -87,17 +219,32 @@
         margin-left: 10px;
         @include proximaLight;
       }
+			@media all and (max-width: 992px) {
+				.title3-right{
+					font-size: 24px;
+				}
+			}
+			@media all and (max-width: 576px) {
+				.title3-right{
+					font-size: 20px;
+				}
+			}
     }
+
     .quiz-title-4{
       text-align: center;
       font-size: 28px;
       @include proximaLight;
       color: $basicFontColor;
 			padding-bottom: 10px;
+			@media all and (max-width: 992px) {
+				font-size: 24px;
+				padding-bottom: 0;
+			}
     }
-  border-bottom: 1px solid hsla(0,0%,100%,.2);
-}
+  	border-bottom: 1px solid hsla(0,0%,100%,.2);
 
+}
 
 .quiz {
   //background-color: #3772d9;
@@ -111,11 +258,10 @@
 
   background-size: 100%;
   border-radius: 20px;
-  &-wrapper {
-	  width: 945px;
-	  margin-left: auto;
-	  margin-right: auto;
-  }
+		&-wrapper {
+		  margin-left: auto;
+		  margin-right: auto;
+		}
 
   &-step {
 	  height: 320px;
@@ -125,19 +271,81 @@
 	  }
   }
 }
+@media all and (min-width: 992px){
+.quiz {
+	&-wrapper {
+		  width: 945px;
+		}
+
+  &-step {
+	  height: 320px;
+  }
+}
+}
+
+@media all and (max-width: 991px){
+.quiz {
+
+	&-wrapper {
+		  width: 90%;
+		}
+  &-step {
+	  height: 320px;
+  }
+}
+}
+@media all and (max-width: 768px){
+.quiz {
+		&-wrapper {
+		  width: 90%;
+		}
+  &-step {
+	  height: 320px;
+  }
+}
+}
+
+
 
 .quiz-step__body{
 	.quiz-dropdown-1, .quiz-dropdown-2{
 		position: relative;
-		padding-bottom: 90px;
-		.quiz-floating-label {
-	  	top: 30px !important;
-			.quiz-dropdown{
-	      height: 50px !important;
-	      width: 388px !important;
-	    	 cursor: pointer;
-			 }
-	  }
+		@media all and (max-width: 2000px){
+			padding-bottom: 90px;
+			.quiz-floating-label {
+		  	top: 30px !important;
+				.quiz-dropdown{
+		      height: 50px !important;
+		      width: 388px !important;
+		    	 cursor: pointer;
+				 }
+		  }
+		}
+		@media all and (max-width: 991px){
+			.quiz-floating-label {
+		  	top: 30px !important;
+				left: 50%;
+				transform: translate(-50%, 15px);
+				.quiz-dropdown{
+		      height: 50px !important;
+		      width: 388px !important;
+		    	 cursor: pointer;
+				 }
+		  }
+		}
+		@media all and (max-width: 576px){
+			padding-bottom: 60px;
+			.quiz-floating-label {
+				top: 15px !important;
+				left: 50%;
+				transform: translate(-50%, 15px);
+				.quiz-dropdown{
+		      height: 50px !important;
+		      width: 300px !important;
+		    	 cursor: pointer;
+				 }
+		  }
+		}
 	}
   .body-title-3{
     text-align: center;
@@ -176,6 +384,17 @@
 			    }
 				}
 		}
+		@media all and (max-width: 992px){
+			div{
+				font-size: 24px;
+			}
+		}
+		@media all and (max-width: 992px){
+			padding-bottom: 25px;
+			div{
+				font-size: 20px;
+			}
+		}
   }
   .body-title-top-4{
 		padding-top:90px;
@@ -192,6 +411,9 @@
       vertical-align: middle;
       margin-left: 10px;
       @include proximaLight;
+			@media all and (max-width: 992px){
+				font-size: 24px;
+			}
     }
   }
   .body-title-bottom-4{
@@ -202,6 +424,9 @@
     @include proximaLight;
     font-size: 18px;
     color: $basicFontColor;
+		@media all and (max-width: 992px){
+			font-size: 16px;
+		}
   }
 	.body-5{
 		position: relative;
@@ -209,12 +434,8 @@
 	.first-dropdown, .third-dropdown, .second-dropdown, .fourth-dropdown{
 		position: relative !important;
 		min-width: 388px !important;
-		padding-left: 0;
-		padding-right: 0;
 		left: -15px;
-		right: 0;
 		top: 30px;
-		bottom: 0;
 		img{
 			position: absolute;
 			z-index: 10;
@@ -222,27 +443,69 @@
 			right: 55px;
 		}
 	}
-	.second-dropdown, .fourth-dropdown{
-		left: -170px !important;
+	@media all and (max-width: 2000px){
+		.second-dropdown, .fourth-dropdown{
+			left: -170px !important;
+		}
+		.fourth-dropdown, .third-dropdown{
+			top: 60px !important;
+		}
 	}
-	.fourth-dropdown, .third-dropdown{
-		top: 60px !important;
+	@media all and (max-width: 1200px){
+		.second-dropdown, .fourth-dropdown{
+			left: -70px !important;
+		}
+	}
+	@media all and (max-width: 992px){
+
+		.first-dropdown, .third-dropdown{
+			left: 70px !important;
+		}
+		.second-dropdown, .fourth-dropdown{
+			top: 45px !important;
+			left: 70px !important;
+		}
+		.fourth-dropdown{
+			top: 75px !important;
+		}
+	}
+	@media all and (max-width: 767px){
+		.first-dropdown, .third-dropdown, .second-dropdown, .fourth-dropdown{
+			min-width: 270px !important;
+		}
+		.first-dropdown{
+			top: 15px !important;
+		}
+		.second-dropdown{
+				top: 30px !important;
+		}
+		.third-dropdown{
+				top: 45px !important;
+		}
+		.fourth-dropdown{
+				top: 60px !important;
+		}
 	}
 
-  .text-body-5{
+	.body-5{
 		position: relative;
-		a{
-			img{
-				position: absolute;
-				left: -30px;
-				top: 15px;
+		.back-2{
+			a{
+				img{
+					position: absolute;
+					left: -45px;
+					top: 15px;
+				}
 			}
 		}
+  .text-body-5{
+		position: relative;
+		display: inline-block;
     color: $basicFontColor;
     @include proximaLight;
-    .list-5{
-        font-size: 20px;
-    }
+		width: 280px;
+    font-size: 20px;
+		text-align: left;
 		#list-item-1{
 			padding-top: 15px;
 		}
@@ -252,33 +515,97 @@
     #list-item-3{
       padding-bottom: 45px;
     }
-
-      a{
-        font-size: 18px;
-        color: inherit;
-				border-bottom: 1px solid hsla(0,0%,100%,.2);
-        &:link{
-          text-decoration: none;
-        }
-      }
-    }
+		@media all and(max-width: 992px){
+				 display: block;
+	       text-align: center;
+				 width: 500px !important;
+				#list-item-3, #list-item-1, #list-item-2{
+	      	padding-bottom: 5px;
+				}
+		}
+		@media all and(max-width: 767px){
+	        font-size: 16px;
+					width: 100% !important;
+					transform: translate(-50%);
+					left: 50%;
+		}
+		@media all and(max-width: 576px){
+	        //text-align: center !important;
+					width: 350px;
+			}
+  	}
+		.but-5{
+			position: absolute;
+			bottom: 10px;
+			a{
+					bottom: 0px;
+	        font-size: 18px;
+					@include proximaLight;
+	        color: $basicFontColor;
+					border-bottom: 1px solid hsla(0,0%,100%,.2);
+	        &:link{
+	          text-decoration: none;
+	        }
+	      }
+			@media all and (max-width: 992px){
+				transform: translate(-110%, -2px);
+				left: 50%;
+				bottom: -20px;
+				a{
+					margin-top: 15px;
+				}
+			}
+			@media all and (max-width: 767px){
+				transform: translate(-50%, -2px);
+			}
+		}
+	}
     .image-laptop{
+			padding-bottom: 15px;
+			position: relative;
+			display: inline-block;
+			margin-left: 135px;
+			vertical-align: top;
+			margin-top: 15px;
       img{
-        margin-right: 58px;
         border: 10px solid hsla(0,0%,100%,.2);
         border-radius: 20px;
       }
+			@media all and (max-width: 992px){
+				padding-bottom: 15px;
+				left: 12%;
+				display: block;
+				margin-left: 0px;
+				img{
+					width:340px;
+					height: 200px;
+				}
+			}
+			@media all and (max-width: 767px){
+				left:0;
+				text-align: center;
+				img{
+					width:280px;
+					height: 170px;
+				}
+			}
+			@media all and (max-width: 576px){
+				left:0;
+				text-align: center;
+				img{
+					width:240px;
+					height: 130px;
+				}
+			}
     }
-}
-
-.quiz-step__footer{
-	.butt-2{
-		margin-left: 287px !important;
-		vertical-align: text-bottom;
 	}
-  .butt-1, .butt-2{
+
+.footer-2{
+	position: relative;
+}
+.quiz-step__footer{
+	.butt-1, .butt-2{
 		display: inline-block;
-		margin-left: 620px;
 		a{
 				min-width: 200px !important;
 			img{
@@ -287,15 +614,77 @@
 				vertical-align: middle;
 			}
 		}
+	}
+	@media all and (max-width: 2000px){
+		.butt-1{
+			margin-left: 620px;
+		}
+		.butt-2{
+			margin-left: 287px !important;
+			vertical-align: text-bottom;
+			#s-text{
+				display: none;
+			}
+		}
+	}
+	@media all and (max-width: 992px){
+		.butt-1{
+			margin-left: 620px;
+		}
+		.butt-2{
+			margin-left: 17px !important;
+			vertical-align: text-bottom;
+			#s-text{
+				display: none;
+			}
+		}
+	}
+	@media all and (max-width: 768px){
+		.butt-1{
+			margin-left: 50%;
+    	transform: translate(-50%, 0px);
+		}
+		.butt-2{
+			a{
+					min-width: 150px !important;
+					#s-text{
+						display: none;
+					}
+			 }
+			margin-left: 0px !important;
+			left: 65%;
+			vertical-align: text-bottom;
+			position:absolute;
+		}
+	}
+	@media all and (max-width: 576px){
+		.butt-1{
+			margin-left: 50%;
+    	transform: translate(-50%, 0px);
+		}
+		.butt-2{
+			a{
+					min-width: 120px !important;
+					#b-text{
+						display: none;
+					}
+					#s-text{
+						display: inline-block;
+					}
+			 }
+			margin-left: 0px !important;
+			left: 50% !important;
+			transform: translate(-50%,20px);
+			vertical-align: text-bottom;
+			position: relative;
+		}
+	}
 
-
-  }
   .footer-text-2{
 		display: inline-block;
     text-align: left;
     a {
       color: #fff;
-      font-size: 18px;
       line-height: 0.5;
       @include proximaLight;
 			border-bottom: 1px solid hsla(0,0%,100%,.2);
@@ -303,7 +692,22 @@
 				text-decoration: none;
 			}
     }
-  }
+		@media all and(max-width: 2000px){
+			a{
+				font-size: 18px;
+			}
+		}
+		@media all and(max-width: 767px){
+			a {
+				font-size: 16px;
+			}
+		}
+		@media all and(max-width: 576px){
+			display: block;
+			text-align: center;
+		}
+}
+
   .footer-text-3{
     display: block;
     .text-3-left{
@@ -318,15 +722,36 @@
           text-decoration: none;
         }
       }
+			@media all and (max-width: 768px){
+				display: block;
+				text-align: center;
+				padding-bottom: 30px;
+			}
     }
-    .butt-3{
-      display: inline-block;
-			margin-left: 424px;
-    	vertical-align: middle;
+		.butt-3{
+			display: inline-block;
+			vertical-align: middle;
 			a{
 				min-width: 190px;
 			}
-    }
+		}
+		@media all and (max-width: 2000px){
+	    .butt-3{
+				margin-left: 424px;
+	    }
+		}
+		@media all and (max-width: 991px){
+	    .butt-3{
+				margin-left: 154px;
+	    }
+		}
+		@media all and (max-width: 767px){
+	    .butt-3{
+				display: block;
+				text-align: center;
+				margin-left: 0;
+	    }
+		}
   }
   .footer-text-4{
     text-align: center;
@@ -342,6 +767,10 @@
       margin-left: 10px;
       vertical-align: baseline;
     }
+		@media all and (max-width: 992px){
+			font-size: 24px;
+			padding-top: 10px;
+		}
   }
   .butt-4{
     text-align: center;

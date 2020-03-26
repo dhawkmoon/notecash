@@ -6,6 +6,7 @@
 	<title>NoteCash - удобный сервис по выкупу ноутбуков в Москве и Московской области</title>
 	<meta name="description" content="Сервис по выкупу ноутбуков" />
 	<meta name="yandex-verification" content="7969cb48652d77e7" />
+	<link rel="stylesheet" href="/dist/css/styles.css" />
 	<!--[if lte IE 6]>
     	<script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif-->
@@ -219,7 +220,7 @@
 
 				<div class="col-xs-12 text-center">
 
-					<h2>Оценить ноутбук</h2>
+					<h2 class="main-title">Оценить ноутбук</h2>
 
 				</div>
 
@@ -298,13 +299,13 @@
 										</div>
 								</div>
 								</div>
-								<div class="quiz-step__footer">
+								<div class="quiz-step__footer footer-2">
 									<div class="footer-text-2">
 										<p><a href="#">Как узнать модель для ноутбуков Asus?</a></p>
 										<p><a href="#">Я не знаю, какая у меня модель</a></p>
 									</div>
 									<div class="butt-2">
-										<a href="#modal-2" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Перейти к оценке <img src="./src/i/arrow_but.png" alt=""></a>
+										<a href="#modal-2" class="btn btn-primary" data-toggle="modal" data-target="#modal-2"><span id="b-text">Перейти к оценке </span> <span id="s-text" >Оценка </span> <img src="./src/i/arrow_but.png" alt=""></a>
 									</div>
 								</div>
 							</div>
@@ -338,7 +339,7 @@
 										<div class="quiz-step__body body-5">
 											<div class="container">
 													<div class="row">
-														<div class="col-md-6 dropleft">
+														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-1 dropleft">
 															<div class="quiz-floating-label text-left first-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
 																<div class="quiz-dropdown">
@@ -353,7 +354,7 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6 dropleft">
+														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-1 dropleft">
 															<div class="quiz-floating-label text-left second-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
 																<div class="quiz-dropdown">
@@ -370,7 +371,7 @@
 														</div>
 													</div>
 													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-1">
 															<div class="quiz-floating-label text-left third-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
 																<div class="quiz-dropdown">
@@ -385,7 +386,7 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-6">
+														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-4 col-xs-push-1">
 															<div class="quiz-floating-label text-left fourth-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
 																<div class="quiz-dropdown">
@@ -421,19 +422,17 @@
 							</div>
 							<div class="quiz-step">
 								<div class="quiz-step__body">
-									<div class="container">
-										<div class="row">
-											<div class="col-md-3 text-body-5">
-												<a href=""><img src="./src/i/back.png" alt=""></a>
-												<div class="list-5">
+									<div class="container body-5">
+										<div class="back-2"><a href=""><img src="./src/i/back.png" alt=""></a></div>
+											<div class="text-body-5">
 													<div id= "list-item-1">1) Переверните устройство</div>
 													<div id= "list-item-2">2) На задней панеле ноутбука найдите шрихкод</div>
 													<div id= "list-item-3">3) Модель будет указана в третьей строчке</div>
-												</div>
-												<div><a href="#">Понятно, продолжить</a></div>
 											</div>
-											<div class="col-md-6 text-right image-laptop">	<img src="./src/i/under_laptop.png" alt=""></div>
-										</div>
+											<div class="image-laptop">	<img src="./src/i/under_laptop.png" alt=""></div>
+											<div class="but-5">
+												<a href="#">Понятно, продолжить</a>
+											</div>
 									</div>
 								</div>
 							</div>
@@ -1210,7 +1209,7 @@
 		</aside>
 
 		<div class="mobile-menu-overlay"></div>
-		<link rel="stylesheet" href="/dist/css/styles.css" />
+	<!--	<link rel="stylesheet" href="/dist/css/styles.css" /> -->
     	<!-- SCRIPTS -->
 		<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
