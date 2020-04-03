@@ -308,6 +308,11 @@
 
 
 .quiz-step__body{
+	.quiz-dropdown-2{
+		.quiz-dropdown__item{
+			display: none;
+		}
+	}
 	.quiz-dropdown-1, .quiz-dropdown-2{
 		position: relative;
 		@media all and (max-width: 2000px){
@@ -689,6 +694,7 @@
       @include proximaLight;
 			border-bottom: 1px solid hsla(0,0%,100%,.2);
 			&:hover{
+				cursor: pointer;
 				text-decoration: none;
 			}
     }
@@ -718,7 +724,8 @@
         color: $basicFontColor;
         font-size: 18px;
 				border-bottom: 1px solid hsla(0,0%,100%,.2);
-        &:link{
+        &:link, &:hover{
+					cursor: pointer;
           text-decoration: none;
         }
       }

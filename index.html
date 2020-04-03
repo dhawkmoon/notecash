@@ -231,7 +231,7 @@
 				<div class="quiz-wrapper">
 					<div class="quiz">
 						<div class="quiz-steps">
-							<div class="quiz-step">
+							<div class="quiz-step--active quiz-1">
 								<div class="quiz-step__header">
 									<div class="quiz-title-1">
 										<div class="title-left-1">Выберите бренд вашего ноутбукa</div>
@@ -270,17 +270,17 @@
 								</div>
 								<div class="quiz-step__footer">
 									<div class="butt-1">
-										<a href="#modal-2" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Следующий шаг <img src="./src/i/arrow_but.png" alt=""></a>
+										<a class="btn btn-primary go-step-2" >Следующий шаг <img src="./src/i/arrow_but.png" alt=""></a>
 									</div>
 								</div>
 							</div>
-							<div class="quiz-step">
+							<div class="quiz-step quiz-2">
 								<div class="quiz-step__header" >
-									<a href="#"> <img src="./src/i/back.png" class="button-back" alt=""></a>
+									<a class="go-step-1"> <img src="./src/i/back.png" class="button-back" alt=""></a>
 									<div class="quiz-title-2">
 										<div class="title-left-2">Выберите модель</div>
 										<img src="./src/i/quiz-figure-1.png" alt="">
-										<div class="number-step-2">1 <span>/2</span></div>
+										<div class="number-step-2">2 <span>/2</span></div>
 									</div>
 								</div>
 								<div class="quiz-step__body">
@@ -291,9 +291,12 @@
 												<div class="quiz-dropdown__current"></div>
 												<label>Модель</label>
 												<div class="quiz-dropdown__items-wrapper">
-													<div class="quiz-dropdown__item">Asus</div>
-													<div class="quiz-dropdown__item">Acer</div>
-													<div class="quiz-dropdown__item">Apple</div>
+													<div class="quiz-dropdown__item asus">VivoBook X571GT-BQ212T</div>
+													<div class="quiz-dropdown__item asus">X540BA</div>
+													<div class="quiz-dropdown__item asus">VivoBook X540UA</div>
+													<div class="quiz-dropdown__item hp">15-rb076ur 8KH84EA</div>
+													<div class="quiz-dropdown__item hp">15-rb028ur US49EA</div>
+													<div class="quiz-dropdown__item hp">HP 15-db0389ur 6LC05EA</div>
 												</div>
 											</div>
 										</div>
@@ -301,19 +304,19 @@
 								</div>
 								<div class="quiz-step__footer footer-2">
 									<div class="footer-text-2">
-										<p><a href="#">Как узнать модель для ноутбуков Asus?</a></p>
-										<p><a href="#">Я не знаю, какая у меня модель</a></p>
+										<p><a class="go-step-5">Как узнать модель для ноутбуков <span class="f-mark"></span>?</a></p>
+										<p><a class="go-step-5">Я не знаю, какая у меня модель</a></p>
 									</div>
 									<div class="butt-2">
-										<a href="#modal-2" class="btn btn-primary" data-toggle="modal" data-target="#modal-2"><span id="b-text">Перейти к оценке </span> <span id="s-text" >Оценка </span> <img src="./src/i/arrow_but.png" alt=""></a>
+										<a class="btn btn-primary go-step-3"><span id="b-text">Перейти к оценке </span> <span id="s-text" >Оценка </span> <img src="./src/i/arrow_but.png" alt=""></a>
 									</div>
 								</div>
 							</div>
-							<div class="quiz-step">
+							<div class="quiz-step quiz-3">
 								<div class="quiz-step__header">
 									<div class="quiz-title-3">
 										<img src="./src/i/laptop.png" alt="">
-										<div class="title3-right">Asus JK8X-232</div>
+										<div class="title3-right"><span class="f-mark"></span> <span class = "f-model"></span></div>
 									</div>
 								</div>
 								<div class="quiz-step__body">
@@ -327,12 +330,12 @@
 								</div>
 								<div class="quiz-step__footer">
 									<div class="footer-text-3">
-										<div class="text-3-left"><a href="#">Указать характеристики</a></div>
-										<div class="butt-3"><a id="link_7" href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Продать ноутбук</a></div>
+										<div class="text-3-left"><a class="go-step-4">Указать характеристики</a></div>
+										<div class="butt-3"><a href="#" class="btn btn-primary">Продать ноутбук</a></div>
 									</div>
 								</div>
 							</div>
-								<div class="quiz-step--active">
+								<div class="quiz-step quiz-4">
 										<div class="quiz-step__header">
 											<div class="quiz-title-4">Дополнительные характеристики</div>
 										</div>
@@ -342,14 +345,16 @@
 														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-1 dropleft">
 															<div class="quiz-floating-label text-left first-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
-																<div class="quiz-dropdown">
+																<div class="quiz-dropdown cpu">
 																	<div class="quiz-dropdown__current"></div>
 																	<label>Укажите процессор</label>
 																	<img src="./src/i/question.png" alt="">
 																	<div class="quiz-dropdown__items-wrapper">
-																		<div class="quiz-dropdown__item">Asus</div>
-																		<div class="quiz-dropdown__item">Acer</div>
-																		<div class="quiz-dropdown__item">Apple</div>
+																		<div class="quiz-dropdown__item">Intel Celeron</div>
+																		<div class="quiz-dropdown__item">Intel Pentium</div>
+																		<div class="quiz-dropdown__item">Intel Core i3</div>
+																		<div class="quiz-dropdown__item">Intel Core i5</div>
+																		<div class="quiz-dropdown__item">Intel Core i7</div>
 																	</div>
 																</div>
 															</div>
@@ -357,14 +362,13 @@
 														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-1 dropleft">
 															<div class="quiz-floating-label text-left second-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
-																<div class="quiz-dropdown">
+																<div class="quiz-dropdown graphics">
 																	<div class="quiz-dropdown__current"></div>
 																	<label>Укажите видеокарту</label>
 																	<img src="./src/i/question.png" alt="">
 																	<div class="quiz-dropdown__items-wrapper">
-																		<div class="quiz-dropdown__item">Asus</div>
-																		<div class="quiz-dropdown__item">Acer</div>
-																		<div class="quiz-dropdown__item">Apple</div>
+																		<div class="quiz-dropdown__item">GeForce</div>
+																		<div class="quiz-dropdown__item">Radeon</div>
 																	</div>
 																</div>
 															</div>
@@ -374,14 +378,17 @@
 														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-1">
 															<div class="quiz-floating-label text-left third-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
-																<div class="quiz-dropdown">
+																<div class="quiz-dropdown ram">
 																	<div class="quiz-dropdown__current"></div>
 																	<label>Оперативная память</label>
 																	<img src="./src/i/question.png" alt="">
 																	<div class="quiz-dropdown__items-wrapper">
-																		<div class="quiz-dropdown__item">Asus</div>
-																		<div class="quiz-dropdown__item">Acer</div>
-																		<div class="quiz-dropdown__item">Apple</div>
+																		<div class="quiz-dropdown__item">2ГБ</div>
+																		<div class="quiz-dropdown__item">4ГБ</div>
+																		<div class="quiz-dropdown__item">8ГБ</div>
+																		<div class="quiz-dropdown__item">16ГБ</div>
+																		<div class="quiz-dropdown__item">32ГБ</div>
+																		<div class="quiz-dropdown__item">64ГБ</div>
 																	</div>
 																</div>
 															</div>
@@ -389,14 +396,15 @@
 														<div class="col-md-6 col-sm-12 col-sm-push-0 col-xs-4 col-xs-push-1">
 															<div class="quiz-floating-label text-left fourth-dropdown">
 																<input type="hidden" id="modal-note" data-field="notebook" name="modal-note">
-																<div class="quiz-dropdown">
+																<div class="quiz-dropdown hard">
 																	<div class="quiz-dropdown__current"></div>
 																	<label>Жесткий диск</label>
 																	<img src="./src/i/question.png" alt="">
 																	<div class="quiz-dropdown__items-wrapper">
-																		<div class="quiz-dropdown__item">Asus</div>
-																		<div class="quiz-dropdown__item">Acer</div>
-																		<div class="quiz-dropdown__item">Apple</div>
+																		<div class="quiz-dropdown__item">SSD 512ГБ</div>
+																		<div class="quiz-dropdown__item">SSD 256ГБ</div>
+																		<div class="quiz-dropdown__item">HDD 1ТБ</div>
+																		<div class="quiz-dropdown__item">HDD 512ГБ</div>
 																	</div>
 																</div>
 															</div>
@@ -406,9 +414,9 @@
 
 												<div class="body-title-top-4">
 													<img src="./src/i/laptop.png" alt="">
-													<div class="title3-right">Asus JK8X-232</div>
+													<div class="title3-right"><span class="f-mark"></span> <span class = "f-model"></span></div>
 												</div>
-												<div class="body-title-bottom-4">i5 A10-ATI Radeon 75GT - 512 ОЗУ - 128 SSD</div>
+												<div class="body-title-bottom-4"><span class = "f-cpu"> </span> <span class = "f-graphics"></span> <span class = "f-ram"></span> <span class = "f-hard"></span></div>
 								</div>
 								<div class="quiz-step__footer">
 									<div class="footer-text-4">
@@ -416,14 +424,14 @@
 										<div>получить <span>27000 ₽</span></div>
 									</div>
 									<div class="butt-4">
-											<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Продать ноутбук</a>
+											<a href="#" class="btn btn-primary">Продать ноутбук</a>
 									</div>
 								</div>
 							</div>
-							<div class="quiz-step">
+							<div class="quiz-step quiz-5">
 								<div class="quiz-step__body">
 									<div class="container body-5">
-										<div class="back-2"><a href=""><img src="./src/i/back.png" alt=""></a></div>
+										<div class="back-2"><a class="go-step-5-2"><img src="./src/i/back.png" alt=""></a></div>
 											<div class="text-body-5">
 													<div id= "list-item-1">1) Переверните устройство</div>
 													<div id= "list-item-2">2) На задней панеле ноутбука найдите шрихкод</div>
@@ -431,7 +439,7 @@
 											</div>
 											<div class="image-laptop">	<img src="./src/i/under_laptop.png" alt=""></div>
 											<div class="but-5">
-												<a href="#">Понятно, продолжить</a>
+												<a class="go-step-5-2">Понятно, продолжить</a>
 											</div>
 									</div>
 								</div>

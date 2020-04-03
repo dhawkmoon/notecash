@@ -9,7 +9,8 @@ import './forms.js';
 import './video.js';
 import './yall.min.js';
 import './dropdown.js';
-import './dropdown-quiz.js';
+import './quiz-dropdown.js';
 import './quiz-steps.js'
+import './quiz-12345.js'
 
 document.addEventListener("DOMContentLoaded", window.yall);
